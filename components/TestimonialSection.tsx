@@ -1,0 +1,249 @@
+import React from "react";
+import { LinkedinIcon, ExternalLinkIcon, User, Building2 } from "lucide-react";
+import Image from "next/image";
+
+interface Testimonial {
+  id: number;
+  companyUrl: string; // can be an image URL or fallback text
+  title: string;
+  company: string;
+  testimonial: string;
+  personAvatar: string; // can be an image URL or fallback text
+  linkedinUrl?: string;
+}
+
+const TestimonialSection = () => {
+  const testimonials: Testimonial[] = [
+    {
+      id: 1,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+      title: "Senior Engineering Manager",
+      company: "Bajaj Finance Limited",
+      testimonial:
+        "I had the pleasure of working with Shweta during her tenure as a Software Developer...",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQHtCA8UC2OWfA/profile-displayphoto-scale_200_200/B4DZjirTCmHsAo-/0/1756149661161?e=1759363200&v=beta&t=K01s4tlvj1LbNeapWZ17h1I0qdRR1Is3mIxPOCqmDbQ",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 2,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+      title: "Principle Software Engineerr at GEP",
+      company: "GEP Worldwide",
+      testimonial:
+        "I had the privilege of working with Shweta Shekhar on the GEP Smart Contracts team, and I can confidently say she was one of the most driven and solution-focused professionals I’ve collaborated with. Over the course of our time together, I witnessed her significant growth in both technical expertise and sense of ownership....",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 3,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQHeJ-2mFiqcmQ/company-logo_200_200/company-logo_200_200/0/1732599862731?e=1759363200&v=beta&t=8rnfNvoNhUx10bZnN2ExDi0SW5F5W2ZztYhkpaSDU3g",
+      title: "Associate Director of Academics",
+      company: "upGrad",
+      testimonial:
+        "I had the pleasure of working closely with Shweta during my time as the Student Council Faculty In charge, where she consistently demonstrated strong leadership, initiative, and dedication. Shweta played a key role in managing college events, showing exceptional organizational skills and motivating the entire team to perform at their best. She worked closely with me during various college fests and activities, and I found her to be proactive, dependable, and solutions-driven. While excelling academically including topping one of the key subjects, Shweta also actively participated in hackathons, competitions, and inter-college events, often taking the lead and inspiring peers through action....",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQFsses1qCPbUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729013478092?e=1759363200&v=beta&t=iUL-NB_hpccrqCwZQ9NPHuhALp8rH_tb6BCaDH6D37U",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 4,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/C4E0BAQFKa_ObftR_8w/company-logo_200_200/company-logo_200_200/0/1634555714140/nielsen_logo?e=1759363200&v=beta&t=03uvwtvAlErQCHcYWPW-_8G6_lsAIMms08vruAPhtX0",
+      title: "Software Engineer at Nielsen",
+      company: "Nielsen",
+      testimonial:
+        "I’ve had the pleasure of knowing Shweta Shekhar for several years now—first as a friend and batchmate during our 11th and 12th in the PCMB + IT stream, and later as a colleague at GEP. From our school days to the corporate world, her passion for technology and problem-solving has always stood out....",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D35AQGYDEElc3gOSA/profile-framedphoto-shrink_200_200/B4DZg0_YeUGkAY-/0/1753235687615?e=1757073600&v=beta&t=PBij51LCybLmWSDuNjLIL3A8an6yUUa8iHJj6SfD8VI",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 5,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+      title: "Senior Business Analyst at GEP Worldwide",
+      company: "GEP Worldwide",
+      testimonial:
+        "I had the opportunity to work closely with Shweta during our time on the Citi client project. As a Implementation analyst, I collaborated with her across several initiatives, particularly around bulk utility operations and incident management......",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQEhQ6jRnv6ixg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732547313464?e=1759363200&v=beta&t=PfPUnvocUtJ1528IBbR47fOVlv-9ojpNM8aJH6oKKYg",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 6,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+      title: "Sr.Consultant-Digital Transformation",
+      company: "GEP Worldwide",
+      testimonial:
+        "It was a privilege working with Shweta. We've worked within cross-functional teams for a common software product.Shweta is a bright individual and has a great potential. She was one of the greatest developers in the team, and was always eager to learn and help. She can do wonders in whatever field show chooses for her future, and as an acquaintance one can always vouch on her.",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D5603AQGWQ7qEH8FhYA/profile-displayphoto-shrink_200_200/B56Zb4Rf_WHoAY-/0/1747922063410?e=1759363200&v=beta&t=wdeD9W-YuxRDyKPN0X4pvHtjTNwKNHZMWAMQNWe3RLk",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 7,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/C4D0BAQF6TmzLkch0dQ/company-logo_200_200/company-logo_200_200/0/1630556159190/new_york_university_logo?e=1759363200&v=beta&t=5uuiWDerbMeHX9YJ5-HCwify4N_FXah5tpmhEhGMEv0",
+      title: "Graduate Assistant at NYU",
+      company: "New York University ",
+      testimonial:
+        "I had the pleasure of working with Shweta on multiple NYU projects, and I can confidently say she is one of the most dedicated, thoughtful, and innovative teammates I’ve collaborated with....",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D5635AQGYPqE-x8l6Qg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1738359560915?e=1757073600&v=beta&t=qX94tUdkua7pcbx_GXPHlmBBfzc9fc07nRkdYkodPiw",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 8,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/C4D0BAQGKc55wKjYy2A/company-logo_200_200/company-logo_200_200/0/1660715835929/sbi_life_insurance_co__ltd__logo?e=1759363200&v=beta&t=US_dGJaTbIlfBc_znwl-nUJs4wa6zGgFKaO-GOOv1PA",
+      title: "RPA Developer with Automation Anywhere",
+      company: "SBI Life Insurance Co. Ltd.",
+      testimonial:
+        "Shweta is highly motivated individual.She is good at understanding user's need be it any project.",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQF6_NPO0dak0w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1683902302774?e=1759363200&v=beta&t=lMZpPlyPKdMbBlWnDjdloGKe5CYqU2QkT7xJM8qTqy0",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 9,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/C560BAQFyJGIrZBoY0g/company-logo_200_200/company-logo_200_200/0/1630611526356/punchcut_logo?e=1759363200&v=beta&t=fosUcE2vdc_bWxY2LSbsE5vh0wDM2ESRpuqkA49FZ9s",
+      title: "Interaction Designer @Punchcut",
+      company: "Punchcut",
+      testimonial:
+        "Shweta is highly motivated individual.She is good at understanding user's need be it any project.",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQFe4iBs3HJhDA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704425676427?e=1759363200&v=beta&t=UmbfX337T4imkFz3Itnz0DP5L8hGhhfYNtDluE68VwA",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 10,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEgtOEcxlXMog/company-logo_200_200/B4DZfqEQWkHAAQ-/0/1751978673981/accenture_logo?e=1759363200&v=beta&t=HWcOmfyJi6ul3p7saiO6BhC7eDIV3EDR2Bhoa9u5Q9I",
+      title: "Data Scientist specializing in AI-ML using Python",
+      company: "Accenture",
+      testimonial:
+        "I had the privilege of studying Computer Engineering with Shweta, and throughout those four years, they consistently stood out as one of the most reliable and sharp-minded individuals in our batch. Shweta brought a strong technical foundation, a problem-solving mindset, and a calm, team-first attitude whenever we collaborated on projects. We took part in multiple project competitions and hackathons ( got 2nd Prize) throughout Engineering. Her inputs in all phases of projects were equally crucial whether it was ideation, solution approach, development etc. Shweta excelled in Academia as well and always helped others by explaining academic concepts or topics. Her excellent communication skills were definitely an enabler in this regard. Academics and Projects aside, she was always willing to support others, share knowledge, and raise the overall level of any team or group she was part of....",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/C5603AQEGkVPhTdzI7A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1595769353200?e=1759363200&v=beta&t=5piHU3LFdEq6JRq6MO81yfskU9zERBVCePQTPF3_53g",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+  ];
+
+  return (
+    <section className="bg-black-100 py-12 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+            What People Say
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+            Insights from those who have worked with me...
+          </p>
+        </div>
+
+        {/* Masonry Layout */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="break-inside-avoid bg-black-200 rounded-2xl p-5 sm:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]"
+            >
+              {/* Top Row (Company logo + LinkedIn) */}
+              <div className="flex justify-between items-center mb-4">
+                {testimonial.companyUrl &&
+                testimonial.companyUrl.startsWith("http") ? (
+                  <Image
+                    src={testimonial.companyUrl}
+                    alt="Company logo"
+                    width={48} // w-12 = 48px
+                    height={48} // h-12 = 48px
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover bg-gray-700"
+                  />
+                ) : (
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                    <Building2 className="text-white w-6 h-6" />
+                  </div>
+                )}
+                {testimonial.linkedinUrl && (
+                  <a
+                    href={testimonial.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <LinkedinIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 hover:text-blue-300 transition-colors" />
+                  </a>
+                )}
+              </div>
+
+              {/* Testimonial */}
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base mb-5">
+                “{testimonial.testimonial}”
+              </p>
+
+              {/* Person Info */}
+              <div className="flex items-center space-x-3 mb-4">
+                {testimonial.personAvatar &&
+                testimonial.personAvatar.startsWith("http") ? (
+                  <Image
+                    src={testimonial.personAvatar}
+                    alt="Person avatar"
+                    width={48} // sm:w-12 = 48px
+                    height={48} // sm:h-12 = 48px
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover bg-gray-700"
+                  />
+                ) : (
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                    <User className="text-white w-6 h-6" />
+                  </div>
+                )}
+                <div>
+                  <div className="text-white font-medium text-sm sm:text-base">
+                    {testimonial.title}
+                  </div>
+                  <div className="text-gray-400 text-xs sm:text-sm">
+                    {testimonial.company}
+                  </div>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-gray-700 my-3"></div>
+
+              {/* Bottom Link */}
+              {testimonial.linkedinUrl && (
+                <a
+                  href={testimonial.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-400 text-xs sm:text-sm hover:text-gray-300 transition-colors"
+                >
+                  <span>Click to view on LinkedIn</span>
+                  <ExternalLinkIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialSection;
