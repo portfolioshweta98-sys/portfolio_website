@@ -151,10 +151,10 @@ const TestimonialSection = () => {
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-            What People Say
+            LinkedIn Recommendations
           </h2>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Insights from those who have worked with me...
+            Stories and perspectives from people who’ve journeyed with me professionally and academically
           </p>
         </div>
 
