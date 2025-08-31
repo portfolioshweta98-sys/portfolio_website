@@ -79,10 +79,10 @@ const ContactSection: React.FC = () => {
         <p className="text-gray-300 text-sm">
           Or email me directly at{" "}
           <a
-            href="mailto:shwetashekhar2016@gmail.com"
+            href="mailto:ss19623@nyu.edu"
             className="text-blue-400 hover:underline"
           >
-            shwetashekhar2016@gmail.com
+            ss19623@nyu.edu
           </a>
         </p>
          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />

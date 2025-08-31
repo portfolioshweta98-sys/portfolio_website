@@ -9,6 +9,7 @@ import {
   BriefcaseIcon,
   CalendarIcon,
   MapPinIcon,
+  GraduationCapIcon,
 } from "lucide-react";
 
 const Experience = () => {
@@ -81,8 +82,141 @@ const Experience = () => {
   ];
 
   const data = [
+    // Education Section
     {
-      title: "Feb 2025 – Present",
+      title: "Master of Computer Science",
+      image: "/Exp 1.png", // NYU image
+      content: (
+        <div key={0} className="group relative w-full">
+          {/* Main Card */}
+          <div
+            className="bg-black-200 backdrop-blur-xl rounded-xl sm:rounded-2xl 
+                       border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.15)] 
+                       p-3 sm:p-4 md:p-6 transition-all duration-500 
+                       hover:-translate-y-1 hover:border-blue-400/50 w-full"
+          >
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-4">
+              {/* University Image */}
+              <div
+                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden 
+                            bg-gradient-to-br from-blue-500/30 to-violet-500/30 flex-shrink-0 mx-auto sm:mx-0
+                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
+                            border-2 border-blue-400/40"
+              >
+                <Image
+                  src="/Exp 1.png"
+                  alt="New York University"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 640px) 48px, (max-width: 768px) 56px, (max-width: 1024px) 64px, 80px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
+              </div>
+
+              <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-2">
+                  <GraduationCapIcon className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
+                  <h3
+                    className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white 
+                               group-hover:text-blue-300 transition-colors duration-300 break-words"
+                  >
+                    Master of Computer Science
+                  </h3>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-1">
+                  <MapPinIcon className="w-3 h-3 text-blue-400 flex-shrink-0" />
+                  <p className="text-xs sm:text-sm font-medium text-blue-200 break-words">
+                    New York University, New York, NY
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2">
+                  <CalendarIcon className="w-3 h-3 text-blue-400 flex-shrink-0" />
+                  <span className="text-xs text-blue-300 bg-blue-900/40 px-2 py-1 rounded-full">
+                    2024 – 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Preview */}
+            <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
+              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
+                Currently pursuing Master's degree in Computer Science with focus on AI/ML and software engineering...
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Bachelor of Computer Engineering",
+      image: "/Exp 4.jpg", // You'll need to add this image
+      content: (
+        <div key={5} className="group relative w-full">
+          {/* Main Card */}
+          <div
+            className="bg-black-200 backdrop-blur-xl rounded-xl sm:rounded-2xl 
+                       border border-green-500/30 shadow-[0_0_20px_rgba(34,197,94,0.15)] 
+                       p-3 sm:p-4 md:p-6 transition-all duration-500 
+                       hover:-translate-y-1 hover:border-green-400/50 w-full"
+          >
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-4">
+              {/* University Image */}
+              <div
+                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden 
+                            bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex-shrink-0 mx-auto sm:mx-0
+                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
+                            border-2 border-green-400/40"
+              >
+                <div className="w-full h-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                  <GraduationCapIcon className="w-6 h-6 text-white" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 to-transparent" />
+              </div>
+
+              <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-2">
+                  <GraduationCapIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
+                  <h3
+                    className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white 
+                               group-hover:text-green-300 transition-colors duration-300 break-words"
+                  >
+                    Bachelor of Computer Engineering
+                  </h3>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-1">
+                  <MapPinIcon className="w-3 h-3 text-green-400 flex-shrink-0" />
+                  <p className="text-xs sm:text-sm font-medium text-green-200 break-words">
+                    SIES Graduate School of Technology, University of Mumbai
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2">
+                  <CalendarIcon className="w-3 h-3 text-green-400 flex-shrink-0" />
+                  <span className="text-xs text-green-300 bg-green-900/40 px-2 py-1 rounded-full">
+                    2016 – 2020
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Preview */}
+            <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
+              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
+                Completed Bachelor's degree in Computer Engineering with strong foundation in software development...
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    // Experience Section
+    {
+      title: "Graduate Assistant",
+      image: "/Exp 1.png",
       content: (
         <div key={1} className="group relative w-full">
           {/* Main Card */}
@@ -200,7 +334,8 @@ const Experience = () => {
       ),
     },
     {
-      title: "May 2025 – Aug 2025",
+      title: "AI Intern (Summer Internship)",
+      image: "/Exp 2.jpg",
       content: (
         <div key={2} className="group relative">
           {/* Main Card */}
@@ -330,7 +465,8 @@ const Experience = () => {
       ),
     },
     {
-      title: "Aug 2020 – Aug 2024",
+      title: "Senior Software Engineer",
+      image: "/Exp 2.jpg",
       content: (
         <div key={3} className="group relative">
           {/* Main Card */}
@@ -442,7 +578,8 @@ const Experience = () => {
       ),
     },
     {
-      title: "May 2019 – June 2019",
+      title: "Machine Learning Intern",
+      image: "/Exp 3.png",
       content: (
         <div key={4} className="group relative">
           {/* Main Card */}
