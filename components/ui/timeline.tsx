@@ -1,5 +1,6 @@
 "use client";
 import { useScroll, useTransform, motion } from "motion/react";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -40,10 +41,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <div className="sticky flex flex-col md:flex-row z-40 items-center self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-12 absolute left-2 md:left-2 w-12 rounded-full bg-white dark:bg-black flex items-center justify-center shadow-lg border-2 border-neutral-200 dark:border-neutral-700">
                 {item.image ? (
-                  <img 
-                    src={item.image} 
+                  <Image
+                    src={item.image}
                     alt={`Timeline ${item.title}`}
-                    className="h-8 w-8 rounded-full object-cover"
+                    width={32} // same as w-8
+                    height={32} // same as h-8
+                    className="rounded-full object-cover"
                   />
                 ) : item.icon ? (
                   <div className="h-6 w-6 flex items-center justify-center text-neutral-600 dark:text-neutral-400">
