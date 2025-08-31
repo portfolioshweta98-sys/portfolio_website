@@ -84,7 +84,7 @@ const Experience = () => {
   const data = [
     // Education Section
     {
-      title: "Master of Computer Science",
+      title: "New York University, New York, NY",
       image: "/Exp 1.png", // NYU image
       content: (
         <div key={0} className="group relative w-full">
@@ -143,7 +143,8 @@ const Experience = () => {
             {/* Quick Preview */}
             <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
               <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
-                Currently pursuing Master's degree in Computer Science with focus on AI/ML and software engineering...
+                Currently pursuing Master&apos;s degree in Computer Science with
+                focus on AI/ML and software engineering...
               </p>
             </div>
           </div>
@@ -206,7 +207,8 @@ const Experience = () => {
             {/* Quick Preview */}
             <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
               <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
-                Completed Bachelor's degree in Computer Engineering with strong foundation in software development...
+                Completed Bachelor&apos;s degree in Computer Engineering with
+                strong foundation in software development...
               </p>
             </div>
           </div>
