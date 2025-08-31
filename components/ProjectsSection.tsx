@@ -79,6 +79,7 @@ const ProjectsSection = () => {
 
   return (
     <section className="w-full py-16 sm:py-20 bg-black-100 text-white">
+      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />
       <div className="container mx-auto px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8 sm:mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Projects
@@ -119,7 +120,12 @@ const ProjectsSection = () => {
                        cursor-grab active:cursor-grabbing"
           >
             {projects.map((p) => (
-              <Link href={p.url} target="_blank" rel="noopener noreferrer"   key={p.id}>
+              <Link
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={p.id}
+              >
                 <div
                   className="min-w-[260px] sm:min-w-[320px] md:min-w-[420px] snap-start rounded-2xl
                            bg-[rgba(20,26,41,0.65)] backdrop-blur-xl

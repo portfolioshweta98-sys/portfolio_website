@@ -54,7 +54,7 @@ const Hero = () => {
               revealText="SHWETA SHEKHAR"
               className="hidden lg:block"
             />
-            <div className="text-center">
+            {/* <div className="text-center">
               {isMounted && (
                 <div className="block lg:hidden mt-6 mb-2">
                   <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-wider">
@@ -64,7 +64,7 @@ const Hero = () => {
                   </h1>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
 
           {/* Layout */}
@@ -206,6 +206,7 @@ const Hero = () => {
                   </CardItem>
                 </CardBody>
               </CardContainer>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />
             </div>
           </div>
         </div>

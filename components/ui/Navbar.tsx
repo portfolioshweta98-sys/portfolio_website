@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-full max-w-7xl px-6"
+      className="fixed top-2 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-full max-w-7xl px-6"
     >
       <div
         className={`rounded-2xl border transition-all duration-300 ${
