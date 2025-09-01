@@ -117,7 +117,7 @@ const CertificatesSection = () => {
           <div
             ref={scrollRef}
             onScroll={updateProgress}
-            className="w-full flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4
+            className="w-full flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 custom-scrollbar
                        cursor-grab active:cursor-grabbing"
           >
             {certificates.map((c) => (

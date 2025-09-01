@@ -18,6 +18,7 @@ const ProjectsSection = () => {
   const [progress, setProgress] = useState(0);
   const [animated, setAnimated] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
   const scrollRef = useRef<HTMLDivElement>(null);
   const frame = useRef<number>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,7 +29,7 @@ const ProjectsSection = () => {
       id: 1,
       title: "Research-Net: Community Detection in Academic Papers",
       description:
-        "Developed a Spark-based framework using semantic embeddings + weighted PageRank to analyze 5M+ academic papers, improving topic clustering accuracy by 35%.",
+        "Developed a Spark-based framework using semantic embeddings + weighted PageRank to analyze 5M+ academic papers, improving topic clustering accuracy by 35%. This comprehensive solution involved implementing advanced machine learning algorithms, distributed computing techniques, and sophisticated data processing pipelines to handle massive datasets efficiently.",
       timeline: "Jan 2025 – May 2025",
       tags: ["Apache Spark", "Embeddings", "PageRank", "Data Science"],
       url: "https://github.com/shwetashekhar98/Big-Data-Project-Research-Net",
@@ -48,13 +49,63 @@ const ProjectsSection = () => {
       id: 3,
       title: "Advanced Information Visualization for Stock Market Analysis",
       description:
-        "Streamlit, Dash, D3.js, and Matplotlib tool for NYSE analysis; sentiment-based insights improved decision-making by 30%.",
+        "Streamlit, Dash, D3.js, and Matplotlib tool for NYSE analysis; sentiment-based insights improved decision-making by 30%. The project involved creating interactive dashboards, real-time data visualization, comprehensive market analysis tools, and integration with multiple data sources to provide actionable insights for traders and analysts.",
       timeline: "Sept 2024 – Nov 2024",
       tags: ["Streamlit", "Dash", "D3.js", "Matplotlib"],
       url: "https://github.com/shwetashekhar98/InfoVizProject",
       image: "/project 3.jpg",
     },
   ];
+
+  // Responsive character limit based on screen size
+  const getDescriptionLimit = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 80; // sm
+      if (window.innerWidth < 768) return 100; // md
+      return 120; // lg+
+    }
+    return 120;
+  };
+
+  const [descriptionLimit, setDescriptionLimit] = useState(120);
+
+  // Update description limit on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setDescriptionLimit(getDescriptionLimit());
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Function to toggle card expansion
+  const toggleCardExpansion = (cardId: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setExpandedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(cardId)) {
+        newSet.delete(cardId);
+      } else {
+        newSet.add(cardId);
+      }
+      return newSet;
+    });
+  };
+
+  // Function to get truncated or full description
+  const getDisplayDescription = (project: Project) => {
+    const isExpanded = expandedCards.has(project.id);
+    const needsTruncation = project.description.length > descriptionLimit;
+    
+    if (!needsTruncation || isExpanded) {
+      return project.description;
+    }
+    
+    return project.description.substring(0, descriptionLimit) + "...";
+  };
 
   // Intersection Observer for entrance animation
   useEffect(() => {
@@ -106,18 +157,18 @@ const ProjectsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-16 sm:py-20 bg-black-100 text-white relative overflow-hidden"
+      className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-black-100 text-white relative overflow-hidden"
     >
       {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 blur-xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-gradient-to-r from-blue-500/10 to-pink-500/10 blur-2xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 blur-xl animate-pulse delay-2000" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-4 sm:top-10 left-4 sm:left-10 w-16 sm:w-32 h-16 sm:h-32 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 blur-xl animate-pulse" />
+        <div className="absolute bottom-8 sm:bottom-20 right-8 sm:right-20 w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-gradient-to-r from-blue-500/10 to-pink-500/10 blur-2xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/4 w-12 sm:w-24 h-12 sm:h-24 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 blur-xl animate-pulse delay-2000" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto">
         <h2
-          className={`text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8 sm:mb-12 
+          className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 
                       bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent
                       transition-all duration-1000 transform ${
                         isVisible
@@ -128,10 +179,10 @@ const ProjectsSection = () => {
           Projects
         </h2>
 
-        <div className="relative flex items-start sm:items-center gap-4 sm:gap-8 flex-col sm:flex-row">
+        <div className="relative flex items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 flex-col lg:flex-row">
           {/* Circular progress with enhanced animations */}
           <div
-            className={`relative w-12 h-12 sm:w-20 sm:h-20 flex-shrink-0 mx-auto sm:mx-0 mb-6 sm:mb-0
+            className={`relative w-10 h-10 sm:w-12 sm:h-12 lg:w-20 lg:h-20 flex-shrink-0 mx-auto lg:mx-0 mb-4 sm:mb-6 lg:mb-0
                           transition-all duration-1000 delay-300 transform ${
                             isVisible
                               ? "translate-y-0 opacity-100 scale-100"
@@ -144,7 +195,7 @@ const ProjectsSection = () => {
                 cy="50"
                 r={R}
                 fill="transparent"
-                strokeWidth="8"
+                strokeWidth="6"
                 className="stroke-[#1a2440]"
               />
               <circle
@@ -152,7 +203,7 @@ const ProjectsSection = () => {
                 cy="50"
                 r={R}
                 fill="transparent"
-                strokeWidth="8"
+                strokeWidth="6"
                 strokeLinecap="round"
                 className="stroke-purple-500 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]
                           transition-all duration-300"
@@ -163,16 +214,21 @@ const ProjectsSection = () => {
             </svg>
           </div>
 
-          {/* Scrollable project cards with staggered entrance animations */}
+          {/* Scrollable project cards with enhanced responsive design */}
           <div
             ref={scrollRef}
             onScroll={updateProgress}
-            className={`w-full flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4
-                       cursor-grab active:cursor-grabbing transition-all duration-1000 delay-500 ${
+            className={`w-full flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 
+                       cursor-grab active:cursor-grabbing transition-all duration-1000 delay-500
+                       ${
                          isVisible
                            ? "translate-y-0 opacity-100"
                            : "translate-y-12 opacity-0"
                        }`}
+            style={{
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'rgba(168, 85, 247, 0.3) transparent'
+            }}
           >
             {projects.map((p, index) => (
               <Link
@@ -180,17 +236,22 @@ const ProjectsSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={p.id}
-                className="group"
+                className="group flex-shrink-0"
                 onMouseEnter={() => setHoveredCard(p.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div
-                  className={`min-w-[280px] sm:min-w-[340px] md:min-w-[440px] snap-start rounded-2xl
+                  className={`w-[240px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[420px] 
+                           ${expandedCards.has(p.id) 
+                             ? 'h-auto min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[480px]' 
+                             : 'h-[340px] sm:h-[380px] md:h-[420px] lg:h-[460px] xl:h-[480px]'
+                           }
+                           snap-start rounded-xl sm:rounded-2xl
                            bg-[rgba(20,26,41,0.65)] backdrop-blur-xl
                            border border-purple-500/20 shadow-[0_0_20px_rgba(88,28,135,0.15)]
                            overflow-hidden hover:shadow-[0_0_40px_rgba(88,28,135,0.35)] 
-                           transition-all duration-500 transform hover:-translate-y-2
-                           ${hoveredCard === p.id ? "scale-105" : "scale-100"}
+                           transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col
+                           ${hoveredCard === p.id ? "scale-[1.02] sm:scale-105" : "scale-100"}
                            ${
                              isVisible
                                ? "translate-y-0 opacity-100"
@@ -202,8 +263,8 @@ const ProjectsSection = () => {
                       : "0ms",
                   }}
                 >
-                  {/* Project Image */}
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
+                  {/* Project Image - Fixed height with consistent ratios */}
+                  <div className="relative h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 overflow-hidden flex-shrink-0">
                     <Image
                       src={p.image}
                       alt={p.title}
@@ -214,14 +275,14 @@ const ProjectsSection = () => {
                                     ? "scale-110 brightness-110"
                                     : "scale-100 brightness-90"
                                 }`}
-                      sizes="(max-width: 640px) 280px, (max-width: 768px) 340px, 440px"
+                      sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 380px, 420px"
                     />
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                     {/* Animated timeline badge */}
                     <div
-                      className={`absolute top-4 left-4 px-3 py-1.5 rounded-full
+                      className={`absolute top-2 sm:top-4 left-2 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full
                                    bg-black/60 backdrop-blur-md border border-purple-500/40
                                    transition-all duration-300 transform
                                    ${
@@ -230,41 +291,58 @@ const ProjectsSection = () => {
                                        : "translate-y-2 opacity-90"
                                    }`}
                     >
-                      <p className="text-xs text-purple-300 font-medium">
+                      <p className="text-[10px] sm:text-xs text-purple-300 font-medium">
                         {p.timeline}
                       </p>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-4 sm:p-6 relative">
+                  {/* Content - Fixed height with controlled overflow */}
+                  <div className="p-3 sm:p-4 md:p-5 lg:p-6 relative flex-1 flex flex-col justify-between min-h-0">
                     <h3
-                      className={`text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-blue-200
-                                  transition-all duration-300 transform
+                      className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 text-blue-200
+                                  transition-all duration-300 transform flex-shrink-0 leading-tight
                                   ${
                                     hoveredCard === p.id
-                                      ? "translate-x-2 text-blue-100"
+                                      ? "translate-x-1 sm:translate-x-2 text-blue-100"
                                       : "translate-x-0"
                                   }`}
                     >
                       {p.title}
                     </h3>
-                    <p
-                      className={`text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed
-                                 transition-all duration-300
-                                 ${
-                                   hoveredCard === p.id ? "text-gray-200" : ""
-                                 }`}
-                    >
-                      {p.description}
-                    </p>
+                    
+                    {/* Description with expandable functionality */}
+                    <div className={`flex-1 mb-2 ${expandedCards.has(p.id) ? 'overflow-visible' : 'overflow-hidden'}`}>
+                      <p
+                        className={`text-gray-300 text-xs sm:text-sm leading-relaxed 
+                                   ${expandedCards.has(p.id) ? '' : 'line-clamp-3 sm:line-clamp-4 md:line-clamp-5'}
+                                   transition-all duration-300
+                                   ${
+                                     hoveredCard === p.id ? "text-gray-200" : ""
+                                   }`}
+                      >
+                        {expandedCards.has(p.id) ? p.description : getDisplayDescription(p)}
+                      </p>
+                      
+                      {/* Read More/Less button */}
+                      {p.description.length > descriptionLimit && (
+                        <button
+                          onClick={(e) => toggleCardExpansion(p.id, e)}
+                          className="mt-1 text-purple-400 hover:text-purple-300 text-xs sm:text-sm 
+                                   font-medium transition-colors duration-200 underline underline-offset-2
+                                   hover:underline-offset-4 block"
+                        >
+                          {expandedCards.has(p.id) ? "Read Less" : "Read More"}
+                        </button>
+                      )}
+                    </div>
 
-                    {/* Animated tags */}
-                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                    {/* Animated tags - Fixed at bottom with flex-shrink-0 */}
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto flex-shrink-0">
                       {p.tags.map((t, i) => (
                         <span
                           key={i}
-                          className={`px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs rounded-full
+                          className={`px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] md:text-xs rounded-full
                                    bg-gradient-to-r from-blue-900/40 to-purple-900/40
                                    text-blue-200 border border-blue-800/30
                                    transition-all duration-300 transform hover:scale-105
@@ -283,18 +361,18 @@ const ProjectsSection = () => {
                       ))}
                     </div>
 
-                    {/* Hover arrow indicator */}
+                    {/* Hover arrow indicator - Responsive sizing */}
                     <div
-                      className={`absolute bottom-4 right-4 transition-all duration-300 transform
+                      className={`absolute bottom-3 sm:bottom-4 right-3 sm:right-4 transition-all duration-300 transform
                                    ${
                                      hoveredCard === p.id
                                        ? "translate-x-0 opacity-100"
                                        : "translate-x-4 opacity-0"
                                    }`}
                     >
-                      <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
+                      <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
                         <svg
-                          className="w-3 h-3 text-purple-400"
+                          className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-purple-400"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -315,6 +393,8 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+
+
     </section>
   );
 };

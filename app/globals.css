@@ -167,6 +167,32 @@
     var(--animation-direction, forwards) linear infinite;
 }
 
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-black); /* dark base */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4c1d95, #6d28d9); /* deep violet → rich purple */
+  border-radius: 9999px;
+  border: 2px solid var(--color-black); /* keeps it neat */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7c3aed, #8b5cf6); /* brighter purple glow */
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6d28d9 var(--color-black);
+}
+
+
 /* --- Extra Utilities (like your bg-grid / bg-dot) --- */
 @utility bg-grid {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='100' height='100' fill='none' stroke=currentColor%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
