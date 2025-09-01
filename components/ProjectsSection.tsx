@@ -42,7 +42,7 @@ const ProjectsSection = () => {
         "Bayesian modeling with PyMC + DAGs to study how weather/traffic affect delivery times; patterns informed logistics decisions and improved efficiency.",
       timeline: "Sept 2024 – Nov 2024",
       tags: ["PyMC", "Bayesian", "Pandas", "Causal Inference"],
-      url: "https://github.com/shwetashekhar98",
+      url: "https://github.com/shwetashekhar98/Foundation-of-Data-Science-Project.git",
       image: "/project 2.jpg",
     },
     {
