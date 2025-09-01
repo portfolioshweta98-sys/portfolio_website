@@ -44,8 +44,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   <Image
                     src={item.image}
                     alt={`Timeline ${item.title}`}
-                    width={32} // same as w-8
-                    height={32} // same as h-8
+                    width={50} // same as w-8
+                    height={50} // same as h-8
                     className="rounded-full object-cover"
                   />
                 ) : item.icon ? (
