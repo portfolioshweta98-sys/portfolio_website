@@ -84,7 +84,7 @@ const Experience = () => {
   const data = [
     // Education Section
     {
-      title: "New York University, New York, NY",
+      title: "Master of Computer Science",
       image: "/Exp 1.png", // NYU image
       content: (
         <div key={0} className="group relative w-full">
@@ -97,33 +97,8 @@ const Experience = () => {
           >
             <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-4">
               {/* University Image */}
-              <div
-                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden 
-                            bg-gradient-to-br from-blue-500/30 to-violet-500/30 flex-shrink-0 mx-auto sm:mx-0
-                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
-                            border-2 border-blue-400/40"
-              >
-                <Image
-                  src="/Exp 1.png"
-                  alt="New York University"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 48px, (max-width: 768px) 56px, (max-width: 1024px) 64px, 80px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
-              </div>
 
               <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-2">
-                  <GraduationCapIcon className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
-                  <h3
-                    className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white 
-                               group-hover:text-blue-300 transition-colors duration-300 break-words"
-                  >
-                    Master of Computer Science
-                  </h3>
-                </div>
-
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-1">
                   <MapPinIcon className="w-3 h-3 text-blue-400 flex-shrink-0" />
                   <p className="text-xs sm:text-sm font-medium text-blue-200 break-words">
@@ -141,10 +116,10 @@ const Experience = () => {
             </div>
 
             {/* Quick Preview */}
-            <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
-              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
+            <div className="mb-4 px-2 ">
+              <p className="text-xs sm:text-sm text-gray-300 text-center sm:text-left">
                 Currently pursuing Master&apos;s degree in Computer Science with
-                focus on AI/ML and software engineering...
+                focus on AI/ML and software engineering.
               </p>
             </div>
           </div>
@@ -165,29 +140,8 @@ const Experience = () => {
           >
             <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-4">
               {/* University Image */}
-              <div
-                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden 
-                            bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex-shrink-0 mx-auto sm:mx-0
-                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
-                            border-2 border-green-400/40"
-              >
-                <div className="w-full h-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                  <GraduationCapIcon className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 to-transparent" />
-              </div>
 
               <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-2">
-                  <GraduationCapIcon className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
-                  <h3
-                    className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white 
-                               group-hover:text-green-300 transition-colors duration-300 break-words"
-                  >
-                    Bachelor of Computer Engineering
-                  </h3>
-                </div>
-
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-1">
                   <MapPinIcon className="w-3 h-3 text-green-400 flex-shrink-0" />
                   <p className="text-xs sm:text-sm font-medium text-green-200 break-words">
@@ -205,10 +159,10 @@ const Experience = () => {
             </div>
 
             {/* Quick Preview */}
-            <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
-              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
+            <div className="mb-4 px-2">
+              <p className="text-xs sm:text-sm text-gray-300  text-center sm:text-left">
                 Completed Bachelor&apos;s degree in Computer Engineering with
-                strong foundation in software development...
+                strong foundation in software development.
               </p>
             </div>
           </div>
@@ -229,34 +183,7 @@ const Experience = () => {
                        hover:-translate-y-1 hover:border-purple-400/50 w-full"
           >
             <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-4">
-              {/* Company Image */}
-              <div
-                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden 
-                            bg-gradient-to-br from-purple-500/30 to-violet-500/30 flex-shrink-0 mx-auto sm:mx-0
-                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
-                            border-2 border-purple-400/40"
-              >
-                <Image
-                  src="/Exp 1.png"
-                  alt="New York University"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 48px, (max-width: 768px) 56px, (max-width: 1024px) 64px, 80px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
-              </div>
-
               <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-2">
-                  <BriefcaseIcon className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 flex-shrink-0" />
-                  <h3
-                    className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white 
-                               group-hover:text-purple-300 transition-colors duration-300 break-words"
-                  >
-                    Graduate Assistant
-                  </h3>
-                </div>
-
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2 mb-1">
                   <MapPinIcon className="w-3 h-3 text-purple-400 flex-shrink-0" />
                   <p className="text-xs sm:text-sm font-medium text-purple-200 break-words">
@@ -274,10 +201,10 @@ const Experience = () => {
             </div>
 
             {/* Quick Preview */}
-            <div className="mb-4 px-2 sm:px-0 sm:pl-0 md:pl-20">
-              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 text-center sm:text-left">
+            <div className="mb-4 px-2">
+              <p className="text-xs sm:text-sm text-gray-300  text-center sm:text-left">
                 Assist faculty with academic tasks and partner with Graduate
-                Advising Manager on student projects...
+                Advising Manager on student projects.
               </p>
             </div>
 
@@ -348,34 +275,7 @@ const Experience = () => {
                        hover:-translate-y-1 hover:border-purple-400/50 w-full"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4">
-              {/* Company Image */}
-              <div
-                className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl overflow-hidden 
-                            bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex-shrink-0
-                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
-                            border-2 border-purple-400/40"
-              >
-                <Image
-                  src="/Exp 2.jpg"
-                  alt="GEP Worldwide"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 48px, (max-width: 1024px) 64px, 80px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
-              </div>
-
               <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
-                <div className="flex items-center gap-2 mb-2">
-                  <BriefcaseIcon className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                  <h3
-                    className="text-base sm:text-lg lg:text-xl font-bold text-white 
-                               group-hover:text-purple-300 transition-colors duration-300 truncate"
-                  >
-                    AI Intern (Summer Internship)
-                  </h3>
-                </div>
-
                 <div className="flex items-center gap-2 mb-1">
                   <MapPinIcon className="w-3 h-3 text-purple-400 flex-shrink-0" />
                   <p className="text-xs sm:text-sm font-medium text-purple-200 truncate">
@@ -393,10 +293,10 @@ const Experience = () => {
             </div>
 
             {/* Quick Preview */}
-            <div className="mb-4 pl-0 sm:pl-16 lg:pl-24">
-              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2">
+            <div className="mb-4 pl-0">
+              <p className="text-xs sm:text-sm text-gray-300">
                 Integrated LLM solutions through LangChain and agentic AI
-                workflows, automated contract insights retrieval...
+                workflows, automated contract insights retrieval.
               </p>
             </div>
 
@@ -479,34 +379,7 @@ const Experience = () => {
                        hover:-translate-y-1 hover:border-purple-400/50 w-full"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4">
-              {/* Company Image */}
-              <div
-                className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl overflow-hidden 
-                            bg-gradient-to-br from-purple-500/30 to-blue-500/30 flex-shrink-0
-                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
-                            border-2 border-purple-400/40"
-              >
-                <Image
-                  src="/Exp 2.jpg"
-                  alt="GEP Worldwide"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 48px, (max-width: 1024px) 64px, 80px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
-              </div>
-
               <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
-                <div className="flex items-center gap-2 mb-2">
-                  <BriefcaseIcon className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                  <h3
-                    className="text-base sm:text-lg lg:text-xl font-bold text-white 
-                               group-hover:text-purple-300 transition-colors duration-300 truncate"
-                  >
-                    Senior Software Engineer
-                  </h3>
-                </div>
-
                 <div className="flex items-center gap-2 mb-1">
                   <MapPinIcon className="w-3 h-3 text-purple-400 flex-shrink-0" />
                   <p className="text-xs sm:text-sm font-medium text-purple-200 truncate">
@@ -524,10 +397,10 @@ const Experience = () => {
             </div>
 
             {/* Quick Preview */}
-            <div className="mb-4 pl-0 sm:pl-16 lg:pl-24">
-              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2">
+            <div className="mb-4 pl-0 ">
+              <p className="text-xs sm:text-sm text-gray-300">
                 Mentored junior engineers, integrated APIs, spearheaded
-                Git/GitHub workflows and CI/CD pipelines...
+                Git/GitHub workflows and CI/CD pipelines.
               </p>
             </div>
 
@@ -592,34 +465,7 @@ const Experience = () => {
                        hover:-translate-y-1 hover:border-purple-400/50 w-full"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4">
-              {/* Company Image */}
-              <div
-                className="relative w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl overflow-hidden 
-                            bg-gradient-to-br from-purple-500/30 to-indigo-500/30 flex-shrink-0
-                            shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105
-                            border-2 border-purple-400/40"
-              >
-                <Image
-                  src="/Exp 3.png"
-                  alt="BARC & Study League"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 48px, (max-width: 1024px) 64px, 80px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
-              </div>
-
               <div className="flex-1 min-w-0 text-center sm:text-left w-full sm:w-auto">
-                <div className="flex items-center gap-2 mb-2">
-                  <BriefcaseIcon className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                  <h3
-                    className="text-base sm:text-lg lg:text-xl font-bold text-white 
-                               group-hover:text-purple-300 transition-colors duration-300 truncate"
-                  >
-                    Machine Learning Intern
-                  </h3>
-                </div>
-
                 <div className="flex items-center gap-2 mb-1">
                   <MapPinIcon className="w-3 h-3 text-purple-400 flex-shrink-0" />
                   <p className="text-xs sm:text-sm font-medium text-purple-200 truncate">
@@ -637,10 +483,10 @@ const Experience = () => {
             </div>
 
             {/* Quick Preview */}
-            <div className="mb-4 pl-0 sm:pl-16 lg:pl-24">
-              <p className="text-xs sm:text-sm text-gray-300 line-clamp-2">
+            <div className="mb-4 pl-0 ">
+              <p className="text-xs sm:text-sm text-gray-300">
                 Designed ML models for network anomaly detection, developed
-                automated WhatsApp broadcasting systems...
+                automated WhatsApp broadcasting systems.
               </p>
             </div>
 
