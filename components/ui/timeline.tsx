@@ -24,11 +24,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ["start 80%", "end 100%"],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
 
   return (
     <div
@@ -36,44 +36,69 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
-          <div key={index} className="flex justify-start md:pt-20 md:gap-10">
-            <div className="sticky flex flex-col md:flex-row z-40 items-center self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-12 absolute left-2 md:left-2 w-12 rounded-full bg-white dark:bg-black flex items-center justify-center shadow-lg border-2 border-neutral-200 dark:border-neutral-700">
-                {item.image ? (
-                  <Image
-                    src={item.image}
-                    alt={`Timeline ${item.title}`}
-                    width={50} // same as w-8
-                    height={50} // same as h-8
-                    className="rounded-full object-cover"
-                  />
-                ) : item.icon ? (
-                  <div className="h-6 w-6 flex items-center justify-center text-neutral-600 dark:text-neutral-400">
-                    {item.icon}
-                  </div>
-                ) : (
-                  <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700" />
-                )}
-              </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
-                {item.title}
-              </h3>
-            </div>
+        {data.map((item, index) => {
+          const isLeft = index % 2 !== 0; // alternate sides for lg+
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
-                {item.title}
-              </h3>
-              {item.content}
+          return (
+            <div key={index} className="relative flex md:py-12">
+              {/* Icon */}
+              <div
+                className={`
+                  absolute z-40
+                  lg:left-1/2 lg:transform lg:-translate-x-1/2
+                  left-0  /* 📱 mobile + md → line on left */
+                `}
+              >
+                <div className="h-12 w-12 rounded-full bg-white dark:bg-black flex items-center justify-center shadow-lg border-2 border-neutral-200 dark:border-neutral-700">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={`Timeline ${item.title}`}
+                      width={50}
+                      height={50}
+                      className="rounded-full object-cover"
+                    />
+                  ) : item.icon ? (
+                    <div className="h-6 w-6 flex items-center justify-center text-neutral-600 dark:text-neutral-400">
+                      {item.icon}
+                    </div>
+                  ) : (
+                    <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700" />
+                  )}
+                </div>
+              </div>
+
+              {/* Content Box */}
+              <div
+                className={`
+                  w-full lg:w-1/2 px-4
+                  lg:${isLeft ? "pr-12 text-right" : "pl-12 text-left ml-auto"}
+                  pl-16 text-left /* 📱 mobile + md → always right side */
+                `}
+              >
+                <h3 className="text-2xl text-left mb-4 font-bold text-neutral-500 dark:text-neutral-500"
+                >
+                  {item.title}
+                </h3>
+                {item.content}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
+
+        {/* Vertical Line */}
         <div
           style={{
             height: height + "px",
           }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className={`
+            absolute top-0 transform overflow-hidden w-[2px]
+            lg:left-1/2 lg:-translate-x-1/2
+            left-6  /* 📱 mobile + md → line on left */
+            bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))]
+            from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]
+            [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]
+          `}
         >
           <motion.div
             style={{
