@@ -59,7 +59,7 @@ const ProjectsSection = () => {
 
   // Responsive character limit based on screen size
   const getDescriptionLimit = () => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       if (window.innerWidth < 640) return 80; // sm
       if (window.innerWidth < 768) return 100; // md
       return 120; // lg+
@@ -76,15 +76,15 @@ const ProjectsSection = () => {
     };
 
     handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Function to toggle card expansion
   const toggleCardExpansion = (cardId: number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setExpandedCards((prev) => {
+    setExpandedCards(prev => {
       const newSet = new Set(prev);
       if (newSet.has(cardId)) {
         newSet.delete(cardId);
@@ -99,11 +99,11 @@ const ProjectsSection = () => {
   const getDisplayDescription = (project: Project) => {
     const isExpanded = expandedCards.has(project.id);
     const needsTruncation = project.description.length > descriptionLimit;
-
+    
     if (!needsTruncation || isExpanded) {
       return project.description;
     }
-
+    
     return project.description.substring(0, descriptionLimit) + "...";
   };
 
@@ -226,8 +226,8 @@ const ProjectsSection = () => {
                            : "translate-y-12 opacity-0"
                        }`}
             style={{
-              scrollbarWidth: "thin",
-              scrollbarColor: "rgba(168, 85, 247, 0.3) transparent",
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'rgba(168, 85, 247, 0.3) transparent'
             }}
           >
             {projects.map((p, index) => (
@@ -242,21 +242,16 @@ const ProjectsSection = () => {
               >
                 <div
                   className={`w-[240px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[420px] 
-                           ${
-                             expandedCards.has(p.id)
-                               ? "h-auto min-h-[320px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[480px]"
-                               : "h-[320px] sm:h-[360px] md:h-[420px] lg:h-[460px] xl:h-[480px]"
+                           ${expandedCards.has(p.id) 
+                             ? 'h-auto min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[480px]' 
+                             : 'h-[340px] sm:h-[380px] md:h-[420px] lg:h-[460px] xl:h-[480px]'
                            }
                            snap-start rounded-xl sm:rounded-2xl
                            bg-[rgba(20,26,41,0.65)] backdrop-blur-xl
                            border border-purple-500/20 shadow-[0_0_20px_rgba(88,28,135,0.15)]
                            overflow-hidden hover:shadow-[0_0_40px_rgba(88,28,135,0.35)] 
                            transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col
-                           ${
-                             hoveredCard === p.id
-                               ? "scale-[1.02] sm:scale-105"
-                               : "scale-100"
-                           }
+                           ${hoveredCard === p.id ? "scale-[1.02] sm:scale-105" : "scale-100"}
                            ${
                              isVisible
                                ? "translate-y-0 opacity-100"
@@ -268,8 +263,8 @@ const ProjectsSection = () => {
                       : "0ms",
                   }}
                 >
-                  {/* Project Image - Fixed height */}
-                  <div className="relative h-28 sm:h-32 md:h-40 lg:h-44 xl:h-48 overflow-hidden flex-shrink-0">
+                  {/* Project Image - Fixed height with consistent ratios */}
+                  <div className="relative h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 overflow-hidden flex-shrink-0">
                     <Image
                       src={p.image}
                       alt={p.title}
@@ -303,9 +298,9 @@ const ProjectsSection = () => {
                   </div>
 
                   {/* Content - Fixed height with controlled overflow */}
-                  <div className="p-3 sm:p-4 md:p-5 lg:p-6 relative flex-1 flex flex-col min-h-0">
+                  <div className="p-3 sm:p-4 md:p-5 lg:p-6 relative flex-1 flex flex-col justify-between min-h-0">
                     <h3
-                      className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 sm:mb-3 text-blue-200
+                      className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 text-blue-200
                                   transition-all duration-300 transform flex-shrink-0 leading-tight
                                   ${
                                     hoveredCard === p.id
@@ -315,39 +310,27 @@ const ProjectsSection = () => {
                     >
                       {p.title}
                     </h3>
-
+                    
                     {/* Description with expandable functionality */}
-                    <div
-                      className={`flex-1 mb-2 sm:mb-3 ${
-                        expandedCards.has(p.id)
-                          ? "overflow-visible"
-                          : "min-h-0 overflow-hidden"
-                      }`}
-                    >
+                    <div className={`flex-1 mb-2 ${expandedCards.has(p.id) ? 'overflow-visible' : 'overflow-hidden'}`}>
                       <p
                         className={`text-gray-300 text-xs sm:text-sm leading-relaxed 
-                                   ${
-                                     expandedCards.has(p.id)
-                                       ? ""
-                                       : "line-clamp-4 sm:line-clamp-5"
-                                   }
+                                   ${expandedCards.has(p.id) ? '' : 'line-clamp-3 sm:line-clamp-4 md:line-clamp-5'}
                                    transition-all duration-300
                                    ${
                                      hoveredCard === p.id ? "text-gray-200" : ""
                                    }`}
                       >
-                        {expandedCards.has(p.id)
-                          ? p.description
-                          : getDisplayDescription(p)}
+                        {expandedCards.has(p.id) ? p.description : getDisplayDescription(p)}
                       </p>
-
+                      
                       {/* Read More/Less button */}
                       {p.description.length > descriptionLimit && (
                         <button
                           onClick={(e) => toggleCardExpansion(p.id, e)}
-                          className="mt-1 sm:mt-2 text-purple-400 hover:text-purple-300 text-xs sm:text-sm 
+                          className="mt-1 text-purple-400 hover:text-purple-300 text-xs sm:text-sm 
                                    font-medium transition-colors duration-200 underline underline-offset-2
-                                   hover:underline-offset-4"
+                                   hover:underline-offset-4 block"
                         >
                           {expandedCards.has(p.id) ? "Read Less" : "Read More"}
                         </button>
@@ -410,6 +393,8 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+
+
     </section>
   );
 };
