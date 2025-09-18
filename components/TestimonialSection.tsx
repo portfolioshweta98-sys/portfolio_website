@@ -169,6 +169,19 @@ const TestimonialSection = () => {
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
+    {
+      id: 13,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQGsGR9p4ikS5w/company-logo_200_200/company-logo_200_200/0/1708946550425/tata_consultancy_services_logo?e=1761177600&v=beta&t=2yqQrYEIwQXu7wfX5Z_D8J9CE212dqtNcwj0Kywr1Qc",
+      title: "Lead Full Stack Developer",
+      company: "Tata Consultancy Services",
+      testimonial:
+        "Shweta is a great peer to work with as she is very dedicated and meticulous about assigned tasks.She also possesses great technical and analytical skills.",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQHB5rncS-AVYA/profile-displayphoto-shrink_400_400/B4DZPsv7GaG0Ag-/0/1734843807093?e=1761177600&v=beta&t=6OC-B2W4OvjR6OYvUQH1HAwUDdID_PIG65aAE6pDFno",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
   ];
 
   return (
