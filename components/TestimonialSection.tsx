@@ -19,6 +19,7 @@ const TestimonialSection = () => {
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
       title: "Senior Engineering Manager",
+      company: "GEP Worldwide",
       testimonial:
         "I had the pleasure of working with Shweta during her tenure as a Software Developer...",
       personAvatar:
