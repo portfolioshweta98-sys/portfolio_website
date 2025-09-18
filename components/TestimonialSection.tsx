@@ -31,7 +31,7 @@ const TestimonialSection = () => {
       id: 2,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
-      title: "Principle Software Engineerr at GEP",
+      title: "Principle Software Engineer",
       company: "GEP Worldwide",
       testimonial:
         "I had the privilege of working with Shweta Shekhar on the GEP Smart Contracts team, and I can confidently say she was one of the most driven and solution-focused professionals I’ve collaborated with. Over the course of our time together, I witnessed her significant growth in both technical expertise and sense of ownership....",
@@ -147,7 +147,7 @@ const TestimonialSection = () => {
       id: 11,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C511BAQEgJywU_jIMUQ/company-background_10000/company-background_10000/0/1584233244179/nmims_mpstme_alumni_association_cover?e=1758801600&v=beta&t=232wvzHJbIRPquslo_tstcoQeuRq5peZBV3QcIyBGV0",
-      title: "Assistant Professor at MPSTME-NMIMS,Mumbai",
+      title: "Assistant Professor at MPSTME-NMIMS",
       company: "MPSTME-NMIMS",
       testimonial:
         "I am pleased to recommend shweta who worked under my guidance on a project related to detection of learning disabilities during their final year of the B.E. program.....",
