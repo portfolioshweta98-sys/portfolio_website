@@ -143,6 +143,32 @@ const TestimonialSection = () => {
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
+    {
+      id: 11,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/C511BAQEgJywU_jIMUQ/company-background_10000/company-background_10000/0/1584233244179/nmims_mpstme_alumni_association_cover?e=1758801600&v=beta&t=232wvzHJbIRPquslo_tstcoQeuRq5peZBV3QcIyBGV0",
+      title: "Assistant Professor at MPSTME-NMIMS,Mumbai",
+      company: "MPSTME-NMIMS",
+      testimonial:
+        "I am pleased to recommend shweta who worked under my guidance on a project related to detection of learning disabilities during their final year of the B.E. program.....",
+      personAvatar:
+        "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 12,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      title: "Software Engineer",
+      company: "GEP Worldwide",
+      testimonial:
+        "I've worked alongside Shweta for over 2 years and it’s always been a pleasure. Her technical depth, clear communication, and collaborative approach make her a great teammate. She's someone you can always count on to bring thoughtfulness and precision to any project.",
+      personAvatar:
+        "https://media.licdn.com/dms/image/v2/D5603AQEeNRzO7wam9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720688351966?e=1761177600&v=beta&t=aXGsx_JzvrYYmax-Aa5yvDTIUCAHLb8kZiSUMRxlfNg",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
   ];
 
   return (
