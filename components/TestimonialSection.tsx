@@ -19,7 +19,7 @@ const TestimonialSection = () => {
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
       title: "Senior Engineering Manager",
-      company: "Bajaj Finance Limited",
+      company: "GEP Worldwide",
       testimonial:
         "I had the pleasure of working with Shweta during her tenure as a Software Developer...",
       personAvatar:
@@ -124,7 +124,7 @@ const TestimonialSection = () => {
       title: "Interaction Designer @Punchcut",
       company: "Punchcut",
       testimonial:
-        "Shweta is highly motivated individual.She is good at understanding user's need be it any project.",
+        "Shweta is exceptionally dedicated to her work. Her developer expertise is extensive, and she has excellent problem-solving abilities.",
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQFe4iBs3HJhDA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704425676427?e=1759363200&v=beta&t=UmbfX337T4imkFz3Itnz0DP5L8hGhhfYNtDluE68VwA",
       linkedinUrl:
