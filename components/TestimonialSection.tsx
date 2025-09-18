@@ -96,11 +96,11 @@ const TestimonialSection = () => {
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C4D0BAQF6TmzLkch0dQ/company-logo_200_200/company-logo_200_200/0/1630556159190/new_york_university_logo?e=1759363200&v=beta&t=5uuiWDerbMeHX9YJ5-HCwify4N_FXah5tpmhEhGMEv0",
       title: "Graduate Assistant at NYU",
-      company: "New York University ",
+      company: "New York University",
       testimonial:
         "I had the pleasure of working with Shweta on multiple NYU projects, and I can confidently say she is one of the most dedicated, thoughtful, and innovative teammates I’ve collaborated with....",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/D5635AQGYPqE-x8l6Qg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1738359560915?e=1757073600&v=beta&t=qX94tUdkua7pcbx_GXPHlmBBfzc9fc07nRkdYkodPiw",
+        "https://media.licdn.com/dms/image/v2/D5635AQGYPqE-x8l6Qg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1738359560915?e=1758801600&v=beta&t=x3YbK1aZWXVZSHqK1SCwPlQ53KqTWVEiXy4aTHYq5L8",
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
