@@ -48,7 +48,7 @@ const TestimonialSection = () => {
       testimonial:
         "I had the pleasure of working closely with Shweta during my time as the Student Council Faculty In charge, where she consistently demonstrated strong leadership, initiative, and dedication. Shweta played a key role in managing college events, showing exceptional organizational skills and motivating the entire team to perform at their best. She worked closely with me during various college fests and activities, and I found her to be proactive, dependable, and solutions-driven. While excelling academically including topping one of the key subjects, Shweta also actively participated in hackathons, competitions, and inter-college events, often taking the lead and inspiring peers through action....",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/D4D03AQFsses1qCPbUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729013478092?e=1759363200&v=beta&t=iUL-NB_hpccrqCwZQ9NPHuhALp8rH_tb6BCaDH6D37U",
+        "https://media.licdn.com/dms/image/v2/D4D03AQHRlsyB0M2xQw/profile-displayphoto-crop_800_800/B4DZlHOKzCIgAI-/0/1757836522635?e=1761177600&v=beta&t=T8gMa4yJdRJH_3PhDG22jvKTZOzdiWvRP3ysQyKE6Ds",
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
@@ -61,7 +61,7 @@ const TestimonialSection = () => {
       testimonial:
         "I’ve had the pleasure of knowing Shweta Shekhar for several years now—first as a friend and batchmate during our 11th and 12th in the PCMB + IT stream, and later as a colleague at GEP. From our school days to the corporate world, her passion for technology and problem-solving has always stood out....",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/D4D35AQGYDEElc3gOSA/profile-framedphoto-shrink_200_200/B4DZg0_YeUGkAY-/0/1753235687615?e=1757073600&v=beta&t=PBij51LCybLmWSDuNjLIL3A8an6yUUa8iHJj6SfD8VI",
+        "https://media.licdn.com/dms/image/v2/D4D35AQGYDEElc3gOSA/profile-framedphoto-shrink_800_800/B4DZg0_YeUGkAg-/0/1753235687615?e=1758801600&v=beta&t=T_EDqgqQdECR16dw78hH0QddWpbfFHQqoO3fAzcfPo4",
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
@@ -124,7 +124,7 @@ const TestimonialSection = () => {
       title: "Interaction Designer @Punchcut",
       company: "Punchcut",
       testimonial:
-        "Shweta is exceptionally dedicated to her work. Her developer expertise is extensive, and she has excellent problem-solving abilities.",
+        "Shweta is exceptionally dedicated to her work. Her developer expertise is extensive, and she has excellent problem-solving abilities....",
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQFe4iBs3HJhDA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704425676427?e=1759363200&v=beta&t=UmbfX337T4imkFz3Itnz0DP5L8hGhhfYNtDluE68VwA",
       linkedinUrl:
