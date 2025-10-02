@@ -7,6 +7,8 @@ import { TextRevealCard } from "./ui/text-reveal-card";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Image from "next/image";
 
+import profile from "@/public/SHWETA.jpg"
+
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -162,8 +164,8 @@ const Hero = () => {
                     <div className="relative transform-gpu flex justify-center ">
                       <div className="w-59 h-50 lg:w-80 lg:h-72 overflow-hidden rounded-2xl border-2 border-purple-500/30 shadow-xl">
                         <Image
-                          src="/SHWETA.jpeg" // replace with your image path
-                          alt="Profile"
+                          src={profile} // replace with your image path
+                          alt="Shweta Shekhar"
                           width={300}
                           height={400}
                           className="w-full h-full object-cover"
