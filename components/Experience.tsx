@@ -637,6 +637,7 @@ const Experience = () => {
   return (
     <div
       ref={sectionRef}
+      style={{ fontFamily: "var(--font-montserrat)" }}
       className="relative w-full overflow-clip bg-[#212121]"
     >
       {/* Decorative Objects - Future Proof */}

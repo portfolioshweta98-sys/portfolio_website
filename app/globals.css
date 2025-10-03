@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* --- Font Variables --- */
+:root {
+  --font-montserrat: var(--font-montserrat);
+}
+
+/* --- Base Styles --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  font-family: var(--font-montserrat);
+}
+
 /* --- for spotlight --- */
 @theme inline {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
