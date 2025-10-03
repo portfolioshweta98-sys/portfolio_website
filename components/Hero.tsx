@@ -159,16 +159,16 @@ const Hero = () => {
                     translateZ="100"
                     rotateX={5}
                     rotateY={5}
-                    className="w-full flex justify-center mb-6 sm:mb-8"
+                    className="w-full flex justify-center mb-6 sm:mb-8 "
                   >
-                    <div className="relative transform-gpu flex justify-center ">
-                      <div className="w-59 h-50 lg:w-80 lg:h-72 overflow-hidden rounded-2xl border-2 border-[#0077B6]/30 shadow-xl">
+                    <div className="relative transform-gpu flex justify-center -mx-8">
+                      <div className="w-full h-50 lg:h-72 overflow-hidden rounded-2xl border-2 border-[#0077B6]/30 shadow-xl">
                         <Image
                           src={profile}
                           alt="Shweta Shekhar"
-                          width={300}
+                          width={500}
                           height={400}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover "
                           priority
                         />
                       </div>
