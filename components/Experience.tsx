@@ -637,7 +637,7 @@ const Experience = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full overflow-clip bg-black-100"
+      className="relative w-full overflow-clip bg-[#212121]"
     >
       {/* Decorative Objects - Future Proof */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -650,21 +650,14 @@ const Experience = () => {
         ))}
       </div>
 
-      {/* Header Section */}
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8">
-        <div
-          className={`text-center transition-all duration-1000 transform ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4
-                       bg-gradient-to-r from-purple-400 via-violet-500 to-pink-500 bg-clip-text text-transparent
-                       leading-tight"
-          >
+      {/* Title */}
+      <div className="text-center mb-12 md:mb-16 lg:mb-20">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
+          <span className="absolute inset-0 bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent blur-sm scale-105 opacity-60" />
+          <span className="relative bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,119,182,0.5)]">
             Education and Experience
-          </h2>
-        </div>
+          </span>
+        </h2>
       </div>
 
       {/* Timeline Component */}

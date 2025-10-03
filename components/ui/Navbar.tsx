@@ -93,8 +93,8 @@ const Navbar: React.FC = () => {
       <div
         className={`rounded-2xl border transition-all duration-300 ${
           isScrolled
-            ? "bg-slate-900/95 backdrop-blur-xl border-slate-700/50 shadow-2xl"
-            : "bg-slate-900/90 backdrop-blur-lg border-slate-600/40"
+            ? "bg-[#212121]/95 backdrop-blur-xl border-[#B0BEC5]/30 shadow-2xl"
+            : "bg-[#212121]/90 backdrop-blur-lg border-[#B0BEC5]/20"
         }`}
       >
         <div className="px-4 sm:px-6 lg:px-8">
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <button
                 onClick={() => handleNavClick("#about")}
-                className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors"
+                className="flex items-center space-x-2 text-[#F5F5F5] hover:text-[#0077B6] transition-colors"
               >
                 <Home size={24} />
               </button>
@@ -118,8 +118,8 @@ const Navbar: React.FC = () => {
                     onClick={() => handleNavClick(item.href)}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative ${
                       activeSection === item.href.slice(1)
-                        ? "text-blue-400"
-                        : "text-gray-300 hover:text-white"
+                        ? "text-[#0077B6]"
+                        : "text-[#B0BEC5] hover:text-[#F5F5F5]"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
                     {activeSection === item.href.slice(1) && (
                       <motion.div
                         layoutId="activeSection"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0077B6]"
                         initial={false}
                         transition={{
                           type: "spring",
@@ -145,10 +145,9 @@ const Navbar: React.FC = () => {
               <motion.a
                 href="Shweta Shekhar Resume Final Version.pdf"
                 download
-                className="px-4 py-2 text-xs font-medium text-white 
-             bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500
+                className="px-4 py-2 text-xs font-medium text-[#F5F5F5] 
+             bg-[#0077B6] hover:bg-[#005B8D]
              rounded-full shadow-md hover:shadow-lg 
-             hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400
              transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -161,7 +160,7 @@ const Navbar: React.FC = () => {
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
+                className="text-[#B0BEC5] hover:text-[#F5F5F5] focus:outline-none focus:text-[#F5F5F5]"
                 whileTap={{ scale: 0.95 }}
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -177,7 +176,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-slate-900/90 backdrop-blur-xl rounded-b-2xl border-t border-slate-700/50 mt-0.5"
+              className="md:hidden bg-[#212121]/90 backdrop-blur-xl rounded-b-2xl border-t border-[#B0BEC5]/30 mt-0.5"
             >
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 {navItems.map((item) => (
@@ -186,8 +185,8 @@ const Navbar: React.FC = () => {
                     onClick={() => handleNavClick(item.href)}
                     className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
                       activeSection === item.href.slice(1)
-                        ? "text-blue-400 bg-slate-800/50"
-                        : "text-gray-300 hover:text-white hover:bg-slate-800/30"
+                        ? "text-[#0077B6] bg-[#2C2C2C]/50"
+                        : "text-[#B0BEC5] hover:text-[#F5F5F5] hover:bg-[#2C2C2C]/30"
                     }`}
                     whileHover={{ x: 10 }}
                     whileTap={{ scale: 0.95 }}
@@ -200,10 +199,9 @@ const Navbar: React.FC = () => {
                 <motion.a
                   href="/S. Shekhar Resume WORD_V2.docx"
                   download
-                  className="px-4 py-2 text-xs font-medium text-white 
-             bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500
+                  className="px-4 py-2 text-xs font-medium text-[#F5F5F5] 
+             bg-[#0077B6] hover:bg-[#005B8D]
              rounded-full shadow-md hover:shadow-lg 
-             hover:from-pink-400 hover:via-purple-400 hover:to-indigo-400
              transition-all duration-300"
                   whileHover={{ x: 10 }}
                   whileTap={{ scale: 0.95 }}

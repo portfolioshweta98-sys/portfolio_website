@@ -82,9 +82,16 @@ const CertificatesSection = () => {
   return (
     <section className="w-full py-16 sm:py-20 bg-black-100 text-white">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8 sm:mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Certificates
-        </h2>
+
+        {/* Title */}
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
+            <span className="absolute inset-0 bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent blur-sm scale-105 opacity-60" />
+            <span className="relative bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,119,182,0.5)]">
+              Certificates
+            </span>
+          </h2>
+        </div>
 
         <div className="relative flex items-start sm:items-center gap-4 sm:gap-8 flex-col sm:flex-row">
           {/* Circular progress */}
@@ -105,7 +112,7 @@ const CertificatesSection = () => {
                 fill="transparent"
                 strokeWidth="8"
                 strokeLinecap="round"
-                className="stroke-purple-500 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"
+                className="stroke-secondary drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"
                 strokeDasharray={C}
                 strokeDashoffset={C - (animated / 100) * C}
                 transform="rotate(-90 50 50)"
@@ -130,7 +137,7 @@ const CertificatesSection = () => {
                 <div
                   className="min-w-[260px] sm:min-w-[320px] md:min-w-[420px] snap-start rounded-2xl
                            bg-[rgba(20,26,41,0.65)] backdrop-blur-xl
-                           border border-purple-500/20 shadow-[0_0_20px_rgba(88,28,135,0.15)]
+                           border border-secondary-500/20 shadow-[0_0_20px_rgba(88,28,135,0.15)]
                            p-4 sm:p-6 hover:shadow-[0_0_40px_rgba(20,184,166,0.35)] transition-shadow"
                 >
                   <div className="relative w-full h-40 sm:h-56 rounded-lg overflow-hidden">
@@ -141,7 +148,7 @@ const CertificatesSection = () => {
                       className="object-cover"
                     />
                   </div>
-                  <h3 className="text-lg text-center mt-4 sm:text-xl font-semibold mb-3 text-purple-300">
+                  <h3 className="text-lg text-center mt-4 sm:text-xl font-semibold mb-3 text-secondary-300">
                     {c.title}
                   </h3>
                 </div>

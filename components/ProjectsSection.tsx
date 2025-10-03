@@ -59,7 +59,7 @@ const ProjectsSection = () => {
 
   // Responsive character limit based on screen size
   const getDescriptionLimit = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       if (window.innerWidth < 640) return 80; // sm
       if (window.innerWidth < 768) return 100; // md
       return 120; // lg+
@@ -76,15 +76,15 @@ const ProjectsSection = () => {
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Function to toggle card expansion
   const toggleCardExpansion = (cardId: number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setExpandedCards(prev => {
+    setExpandedCards((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(cardId)) {
         newSet.delete(cardId);
@@ -99,11 +99,11 @@ const ProjectsSection = () => {
   const getDisplayDescription = (project: Project) => {
     const isExpanded = expandedCards.has(project.id);
     const needsTruncation = project.description.length > descriptionLimit;
-    
+
     if (!needsTruncation || isExpanded) {
       return project.description;
     }
-    
+
     return project.description.substring(0, descriptionLimit) + "...";
   };
 
@@ -157,27 +157,25 @@ const ProjectsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-black-100 text-white relative overflow-hidden"
+      className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-[#212121] text-[#F5F5F5] relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-4 sm:top-10 left-4 sm:left-10 w-16 sm:w-32 h-16 sm:h-32 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 blur-xl animate-pulse" />
-        <div className="absolute bottom-8 sm:bottom-20 right-8 sm:right-20 w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-gradient-to-r from-blue-500/10 to-pink-500/10 blur-2xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/4 w-12 sm:w-24 h-12 sm:h-24 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 blur-xl animate-pulse delay-2000" />
+        <div className="absolute top-4 sm:top-10 left-4 sm:left-10 w-16 sm:w-32 h-16 sm:h-32 rounded-full bg-gradient-to-r from-[#0077B6]/10 to-[#B0BEC5]/10 blur-xl animate-pulse" />
+        <div className="absolute bottom-8 sm:bottom-20 right-8 sm:right-20 w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-gradient-to-r from-[#0077B6]/10 to-[#B0BEC5]/10 blur-2xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/4 w-12 sm:w-24 h-12 sm:h-24 rounded-full bg-gradient-to-r from-[#0077B6]/10 to-[#B0BEC5]/10 blur-xl animate-pulse delay-2000" />
       </div>
 
       <div className="px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto">
-        <h2
-          className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 
-                      bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent
-                      transition-all duration-1000 transform ${
-                        isVisible
-                          ? "translate-y-0 opacity-100"
-                          : "translate-y-8 opacity-0"
-                      }`}
-        >
-          Projects
-        </h2>
+        {/* Title */}
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
+            <span className="absolute inset-0 bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent blur-sm scale-105 opacity-60" />
+            <span className="relative bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,119,182,0.5)]">
+              Projects
+            </span>
+          </h2>
+        </div>
 
         <div className="relative flex items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 flex-col lg:flex-row">
           {/* Circular progress with enhanced animations */}
@@ -205,7 +203,7 @@ const ProjectsSection = () => {
                 fill="transparent"
                 strokeWidth="6"
                 strokeLinecap="round"
-                className="stroke-purple-500 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]
+                className="stroke-[#0077B6] drop-shadow-[0_0_8px_rgba(0,119,182,0.6)]
                           transition-all duration-300"
                 strokeDasharray={C}
                 strokeDashoffset={C - (animated / 100) * C}
@@ -226,8 +224,8 @@ const ProjectsSection = () => {
                            : "translate-y-12 opacity-0"
                        }`}
             style={{
-              scrollbarWidth: 'thin',
-              scrollbarColor: 'rgba(168, 85, 247, 0.3) transparent'
+              scrollbarWidth: "thin",
+              scrollbarColor: "rgba(0,119,182, 0.3) transparent",
             }}
           >
             {projects.map((p, index) => (
@@ -242,16 +240,21 @@ const ProjectsSection = () => {
               >
                 <div
                   className={`w-[240px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[420px] 
-                           ${expandedCards.has(p.id) 
-                             ? 'h-auto min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[480px]' 
-                             : 'h-[340px] sm:h-[380px] md:h-[420px] lg:h-[460px] xl:h-[480px]'
+                           ${
+                             expandedCards.has(p.id)
+                               ? "h-auto min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[480px]"
+                               : "h-[340px] sm:h-[380px] md:h-[420px] lg:h-[460px] xl:h-[480px]"
                            }
                            snap-start rounded-xl sm:rounded-2xl
-                           bg-[rgba(20,26,41,0.65)] backdrop-blur-xl
-                           border border-purple-500/20 shadow-[0_0_20px_rgba(88,28,135,0.15)]
-                           overflow-hidden hover:shadow-[0_0_40px_rgba(88,28,135,0.35)] 
+                           bg-[#2C2C2C]/65 backdrop-blur-xl
+                           border border-[#0077B6]/20 shadow-[0_0_20px_rgba(0,119,182,0.15)]
+                           overflow-hidden hover:shadow-[0_0_40px_rgba(0,119,182,0.35)] 
                            transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col
-                           ${hoveredCard === p.id ? "scale-[1.02] sm:scale-105" : "scale-100"}
+                           ${
+                             hoveredCard === p.id
+                               ? "scale-[1.02] sm:scale-105"
+                               : "scale-100"
+                           }
                            ${
                              isVisible
                                ? "translate-y-0 opacity-100"
@@ -283,7 +286,7 @@ const ProjectsSection = () => {
                     {/* Animated timeline badge */}
                     <div
                       className={`absolute top-2 sm:top-4 left-2 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full
-                                   bg-black/60 backdrop-blur-md border border-purple-500/40
+                                   bg-[#212121]/60 backdrop-blur-md border border-[#0077B6]/40
                                    transition-all duration-300 transform
                                    ${
                                      hoveredCard === p.id
@@ -291,7 +294,7 @@ const ProjectsSection = () => {
                                        : "translate-y-2 opacity-90"
                                    }`}
                     >
-                      <p className="text-[10px] sm:text-xs text-purple-300 font-medium">
+                      <p className="text-[10px] sm:text-xs text-[#0077B6] font-medium">
                         {p.timeline}
                       </p>
                     </div>
@@ -300,35 +303,49 @@ const ProjectsSection = () => {
                   {/* Content - Fixed height with controlled overflow */}
                   <div className="p-3 sm:p-4 md:p-5 lg:p-6 relative flex-1 flex flex-col justify-between min-h-0">
                     <h3
-                      className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 text-blue-200
+                      className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#F5F5F5]
                                   transition-all duration-300 transform flex-shrink-0 leading-tight
                                   ${
                                     hoveredCard === p.id
-                                      ? "translate-x-1 sm:translate-x-2 text-blue-100"
+                                      ? "translate-x-1 sm:translate-x-2 text-[#B0BEC5]"
                                       : "translate-x-0"
                                   }`}
                     >
                       {p.title}
                     </h3>
-                    
+
                     {/* Description with expandable functionality */}
-                    <div className={`flex-1 mb-2 ${expandedCards.has(p.id) ? 'overflow-visible' : 'overflow-hidden'}`}>
+                    <div
+                      className={`flex-1 mb-2 ${
+                        expandedCards.has(p.id)
+                          ? "overflow-visible"
+                          : "overflow-hidden"
+                      }`}
+                    >
                       <p
-                        className={`text-gray-300 text-xs sm:text-sm leading-relaxed 
-                                   ${expandedCards.has(p.id) ? '' : 'line-clamp-3 sm:line-clamp-4 md:line-clamp-5'}
+                        className={`text-[#B0BEC5] text-xs sm:text-sm leading-relaxed 
+                                   ${
+                                     expandedCards.has(p.id)
+                                       ? ""
+                                       : "line-clamp-3 sm:line-clamp-4 md:line-clamp-5"
+                                   }
                                    transition-all duration-300
                                    ${
-                                     hoveredCard === p.id ? "text-gray-200" : ""
+                                     hoveredCard === p.id
+                                       ? "text-[#F5F5F5]"
+                                       : ""
                                    }`}
                       >
-                        {expandedCards.has(p.id) ? p.description : getDisplayDescription(p)}
+                        {expandedCards.has(p.id)
+                          ? p.description
+                          : getDisplayDescription(p)}
                       </p>
-                      
+
                       {/* Read More/Less button */}
                       {p.description.length > descriptionLimit && (
                         <button
                           onClick={(e) => toggleCardExpansion(p.id, e)}
-                          className="mt-1 text-purple-400 hover:text-purple-300 text-xs sm:text-sm 
+                          className="mt-1 text-[#0077B6] hover:text-[#005B8D] text-xs sm:text-sm 
                                    font-medium transition-colors duration-200 underline underline-offset-2
                                    hover:underline-offset-4 block"
                         >
@@ -343,12 +360,12 @@ const ProjectsSection = () => {
                         <span
                           key={i}
                           className={`px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] md:text-xs rounded-full
-                                   bg-gradient-to-r from-blue-900/40 to-purple-900/40
-                                   text-blue-200 border border-blue-800/30
+                                   bg-gradient-to-r from-[#0077B6]/20 to-[#B0BEC5]/20
+                                   text-[#F5F5F5] border border-[#0077B6]/30
                                    transition-all duration-300 transform hover:scale-105
                                    ${
                                      hoveredCard === p.id
-                                       ? "bg-gradient-to-r from-blue-800/50 to-purple-800/50 border-blue-700/40"
+                                       ? "bg-gradient-to-r from-[#0077B6]/30 to-[#B0BEC5]/30 border-[#0077B6]/40"
                                        : ""
                                    }`}
                           style={{
@@ -370,9 +387,9 @@ const ProjectsSection = () => {
                                        : "translate-x-4 opacity-0"
                                    }`}
                     >
-                      <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
+                      <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-[#0077B6]/20 flex items-center justify-center">
                         <svg
-                          className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-purple-400"
+                          className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#0077B6]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -393,8 +410,6 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };

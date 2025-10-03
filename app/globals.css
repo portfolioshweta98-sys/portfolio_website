@@ -19,60 +19,44 @@
 /* --- Base Theme Extensions --- */
 @theme {
   /* Colors */
-  --color-black: #1a1a2a; /* darker with blue undertone */
-  --color-black-100: #3d2f5a;
-  --color-black-200: rgba(60, 60, 60, 0.6); /* neutral gray */
-  --color-black-300: rgba(255, 245, 248, 0.25); /* very light pink tint */
+  --color-primary: #f5f5f5; /* Primary text color */
+  --color-secondary: #0077b6; /* Secondary/Accent color */
+  --color-background: #212121; /* Main background color */
+  --color-highlight: #b0bec5; /* Subtle highlight color */
 
-  --color-white: #fefefe;
-  --color-white-100: #fdf9fa; /* clean white with hint of pink */
-  --color-white-200: #fcf7f8; /* very subtle pink-tinted white */
+  /* Additional shades for flexibility */
+  --color-primary-dark: #e0e0e0;
+  --color-primary-light: #ffffff;
+  --color-secondary-dark: #005b8d;
+  --color-secondary-light: #0091dc;
+  --color-background-dark: #1a1a1a;
+  --color-background-light: #2c2c2c;
+  --color-highlight-dark: #90a4ae;
+  --color-highlight-light: #cfd8dc;
 
-  --color-blue-100: #f0f8ff; /* very light blue (keeping minimal) */
+  /* UI Component Colors */
+  --color-border: #b0bec5; /* Using highlight color for borders */
+  --color-input: #2c2c2c; /* Slightly lighter than background */
+  --color-ring: #0077b6; /* Using secondary color for focus */
+  --color-foreground: #f5f5f5; /* Using primary color for text */
 
-  /* Clean pink accent colors */
-  --color-pink-50: #fdf2f4; /* lightest pink */
-  --color-pink-100: #fce7ea; /* very light pink */
-  --color-pink-200: #fbcdd1; /* light pink */
-  --color-pink-300: #f9a3aa; /* medium light pink */
-  --color-rose-50: #fff1f2; /* lightest rose */
-  --color-rose-100: #ffe4e6; /* very light rose */
+  --color-primary-foreground: #212121; /* Dark background on primary elements */
+  --color-secondary-foreground: #f5f5f5; /* Light text on secondary elements */
 
-  /* Shadcn/UI compatible colors - Clean Pink Theme */
-  --color-border: hsl(350, 15%, 90%); /* light pink border */
-  --color-input: hsl(350, 10%, 95%); /* very light pink input */
-  --color-ring: hsl(350, 60%, 70%); /* clean pink focus ring */
-  --color-background: hsl(350, 20%, 98%); /* almost white with pink tint */
-  --color-foreground: hsl(350, 8%, 25%); /* dark text with pink undertone */
+  --color-destructive: #cf6679; /* Error/destructive color */
+  --color-destructive-foreground: #f5f5f5;
 
-  --color-primary: hsl(350, 50%, 75%); /* clean pink primary */
-  --color-primary-foreground: hsl(350, 30%, 15%); /* dark text on primary */
+  --color-muted: #424242; /* Muted background */
+  --color-muted-foreground: #b0bec5; /* Muted text using highlight color */
 
-  --color-secondary: hsl(350, 15%, 92%); /* very light pink secondary */
-  --color-secondary-foreground: hsl(
-    350,
-    8%,
-    30%
-  ); /* readable text on secondary */
+  --color-accent: #0077b6; /* Using secondary as accent */
+  --color-accent-foreground: #f5f5f5;
 
-  --color-destructive: hsl(0, 60%, 80%); /* soft red */
-  --color-destructive-foreground: hsl(
-    0,
-    30%,
-    20%
-  ); /* dark text on destructive */
+  --color-popover: #2c2c2c;
+  --color-popover-foreground: #f5f5f5;
 
-  --color-muted: hsl(350, 10%, 88%); /* muted pink-gray */
-  --color-muted-foreground: hsl(350, 5%, 45%); /* muted text */
-
-  --color-accent: hsl(345, 40%, 85%); /* clean pink accent */
-  --color-accent-foreground: hsl(345, 15%, 25%); /* text on accent */
-
-  --color-popover: hsl(350, 25%, 96%); /* light pink popover */
-  --color-popover-foreground: hsl(350, 8%, 20%); /* popover text */
-
-  --color-card: hsl(350, 20%, 97%); /* very light pink card */
-  --color-card-foreground: hsl(350, 8%, 22%); /* card text */
+  --color-card: #2c2c2c;
+  --color-card-foreground: #f5f5f5;
 
   /* Radius - keeping your original values */
   --radius-lg: var(--radius);
@@ -173,25 +157,32 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: var(--color-black); /* dark base */
+  background: var(--color-background); /* dark background */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #4c1d95, #6d28d9); /* deep violet → rich purple */
+  background: linear-gradient(
+    180deg,
+    var(--color-secondary-dark),
+    var(--color-secondary)
+  ); /* blue gradient */
   border-radius: 9999px;
-  border: 2px solid var(--color-black); /* keeps it neat */
+  border: 2px solid var(--color-background); /* keeps it neat */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #7c3aed, #8b5cf6); /* brighter purple glow */
+  background: linear-gradient(
+    180deg,
+    var(--color-secondary),
+    var(--color-secondary-light)
+  ); /* lighter blue on hover */
 }
 
 /* For Firefox */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #6d28d9 var(--color-black);
+  scrollbar-color: var(--color-secondary) var(--color-background);
 }
-
 
 /* --- Extra Utilities (like your bg-grid / bg-dot) --- */
 @utility bg-grid {

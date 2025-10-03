@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.1.12",
     "clsx": "^2.1.1",
     "devicons-react": "^1.5.0",
+    "framer-motion": "^12.23.22",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "next": "15.5.2",

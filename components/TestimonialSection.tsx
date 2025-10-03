@@ -1,6 +1,7 @@
 import React from "react";
-import { LinkedinIcon, ExternalLinkIcon, User, Building2 } from "lucide-react";
-import Image from "next/image";
+import { LinkedinIcon, ExternalLinkIcon } from "lucide-react";
+import { Avatar } from "./ui/Avatar";
+import { CompanyLogo } from "./ui/CompanyLogo";
 
 interface Testimonial {
   id: number;
@@ -151,8 +152,7 @@ const TestimonialSection = () => {
       company: "MPSTME-NMIMS",
       testimonial:
         "I am pleased to recommend shweta who worked under my guidance on a project related to detection of learning disabilities during their final year of the B.E. program.....",
-      personAvatar:
-        "",
+      personAvatar: "",
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
@@ -189,11 +189,18 @@ const TestimonialSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-            LinkedIn Recommendations
-          </h2>
+          {/* Title */}
+          <div className="text-center">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
+              <span className="absolute inset-0 bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent blur-sm scale-105 opacity-60" />
+              <span className="relative bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,119,182,0.5)]">
+                LinkedIn Recommendations
+              </span>
+            </h2>
+          </div>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Stories and perspectives from people who’ve journeyed with me professionally and academically
+            Stories and perspectives from people who’ve journeyed with me
+            professionally and academically
           </p>
         </div>
 
@@ -206,20 +213,10 @@ const TestimonialSection = () => {
             >
               {/* Top Row (Company logo + LinkedIn) */}
               <div className="flex justify-between items-center mb-4">
-                {testimonial.companyUrl &&
-                testimonial.companyUrl.startsWith("http") ? (
-                  <Image
-                    src={testimonial.companyUrl}
-                    alt="Company logo"
-                    width={48} // w-12 = 48px
-                    height={48} // h-12 = 48px
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover bg-gray-700"
-                  />
-                ) : (
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                    <Building2 className="text-white w-6 h-6" />
-                  </div>
-                )}
+                <CompanyLogo
+                  src={testimonial.companyUrl}
+                  alt={`${testimonial.company} logo`}
+                />
                 {testimonial.linkedinUrl && (
                   <a
                     href={testimonial.linkedinUrl}
@@ -238,20 +235,10 @@ const TestimonialSection = () => {
 
               {/* Person Info */}
               <div className="flex items-center space-x-3 mb-4">
-                {testimonial.personAvatar &&
-                testimonial.personAvatar.startsWith("http") ? (
-                  <Image
-                    src={testimonial.personAvatar}
-                    alt="Person avatar"
-                    width={48} // sm:w-12 = 48px
-                    height={48} // sm:h-12 = 48px
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover bg-gray-700"
-                  />
-                ) : (
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-full flex items-center justify-center">
-                    <User className="text-white w-6 h-6" />
-                  </div>
-                )}
+                <Avatar
+                  src={testimonial.personAvatar}
+                  alt={`${testimonial.title}'s avatar`}
+                />
                 <div>
                   <div className="text-white font-medium text-sm sm:text-base">
                     {testimonial.title}
