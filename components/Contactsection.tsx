@@ -42,7 +42,7 @@ const ContactSection: React.FC = () => {
         className={cn(
           "absolute inset-0",
           "[background-size:40px_40px]",
-          "[background-image:linear-gradient(to_right,rgba(228,228,231,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.05)_1px,transparent_1px)]",
+          "[background-image:linear-gradient(to_right,rgba(0,119,182,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,119,182,0.05)_1px,transparent_1px)]",
           "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]"
         )}
       />
@@ -94,7 +94,7 @@ const ContactSection: React.FC = () => {
             ss19623@nyu.edu
           </a>
         </p>
-        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-secondary/20 to-[#B0BEC5]-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />
       </div>
     </section>
   );

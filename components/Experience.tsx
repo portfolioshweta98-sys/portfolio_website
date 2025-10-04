@@ -9,6 +9,7 @@ import {
   ChevronUpIcon,
   ChevronDownIcon,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ExperienceCardProps {
   exp: ExperienceItem;
@@ -210,6 +211,8 @@ const Experience = () => {
           />
         ))}
       </div>
+
+
 
       {/* Title */}
       <div className="text-center mb-12 md:mb-16 lg:mb-20">

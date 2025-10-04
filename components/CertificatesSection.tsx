@@ -11,12 +11,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { certificates } from "../data/certificate";
+import { cn } from "@/lib/utils";
 
 const CertificatesSection = () => {
-
-
   return (
-    <section className="w-full py-16 sm:py-20">
+    <section className="w-full py-16 sm:py-20 relative">
+  
       <div className="container mx-auto px-4 sm:px-6">
         {/* Title */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">

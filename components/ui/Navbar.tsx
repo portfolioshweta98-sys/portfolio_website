@@ -38,24 +38,35 @@ const Navbar: React.FC = () => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
     const options = {
       root: null,
-      rootMargin: "0px 0px -30% 0px",
-      threshold: 0.25,
+      rootMargin: "-10% 0px -10% 0px", // Adjusted for better visibility detection
+      threshold: [0.15, 0.3, 0.5], // Lower thresholds for earlier detection
     };
 
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
+          const id = entry.target.id;
 
-            // ✅ Prioritize contact over testimonial if both visible
-            setActiveSection((prev) => {
-              if (id === "contact") return "contact";
-              if (id === "testimonials" && prev !== "contact")
-                return "testimonials";
-              if (id !== "testimonials" && id !== "contact") return id;
-              return prev;
-            });
+          if (entry.isIntersecting) {
+            // Check if the section is more than 50% visible in the viewport
+            const viewportRatio = entry.intersectionRatio;
+            const boundingRect = entry.boundingClientRect;
+            const windowHeight = window.innerHeight;
+
+            // Calculate how much of the section is in the viewport
+            const visibleHeight =
+              Math.min(boundingRect.bottom, windowHeight) -
+              Math.max(boundingRect.top, 0);
+            const sectionVisibility = visibleHeight / boundingRect.height;
+
+            // Update active section based on visibility
+            if (sectionVisibility > 0.3) {
+              // If more than 30% of the section is visible
+              setActiveSection(id);
+            }
+          } else {
+            // Only remove active state if this section was active
+            setActiveSection((prev) => (prev === id ? "" : prev));
           }
         });
       },
@@ -76,11 +87,18 @@ const Navbar: React.FC = () => {
     setIsOpen(false);
 
     if (element) {
-      const yOffset = -80;
+      // Adjust offset based on section
+      const yOffset =
+        targetId === "experience" || targetId === "testimonials" ? -100 : -80;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      // Force active section update
+      setActiveSection(targetId);
+
+      // Smooth scroll with a brief delay to ensure UI updates
       setTimeout(() => {
         window.scrollTo({ top: y, behavior: "smooth" });
-      }, 300);
+      }, 100);
     }
   };
 
