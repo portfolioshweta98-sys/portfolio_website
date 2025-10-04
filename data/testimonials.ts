@@ -13,7 +13,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 1,
       companyUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
       title: "Senior Engineering Manager",
       company: "GEP Worldwide",
       testimonial:
@@ -26,7 +26,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 2,
       companyUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
       title: "Principle Software Engineer",
       company: "GEP Worldwide",
       testimonial:
@@ -64,7 +64,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 5,
       companyUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
       title: "Senior Business Analyst at GEP Worldwide",
       company: "GEP Worldwide",
       testimonial:
@@ -77,7 +77,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 6,
       companyUrl:
-        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1759363200&v=beta&t=YMKaTl66QK2gM5iZHDVBe-iuf5YxlbMSKPqR2Gau6S8",
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
       title: "Sr.Consultant-Digital Transformation",
       company: "GEP Worldwide",
       testimonial:
