@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <div className="pb-10 pt-10 min-h-screen">
-      {/* Spotlights */}
+      {/* Spotlight */}
       {isMounted && (
         <div>
           {/* <Spotlight
