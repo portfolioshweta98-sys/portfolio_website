@@ -222,7 +222,7 @@ const Experience = () => {
       </div>
 
       {/* Timeline Component */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <Timeline data={data} />
       </div>
     </div>
