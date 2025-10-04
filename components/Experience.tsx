@@ -9,7 +9,6 @@ import {
   ChevronUpIcon,
   ChevronDownIcon,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface ExperienceCardProps {
   exp: ExperienceItem;
@@ -125,6 +124,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 };
 
 const Experience = () => {
+  // @ts-nocheck
   const [isVisible, setIsVisible] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLDivElement>(null);

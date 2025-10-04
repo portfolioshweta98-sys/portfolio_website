@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { certificates } from "../data/certificate";
-import { cn } from "@/lib/utils";
 
 const CertificatesSection = () => {
   return (

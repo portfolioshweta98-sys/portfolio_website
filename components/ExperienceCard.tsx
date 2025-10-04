@@ -1,12 +1,10 @@
 import { useState } from "react";
-import Image from "next/image";
+
 import {
   ChevronDownIcon,
   ChevronUpIcon,
-  BriefcaseIcon,
   CalendarIcon,
   MapPinIcon,
-  GraduationCapIcon,
 } from "lucide-react";
 import type { ExperienceItem } from "../data/experience";
 

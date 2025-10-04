@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
           if (entry.isIntersecting) {
             // Check if the section is more than 50% visible in the viewport
-            const viewportRatio = entry.intersectionRatio;
+            // const viewportRatio = entry.intersectionRatio;
             const boundingRect = entry.boundingClientRect;
             const windowHeight = window.innerHeight;
 

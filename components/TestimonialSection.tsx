@@ -44,8 +44,8 @@ const TestimonialCard = ({
       {/* Testimonial */}
       <div>
         <p className="leading-relaxed text-sm sm:text-base mb-2">
-          "{displayedContent}
-          {!isExpanded && shouldShowReadMore ? "..." : ""}"
+          &quot;{displayedContent}
+          {!isExpanded && shouldShowReadMore ? "..." : ""}&quot;
         </p>
         {shouldShowReadMore && (
           <button
@@ -106,7 +106,7 @@ const TestimonialSection = () => {
             </h2>
           </div>
           <p className="text-primary text-base sm:text-lg max-w-2xl mx-auto">
-            Stories and perspectives from people who've journeyed with me
+            Stories and perspectives from people who&apos;ve journeyed with me
             professionally and academically
           </p>
         </div>
