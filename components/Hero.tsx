@@ -196,16 +196,13 @@ const Hero = () => {
                       </p>
 
                       <p className="text-sm sm:text-base text-[#B0BEC5] leading-relaxed">
-                        Blending{" "}
-                        <span className="text-[#0077B6] font-medium">
-                          creativity
-                        </span>{" "}
-                        and{" "}
-                        <span className="text-[#0077B6] font-medium">
-                          logic
-                        </span>{" "}
-                        to transform AI & data into solutions that work.
+                        Where{" "}
+                        <span className="text-[#0077B6] font-medium">creativity</span>{" "}
+                        meets{" "}
+                        <span className="text-[#0077B6] font-medium">code</span>{" "}
+                        — building AI that works in the real world.
                       </p>
+
                     </div>
                   </CardItem>
                 </CardBody>
