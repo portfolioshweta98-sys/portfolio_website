@@ -95,7 +95,7 @@ export const TextRevealCard = ({
             style={{
               textShadow: "4px 4px 15px rgba(0,0,0,0.5)",
             }}
-            className="text-base sm:text-[3rem] py-10 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-secondary"
+            className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text bg-gradient-to-b from-white to-secondary"
           >
             {revealText}
           </p>
@@ -109,7 +109,7 @@ export const TextRevealCard = ({
             opacity: widthPercentage > 0 ? 1 : 0,
           }}
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="h-40 w-[8px] bg-gradient-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
+          className="h-40 w-[8px] bg-gradient-to-b from-transparent via-secondary to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
         {/* Base text */}

@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} antialiased bg-primary-foreground`}
+        className={`${montserrat.className} antialiased`}
         suppressHydrationWarning={true}
       >
         <Navbar />

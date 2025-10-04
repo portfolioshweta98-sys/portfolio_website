@@ -51,41 +51,50 @@ const ContactSection: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">
-        <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-        <p className="text-gray-300 mb-8">
+        <h2 className="text-4xl font-bold mb-4 text-primary">Contact Me</h2>
+        <p className="text-primary mb-8">
           I&apos;d love to connect! Reach out via any of the platforms below.
         </p>
 
         {/* Social Icons */}
         <div className="flex space-x-8 text-3xl mb-6 justify-center">
-          <Link href="https://www.instagram.com/shweta0898/" target="_blank">
-            <Instagram className="w-8 h-8 hover:text-pink-500 transition-colors duration-300" />
+          <Link
+            href="https://www.instagram.com/shweta0898/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <Instagram className="w-8 h-8 text-primary hover:text-secondary transition-colors duration-300" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/shwetashekhar98/"
             target="_blank"
+            rel="noopener noreferrer nofollow"
           >
-            <Linkedin className="w-8 h-8 hover:text-blue-500 transition-colors duration-300" />
+            <Linkedin className="w-8 h-8 text-primary hover:text-secondary transition-colors duration-300" />
           </Link>
-          <Link href="https://github.com/shwetashekhar98" target="_blank">
-            <Github className="w-8 h-8 hover:text-gray-400 transition-colors duration-300" />
+          <Link
+            href="https://github.com/shwetashekhar98"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <Github className="w-8 h-8 text-primary hover:text-secondary transition-colors duration-300" />
           </Link>
           <button onClick={copyEmail}>
-            <Mail className="w-8 h-8 hover:text-red-500 transition-colors duration-300" />
+            <Mail className="w-8 h-8 text-primary hover:text-secondary transition-colors duration-300" />
           </button>
         </div>
 
         {/* Email */}
-        <p className="text-gray-300 text-sm">
+        <p className="text-primary text-sm">
           Or email me directly at{" "}
           <a
             href="mailto:ss19623@nyu.edu"
-            className="text-blue-400 hover:underline"
+            className="text-secondary underline hover:text-secondary/80"
           >
             ss19623@nyu.edu
           </a>
         </p>
-         <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform" />
       </div>
     </section>
   );

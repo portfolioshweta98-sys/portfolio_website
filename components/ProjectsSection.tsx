@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface Project {
   id: number;
@@ -15,12 +19,8 @@ interface Project {
 }
 
 const ProjectsSection = () => {
-  const [progress, setProgress] = useState(0);
-  const [animated, setAnimated] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const frame = useRef<number>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -125,39 +125,12 @@ const ProjectsSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  // calculate raw scroll progress
-  const updateProgress = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const max = Math.max(1, el.scrollWidth - el.clientWidth);
-    const pct = (el.scrollLeft / max) * 100;
-    setProgress(pct);
-  };
-
-  // easing animation: smoothly interpolate animated → progress
-  useEffect(() => {
-    const animate = () => {
-      setAnimated((prev) => {
-        const diff = progress - prev;
-        return Math.abs(diff) < 0.05 ? progress : prev + diff * 0.12;
-      });
-      frame.current = requestAnimationFrame(animate);
-    };
-    frame.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame.current || 0);
-  }, [progress]);
-
-  useEffect(() => {
-    updateProgress();
-  }, []);
-
-  const R = 40;
-  const C = 2 * Math.PI * R;
+  // Empty the scroll progress code as we're using Swiper now
 
   return (
     <section
       ref={sectionRef}
-      className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-[#212121] text-[#F5F5F5] relative overflow-hidden"
+      className="w-full py-8 sm:py-12 md:py-16 lg:py-20 text-[#F5F5F5] relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -169,245 +142,135 @@ const ProjectsSection = () => {
       <div className="px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
-            <span className="absolute inset-0 bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent blur-sm scale-105 opacity-60" />
-            <span className="relative bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,119,182,0.5)]">
-              Projects
-            </span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-[#212121]">
+            Projects
           </h2>
         </div>
 
-        <div className="relative flex items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 flex-col lg:flex-row">
-          {/* Circular progress with enhanced animations */}
-          <div
-            className={`relative w-10 h-10 sm:w-12 sm:h-12 lg:w-20 lg:h-20 flex-shrink-0 mx-auto lg:mx-0 mb-4 sm:mb-6 lg:mb-0
-                          transition-all duration-1000 delay-300 transform ${
-                            isVisible
-                              ? "translate-y-0 opacity-100 scale-100"
-                              : "translate-y-8 opacity-0 scale-90"
-                          }`}
-          >
-            <svg className="w-full h-full" viewBox="0 0 100 100">
-              <circle
-                cx="50"
-                cy="50"
-                r={R}
-                fill="transparent"
-                strokeWidth="6"
-                className="stroke-[#1a2440]"
-              />
-              <circle
-                cx="50"
-                cy="50"
-                r={R}
-                fill="transparent"
-                strokeWidth="6"
-                strokeLinecap="round"
-                className="stroke-[#0077B6] drop-shadow-[0_0_8px_rgba(0,119,182,0.6)]
-                          transition-all duration-300"
-                strokeDasharray={C}
-                strokeDashoffset={C - (animated / 100) * C}
-                transform="rotate(-90 50 50)"
-              />
-            </svg>
-          </div>
+        <div className="relative">
+          <style>{`
+            .swiper {
+              padding-bottom: 50px !important;
+            }
+            .swiper-pagination {
+              bottom: 0 !important;
+            }
+            .swiper-pagination-bullet {
+              background: #B0BEC5;
+              width: 8px;
+              height: 8px;
+              opacity: 0.5;
+              transition: all 0.3s ease;
+            }
+            .swiper-pagination-bullet-active {
+              background: #0077B6;
+              opacity: 1;
+              width: 24px;
+              border-radius: 4px;
+            }
+          `}</style>
 
-          {/* Scrollable project cards with enhanced responsive design */}
-          <div
-            ref={scrollRef}
-            onScroll={updateProgress}
-            className={`w-full flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 
-                       cursor-grab active:cursor-grabbing transition-all duration-1000 delay-500
-                       ${
-                         isVisible
-                           ? "translate-y-0 opacity-100"
-                           : "translate-y-12 opacity-0"
-                       }`}
-            style={{
-              scrollbarWidth: "thin",
-              scrollbarColor: "rgba(0,119,182, 0.3) transparent",
+          {/* Projects Swiper */}
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            loop={true}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true
             }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            }}
+            className={`w-full transition-all duration-1000 delay-500 pb-16}`}
           >
-            {projects.map((p, index) => (
-              <Link
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={p.id}
-                className="group flex-shrink-0"
-                onMouseEnter={() => setHoveredCard(p.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div
-                  className={`w-[240px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[420px] 
-                           ${
-                             expandedCards.has(p.id)
-                               ? "h-auto min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[480px]"
-                               : "h-[340px] sm:h-[380px] md:h-[420px] lg:h-[460px] xl:h-[480px]"
-                           }
-                           snap-start rounded-xl sm:rounded-2xl
-                           bg-[#2C2C2C]/65 backdrop-blur-xl
-                           border border-[#0077B6]/20 shadow-[0_0_20px_rgba(0,119,182,0.15)]
-                           overflow-hidden hover:shadow-[0_0_40px_rgba(0,119,182,0.35)] 
-                           transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col
-                           ${
-                             hoveredCard === p.id
-                               ? "scale-[1.02] sm:scale-105"
-                               : "scale-100"
-                           }
-                           ${
-                             isVisible
-                               ? "translate-y-0 opacity-100"
-                               : "translate-y-16 opacity-0"
-                           }`}
-                  style={{
-                    transitionDelay: isVisible
-                      ? `${600 + index * 200}ms`
-                      : "0ms",
-                  }}
+            {projects.map((p) => (
+              <SwiperSlide key={p.id}>
+                <Link
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  onMouseEnter={() => setHoveredCard(p.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
                 >
-                  {/* Project Image - Fixed height with consistent ratios */}
-                  <div className="relative h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 overflow-hidden flex-shrink-0">
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      fill
-                      className={`object-cover transition-all duration-700 transform
-                                ${
-                                  hoveredCard === p.id
-                                    ? "scale-110 brightness-110"
-                                    : "scale-100 brightness-90"
-                                }`}
-                      sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 380px, 420px"
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div
+                    className={`w-full h-full
+                             rounded-xl sm:rounded-2xl
+                             bg-[#0077B6] backdrop-blur-xl
+                             border-2 border-white/10 
+                             overflow-hidden hover:shadow-xl
+                             transition-all duration-500 transform hover:-translate-y-2 flex flex-col
+                             ${hoveredCard === p.id ? "scale-[1.02]" : "scale-100"}`}
+                  >
+                    {/* Image */}
+                    <div className="relative w-full h-48 lg:h-60">
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        className="object-cover transition-all duration-700 "
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
 
-                    {/* Animated timeline badge */}
-                    <div
-                      className={`absolute top-2 sm:top-4 left-2 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full
-                                   bg-[#212121]/60 backdrop-blur-md border border-[#0077B6]/40
-                                   transition-all duration-300 transform
-                                   ${
-                                     hoveredCard === p.id
-                                       ? "translate-y-0 opacity-100"
-                                       : "translate-y-2 opacity-90"
-                                   }`}
-                    >
-                      <p className="text-[10px] sm:text-xs text-[#0077B6] font-medium">
-                        {p.timeline}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Content - Fixed height with controlled overflow */}
-                  <div className="p-3 sm:p-4 md:p-5 lg:p-6 relative flex-1 flex flex-col justify-between min-h-0">
-                    <h3
-                      className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#F5F5F5]
-                                  transition-all duration-300 transform flex-shrink-0 leading-tight
-                                  ${
-                                    hoveredCard === p.id
-                                      ? "translate-x-1 sm:translate-x-2 text-[#B0BEC5]"
-                                      : "translate-x-0"
-                                  }`}
-                    >
-                      {p.title}
-                    </h3>
-
-                    {/* Description with expandable functionality */}
-                    <div
-                      className={`flex-1 mb-2 ${
-                        expandedCards.has(p.id)
-                          ? "overflow-visible"
-                          : "overflow-hidden"
-                      }`}
-                    >
-                      <p
-                        className={`text-[#B0BEC5] text-xs sm:text-sm leading-relaxed 
-                                   ${
-                                     expandedCards.has(p.id)
-                                       ? ""
-                                       : "line-clamp-3 sm:line-clamp-4 md:line-clamp-5"
-                                   }
-                                   transition-all duration-300
-                                   ${
-                                     hoveredCard === p.id
-                                       ? "text-[#F5F5F5]"
-                                       : ""
-                                   }`}
+                      {/* Timeline badge */}
+                      <div
+                        className="absolute top-4 left-4 px-3 py-1.5 rounded-full
+                                   bg-secondary backdrop-blur-md border border-secondary/20"
                       >
-                        {expandedCards.has(p.id)
-                          ? p.description
-                          : getDisplayDescription(p)}
+                        <p className="text-xs text-white/90 font-medium">
+                          {p.timeline}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 p-6 flex flex-col">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 text-white">
+                        {p.title}
+                      </h3>
+
+                      <p className="text-white/90 text-sm sm:text-base leading-relaxed line-clamp-4 mb-4">
+                        {getDisplayDescription(p)}
                       </p>
 
-                      {/* Read More/Less button */}
-                      {p.description.length > descriptionLimit && (
-                        <button
-                          onClick={(e) => toggleCardExpansion(p.id, e)}
-                          className="mt-1 text-[#0077B6] hover:text-[#005B8D] text-xs sm:text-sm 
-                                   font-medium transition-colors duration-200 underline underline-offset-2
-                                   hover:underline-offset-4 block"
-                        >
-                          {expandedCards.has(p.id) ? "Read Less" : "Read More"}
-                        </button>
-                      )}
-                    </div>
-
-                    {/* Animated tags - Fixed at bottom with flex-shrink-0 */}
-                    <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto flex-shrink-0">
-                      {p.tags.map((t, i) => (
-                        <span
-                          key={i}
-                          className={`px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] md:text-xs rounded-full
-                                   bg-gradient-to-r from-[#0077B6]/20 to-[#B0BEC5]/20
-                                   text-[#F5F5F5] border border-[#0077B6]/30
-                                   transition-all duration-300 transform hover:scale-105
-                                   ${
-                                     hoveredCard === p.id
-                                       ? "bg-gradient-to-r from-[#0077B6]/30 to-[#B0BEC5]/30 border-[#0077B6]/40"
-                                       : ""
-                                   }`}
-                          style={{
-                            transitionDelay:
-                              hoveredCard === p.id ? `${i * 50}ms` : "0ms",
-                          }}
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Hover arrow indicator - Responsive sizing */}
-                    <div
-                      className={`absolute bottom-3 sm:bottom-4 right-3 sm:right-4 transition-all duration-300 transform
-                                   ${
-                                     hoveredCard === p.id
-                                       ? "translate-x-0 opacity-100"
-                                       : "translate-x-4 opacity-0"
-                                   }`}
-                    >
-                      <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-[#0077B6]/20 flex items-center justify-center">
-                        <svg
-                          className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#0077B6]"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {p.tags.map((t, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-sm rounded-full
+                                     bg-white/10 backdrop-blur-sm
+                                     text-white border border-white/20
+                                     transition-all duration-300 hover:bg-white/20"
+                          >
+                            {t}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </SwiperSlide>
             ))}
-          </div>
+            <div className="swiper-pagination mt-8"></div>
+            <div className="swiper-pagination mt-8"></div>
+          </Swiper>
         </div>
       </div>
     </section>

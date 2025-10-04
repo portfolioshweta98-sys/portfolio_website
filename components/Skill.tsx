@@ -75,7 +75,7 @@ const Skills = () => {
         {/* Animated icon container */}
         <div
           className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 flex items-center justify-center 
-          rounded-full bg-[#2C2C2C]/60 backdrop-blur-sm 
+          rounded-full bg-[#F5F5F5] backdrop-blur-sm 
           transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(0,119,182,0.5)]"
         >
           <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12">
@@ -88,7 +88,7 @@ const Skills = () => {
         </div>
 
         {/* Skill name */}
-        <span className="text-xs sm:text-sm font-medium text-[#F5F5F5] text-center leading-tight">
+        <span className="text-xs sm:text-sm font-medium text-center leading-tight">
           {skill.name}
         </span>
       </div>
@@ -96,7 +96,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#212121]">
+    <div className="relative min-h-screen overflow-hidden ">
       {/* Float animation */}
       <style jsx>{`
         @keyframes float {
@@ -121,7 +121,7 @@ const Skills = () => {
       />
 
       {/* Radial fade */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#212121] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#212121)]" />
+      {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#212121] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#212121)]" /> */}
 
       {/* Floating glow orbs */}
       <div className="absolute top-10 left-10 md:top-20 md:left-20 w-20 h-20 md:w-40 md:h-40 bg-gradient-to-r from-[#0077B6]/10 to-[#B0BEC5]/8 rounded-full blur-2xl md:blur-3xl animate-pulse" />
@@ -138,10 +138,7 @@ const Skills = () => {
       <div className="relative z-10 py-10 md:py-16 lg:py-20 px-4">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
-            <span className="absolute inset-0 bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent blur-sm scale-105 opacity-60" />
-            <span className="relative bg-gradient-to-r from-[#0077B6] via-[#B0BEC5] to-[#0077B6] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,119,182,0.5)]">
-              Skills and Technologies
-            </span>
+            Skills and Technologies
           </h2>
         </div>
 

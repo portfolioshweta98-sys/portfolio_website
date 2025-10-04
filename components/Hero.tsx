@@ -29,13 +29,16 @@ const Hero = () => {
             className="-top-80 -left-10 md:-left-52 md:-top-40 h-screen"
             fill="blue"
           /> */}
-          <Spotlight className="h-[500vh] w-[100vw] left-full" fill="blue" />
-          <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+          <Spotlight className="h-[500vh] w-[100vw] left-full" fill="#0077b6" />
+          <Spotlight
+            className="left-80 top-28 h-[80vh] w-[50vw]"
+            fill="#0077b6"
+          />
         </div>
       )}
 
       {/* Background */}
-      <div className="relative flex flex-col min-h-screen w-full justify-center bg-[#212121]">
+      <div className="relative flex flex-col min-h-screen w-full justify-center">
         <div
           className={cn(
             "absolute inset-0",
@@ -59,8 +62,8 @@ const Hero = () => {
             <div className="text-center">
               {isMounted && (
                 <div className="block lg:hidden mt-6 mb-2">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5F5F5] tracking-wider">
-                    <span className="bg-gradient-to-r from-[#F5F5F5] to-[#0077B6] bg-clip-text text-transparent">
+                  <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-[#212121] tracking-wider">
+                    <span className="bg-gradient-to-r from-[#0077B6] to-[#005B8D] bg-clip-text text-transparent">
                       SHWETA SHEKHAR
                     </span>
                   </h1>
@@ -74,16 +77,16 @@ const Hero = () => {
             {/* Left text */}
             <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
               <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#F5F5F5] mb-6 lg:mb-8 text-center lg:text-left">
+                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 lg:mb-8 text-center lg:text-left text-[#212121]">
                   What I Bring to the Table
                 </h2>
 
-                <div className="space-y-4 lg:space-y-6 text-[#B0BEC5] text-sm sm:text-base">
+                <div className="space-y-4 lg:space-y-6 text-[#212121] text-base sm:text-lg lg:text-xl">
                   <div>
                     <span className="text-[#0077B6] font-semibold">
                       I turn AI ideas into working systems
                     </span>
-                    <span className="text-[#B0BEC5]">
+                    <span className="text-[#212121]">
                       {" "}
                       — from building contract-review pipelines that saved teams
                       hours at GEP to anomaly detectors that caught what humans
@@ -92,10 +95,10 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <span className="text-blue-400 font-semibold">
+                    <span className="text-[#0077B6] font-semibold">
                       I make data easy to trust and act on
                     </span>
-                    <span className="text-gray-400">
+                    <span className="text-[#212121]">
                       {" "}
                       — mixing causal reasoning with interactive visuals so
                       people don&apos;t just see numbers, they understand the
@@ -104,10 +107,10 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <span className="text-purple-300 font-semibold">
+                    <span className="text-[#0077B6] font-semibold">
                       I engineer for scale
                     </span>
-                    <span className="text-gray-400">
+                    <span className="text-[#212121]">
                       {" "}
                       — whether it&apos;s streamlining CI/CD pipelines,
                       optimizing queries, or tuning Elasticsearch, I like making
@@ -116,10 +119,10 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <span className="text-blue-400 font-semibold">
+                    <span className="text-[#0077B6] font-semibold">
                       I grow with people
                     </span>
-                    <span className="text-gray-400">
+                    <span className="text-[#212121]">
                       {" "}
                       — I&apos;ve mentored engineers, built peer mentorship
                       programs, and believe teams do their best work when
@@ -128,10 +131,10 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <span className="text-purple-300 font-semibold">
+                    <span className="text-[#0077B6] font-semibold">
                       Above all, I focus on impact
                     </span>
-                    <span className="text-gray-400">
+                    <span className="text-[#212121]">
                       {" "}
                       — if something I build doesn&apos;t save time, cut effort,
                       or make decisions clearer, I&apos;m not done yet.
@@ -148,61 +151,56 @@ const Hero = () => {
                 containerClassName="py-0"
               >
                 <CardBody
-                  className="bg-[#2C2C2C] relative group/card hover:shadow-2xl 
-                  hover:shadow-[#0077B6]/20 border-[#B0BEC5]/20
-                  w-full min-h-[350px] sm:min-h-[450px] lg:min-h-[500px] 
-                  rounded-xl p-4 sm:p-6 lg:p-8 border backdrop-blur-sm transform-gpu 
-                  flex flex-col justify-center"
+                  className="bg-gradient-to-b from-[#0077B6] to-[#005B8D] relative group/card 
+                  hover:shadow-2xl hover:shadow-[#0077B6]/40 
+                  w-full min-h-[450px] sm:min-h-[520px] lg:min-h-[580px] 
+                  rounded-2xl border-2 border-white/10 backdrop-blur-sm transform-gpu 
+                  flex flex-col justify-start overflow-hidden"
                 >
                   {/* Image */}
+                  {/* Full width image at the top */}
                   <CardItem
                     translateZ="100"
-                    rotateX={5}
-                    rotateY={5}
-                    className="w-full flex justify-center mb-6 sm:mb-8 "
+                    className="w-full h-64 sm:h-72 lg:h-96"
                   >
-                    <div className="relative transform-gpu flex justify-center -mx-8">
-                      <div className="w-full h-50 lg:h-72 overflow-hidden rounded-2xl border-2 border-[#0077B6]/30 shadow-xl">
-                        <Image
-                          src={profile}
-                          alt="Shweta Shekhar"
-                          width={500}
-                          height={400}
-                          className="w-full h-full object-cover "
-                          priority
-                        />
-                      </div>
-                      {/* Glow */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#0077B6]/20 to-[#005B8D]/20 blur-xl -z-10 group-hover/card:blur-2xl transition-all duration-500 will-change-transform"></div>
+                    <div className="absolute inset-0 w-full h-full">
+                      <Image
+                        src={profile}
+                        alt="Shweta Shekhar"
+                        fill
+                        className="object-cover object-center transform-gpu group-hover/card:scale-110 transition-all duration-700"
+                        priority
+                      />
                     </div>
                   </CardItem>
 
-                  {/* Description */}
+                  {/* Content overlay */}
                   <CardItem
-                    translateZ="60"
-                    rotateX={5}
-                    rotateY={5}
-                    className="text-center transform-gpu"
+                    translateZ="50"
+                    className="relative px-6 sm:px-8 lg:px-10 pt-4 pb-8 text-center transform-gpu"
                   >
-                    <div className="space-y-2">
-                      <h3 className="text-base sm:text-lg lg:text-xl font-medium text-[#F5F5F5] leading-relaxed">
-                        <span className="text-[#0077B6] font-semibold">
-                          Software Engineer + Innovator
-                        </span>
+                    <div className="relative space-y-4">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight mt-2">
+                        Software Engineer + Innovator
                       </h3>
 
-                      <p className="text-sm sm:text-base text-[#0077B6] font-medium">
+                      <p className="text-lg sm:text-xl text-white/90 font-medium">
                         Academic Topper (Silver Medalist + 4.0 GPA)
                       </p>
 
-                      <p className="text-sm sm:text-base text-[#B0BEC5] leading-relaxed">
-                        Where{" "}
-                        <span className="text-[#0077B6] font-medium">creativity</span>{" "}
-                        meets{" "}
-                        <span className="text-[#0077B6] font-medium">code</span>{" "}
-                        — building AI that works in the real world.
+                      <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-md mx-auto">
+                        Blending{" "}
+                        <span className="text-white font-semibold bg-white/10 px-2 py-0.5 rounded-md">
+                          creativity
+                        </span>{" "}
+                        and{" "}
+                        <span className="text-white font-semibold bg-white/10 px-2 py-0.5 rounded-md">
+                          logic
+                        </span>{" "}
+                        to transform AI & data into solutions that work.
                       </p>
 
+                      {/* Additional decorative element */}
                     </div>
                   </CardItem>
                 </CardBody>

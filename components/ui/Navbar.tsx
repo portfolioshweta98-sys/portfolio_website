@@ -93,8 +93,8 @@ const Navbar: React.FC = () => {
       <div
         className={`rounded-2xl border transition-all duration-300 ${
           isScrolled
-            ? "bg-[#212121]/95 backdrop-blur-xl border-[#B0BEC5]/30 shadow-2xl"
-            : "bg-[#212121]/90 backdrop-blur-lg border-[#B0BEC5]/20"
+            ? "bg-[#F5F5F5] backdrop-blur-xl border-[#B0BEC5]/30 shadow-2xl"
+            : "bg-[#F5F5F5]/80 backdrop-blur-lg border-[#B0BEC5]/20"
         }`}
       >
         <div className="px-4 sm:px-6 lg:px-8">
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <button
                 onClick={() => handleNavClick("#about")}
-                className="flex items-center space-x-2 text-[#F5F5F5] hover:text-[#0077B6] transition-colors"
+                className="flex items-center space-x-2 text-[#212121] hover:text-[#0077B6] transition-colors"
               >
                 <Home size={24} />
               </button>
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative ${
                       activeSection === item.href.slice(1)
                         ? "text-[#0077B6]"
-                        : "text-[#B0BEC5] hover:text-[#F5F5F5]"
+                        : "text-[#212121] hover:text-[#0077B6]"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
             <div className="md:hidden">
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-[#B0BEC5] hover:text-[#F5F5F5] focus:outline-none focus:text-[#F5F5F5]"
+                className="text-[#212121] hover:text-[#0077B6] focus:outline-none focus:text-[#0077B6]"
                 whileTap={{ scale: 0.95 }}
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-[#212121]/90 backdrop-blur-xl rounded-b-2xl border-t border-[#B0BEC5]/30 mt-0.5"
+              className="md:hidden bg-[#F5F5F5]/90 backdrop-blur-xl rounded-b-2xl border-t border-[#B0BEC5]/30 mt-0.5"
             >
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 {navItems.map((item) => (
@@ -185,8 +185,8 @@ const Navbar: React.FC = () => {
                     onClick={() => handleNavClick(item.href)}
                     className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors ${
                       activeSection === item.href.slice(1)
-                        ? "text-[#0077B6] bg-[#2C2C2C]/50"
-                        : "text-[#B0BEC5] hover:text-[#F5F5F5] hover:bg-[#2C2C2C]/30"
+                        ? "text-[#0077B6] bg-[#B0BEC5]/20"
+                        : "text-[#212121] hover:text-[#0077B6] hover:bg-[#B0BEC5]/10"
                     }`}
                     whileHover={{ x: 10 }}
                     whileTap={{ scale: 0.95 }}
