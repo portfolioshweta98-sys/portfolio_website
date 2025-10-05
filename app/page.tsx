@@ -3,6 +3,7 @@ import ContactSection from "@/components/Contactsection";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import ProjectsSection from "@/components/ProjectsSection";
+import ResearchSection from "@/components/ResearchSection";
 import Skills from "@/components/Skill";
 import TestimonialSection from "@/components/TestimonialSection";
 import { cn } from "@/lib/utils";
@@ -37,6 +38,10 @@ export default function Home() {
             )}
           />
           <CertificatesSection />
+        </section>
+
+        <section id="research">
+          <ResearchSection />
         </section>
 
         <section id="testimonials">
