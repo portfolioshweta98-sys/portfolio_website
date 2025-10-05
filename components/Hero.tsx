@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
           <span className="text-white font-semibold bg-white/10 px-2 py-0.5 rounded-md">
             analytical precision
           </span>
-          and to craft AI and
+          and to craft AI ,
           <span className="text-white font-semibold bg-white/10 px-2 py-0.5 rounded-md">
             data solutions
           </span>{" "}
