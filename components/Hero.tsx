@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./ui/spotlight-new";
 import { TextRevealCard } from "./ui/text-reveal-card";
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import HighlightItem from "./ui/HighlightItem";
 import Image from "next/image";
 
@@ -33,7 +32,7 @@ const Hero: React.FC = () => {
     setIsMounted(true);
 
     // Text rotation effect
-    const interval = setInterval(handleTextRotation, 3000);
+    const interval = setInterval(handleTextRotation, 2000);
 
     return () => clearInterval(interval);
   }, [handleTextRotation]);
@@ -99,12 +98,12 @@ const Hero: React.FC = () => {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Name */}
-          <div className="flex items-center justify-center  sm:mb-6 lg:mb-8">
+          {/* Top heading */}
+          <div className="flex items-center justify-center sm:mb-6 lg:mb-8">
             <TextRevealCard
               text="SHWETA SHEKHAR"
               revealText="SHWETA SHEKHAR"
-              className="hidden lg:block"
+              className="hidden lg:block text-center"
             />
             <div className="text-center">
               {isMounted && (
@@ -119,70 +118,66 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left text */}
-            <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
-              <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 text-center lg:text-left text-[#212121]">
-                  What I Bring to the Table
-                </h2>
-
-                <div
-                  className="space-y-4 lg:space-y-6 text-[#212121] text-base sm:text-lg lg:text-xl"
-                  role="list"
-                  aria-label="Professional highlights and capabilities"
-                >
-                  {highlights.map((highlight, index) => (
-                    <HighlightItem
-                      key={highlight.id}
-                      highlight={highlight}
-                      index={index}
-                    />
-                  ))}
-                </div>
-              </div>
+          {/* Middle image */}
+          <div className="flex justify-center">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[600px] lg:h-[400px] rounded-2xl overflow-hidden border-2 border-white/10 shadow-xl">
+              <Image
+                src={profile}
+                alt="Shweta Shekhar"
+                fill
+                priority
+                className="object-cover object-center"
+              />
             </div>
+          </div>
 
-            {/* Right card */}
-            <div className="flex justify-center order-1 lg:order-2">
-              <CardContainer
-                className="inter-var w-full max-w-sm"
-                containerClassName="py-0"
+          {/* Animated texts + fusing text */}
+          <div className="mt-6 sm:mt-8 text-center">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#212121] leading-tight">
+              {animatedTexts[currentText]}
+            </h3>
+            <p className="mt-3 text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto">
+              Fusing inventive thinking with
+              <span className="text-[#212121] font-semibold bg-[#0077B6]/10 px-2 py-0.5 rounded-md ml-1 mr-1">
+                analytical precision
+              </span>
+              and to craft AI and
+              <span className="text-[#212121] font-semibold bg-[#0077B6]/10 px-2 py-0.5 rounded-md ml-1 mr-1">
+                data solutions
+              </span>
+              that drive real-world results.
+            </p>
+          </div>
+
+          {/* What I bring to the table */}
+          <div className="mt-10 lg:mt-14">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-center text-[#212121]">
+              What I Bring to the Table
+            </h2>
+
+            {/* Infinite scrolling highlights */}
+            <div
+              className="relative overflow-hidden"
+              aria-label="Professional highlights and capabilities"
+            >
+              <div
+                className="flex items-center gap-8 will-change-transform"
+                style={{
+                  animation: "var(--animate-scroll)",
+                  ["--animation-duration" as any]: "5s",
+                  ["--animation-direction" as any]: "forwards",
+                }}
+                role="list"
               >
-                <CardBody
-                  className="bg-gradient-to-b from-[#0077B6] to-[#005B8D] relative group/card 
-                  hover:shadow-2xl hover:shadow-[#0077B6]/40 
-                  w-full min-h-[450px] sm:min-h-[520px] lg:min-h-[550px] 
-                  rounded-2xl border-2 border-white/10 backdrop-blur-sm transform-gpu 
-                  flex flex-col justify-start overflow-hidden"
-                >
-                  {/* Image */}
-                  {/* Full width image at the top */}
-                  <CardItem
-                    translateZ="100"
-                    className="w-full h-64 sm:h-72 lg:h-96"
-                  >
-                    <div className="absolute inset-0 w-full h-full">
-                      <Image
-                        src={profile}
-                        alt="Shweta Shekhar"
-                        fill
-                        className="object-cover object-center transform-gpu group-hover/card:scale-110 transition-all duration-700"
-                        priority
-                      />
-                    </div>
-                  </CardItem>
-
-                  {/* Content overlay */}
-                  <CardItem
-                    translateZ="50"
-                    className="relative px-6 sm:px-8 lg:px-10 pt-4 pb-8 text-center transform-gpu"
-                  >
-                    {cardContent}
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
+                {[...highlights, ...highlights].map((highlight, index) => (
+                  <HighlightItem
+                    key={`${highlight.id}-${index}`}
+                    highlight={highlight}
+                    index={index}
+                    className="inline-flex items-center whitespace-nowrap pr-2"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
