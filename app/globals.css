@@ -186,7 +186,7 @@ div {
   --animate-third: moveInCircle 40s linear infinite;
   --animate-fourth: moveHorizontal 40s ease infinite;
   --animate-fifth: moveInCircle 20s ease infinite;
-  --animate-scroll: scroll var(--animation-duration, 40s)
+  --animate-scroll: scroll var(--animation-duration, 10s)
     var(--animation-direction, forwards) linear infinite;
 }
 

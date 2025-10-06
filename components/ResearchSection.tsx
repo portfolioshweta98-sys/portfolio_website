@@ -14,7 +14,7 @@ function ResearchSection() {
     <div ref={ref} className="relative z-10 py-10 md:py-16 lg:py-20 px-4">
       <div className="text-center mb-12 md:mb-16 lg:mb-20">
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-[#212121]">
-          Research
+        Research & papers
         </h2>
       </div>
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">

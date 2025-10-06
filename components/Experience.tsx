@@ -217,7 +217,7 @@ const Experience = () => {
       {/* Title */}
       <div className="text-center mb-12 md:mb-16 lg:mb-20">
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
-          Education and Experience
+        Work & Education
         </h2>
       </div>
 

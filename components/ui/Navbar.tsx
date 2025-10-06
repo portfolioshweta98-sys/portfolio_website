@@ -11,13 +11,13 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: "About Me", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Certifications", href: "#certifications" },
+  { name: "Tech Stack", href: "#skills" },
+  { name: "Featured work", href: "#projects" },
+  { name: "Work & Education", href: "#experience" },
+  { name: "Achievements", href: "#certifications" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Research", href: "#research" },
-  { name: "Contact Me", href: "#contact" },
+  { name: "Research & papers", href: "#research" },
+  { name: "Let’s connect", href: "#contact" },
 ];
 
 const Navbar: React.FC = () => {
@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
             : "bg-[#F5F5F5]/80 backdrop-blur-lg border-[#B0BEC5]/20"
         }`}
       >
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div className="px-2 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo / Home Button */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -129,13 +129,13 @@ const Navbar: React.FC = () => {
             </motion.div>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-6">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
+              <div className="ml-10 flex items-baseline space-x-2">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.name}
                     onClick={() => handleNavClick(item.href)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative ${
+                    className={`px-2 py-2 rounded-md text-sm font-medium transition-all duration-200 relative ${
                       activeSection === item.href.slice(1)
                         ? "text-[#0077B6]"
                         : "text-[#212121] hover:text-[#0077B6]"
@@ -171,7 +171,7 @@ const Navbar: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Download Resume
+                View resume
               </motion.a>
             </div>
 
@@ -225,7 +225,7 @@ const Navbar: React.FC = () => {
                   whileHover={{ x: 10 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Download Resume
+                 View resume
                 </motion.a>
               </div>
             </motion.div>

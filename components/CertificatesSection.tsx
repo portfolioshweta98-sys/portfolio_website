@@ -20,7 +20,7 @@ const CertificatesSection = () => {
         {/* Title */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative text-primary">
-            Certificates
+          Achievements
           </h2>
         </div>
 
@@ -30,7 +30,7 @@ const CertificatesSection = () => {
             spaceBetween={30}
             pagination={{ clickable: true }}
             autoplay={{
-              delay: 3000,
+              delay: 2000,
               disableOnInteraction: false,
             }}
             breakpoints={{

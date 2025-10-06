@@ -164,13 +164,13 @@ const Skills = () => {
         {/* Enhanced title */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
-            Skills & Technologies
+          Tech Stack
           </h2>
         </div>
 
         {/* Category filter - responsive */}
-        <div className="flex justify-center mb-12 px-4">
-          <div className="flex flex-wrap gap-2 md:gap-4 bg-white/10 rounded-full p-3 max-w-full overflow-x-auto">
+        <div className="flex  justify-center mb-12 px-4">
+          <div className="flex flex-wrap gap-2 md:gap-4 p-3 max-w-full overflow-x-auto">
             {categories.map((category) => (
               <button
                 key={category}
