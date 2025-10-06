@@ -72,7 +72,7 @@ const Skills = () => {
             "w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 flex items-center justify-center rounded-2xl transition-all duration-300 transform",
             isSelected
               ? "bg-secondary scale-110"
-              : "bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:scale-105 hover:shadow-lg hover:shadow-[#0077B6]/20 group-hover:border-[#0077B6]/30"
+              : "bg-white backdrop-blur-sm border border-gray-200/50 hover:scale-105 hover:shadow-lg hover:shadow-[#0077B6]/20 group-hover:border-[#0077B6]/30"
           )}
         >
           <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12">
@@ -183,7 +183,7 @@ const Skills = () => {
                   "px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0",
                   selectedCategory === category
                     ? "bg-secondary text-white shadow-lg"
-                    : "text-primary dark:text-gray-300 hover:bg-white/20 hover:text-secondary"
+                    : "text-primary hover:bg-secondary hover:text-white"
                 )}
               >
                 {category}
