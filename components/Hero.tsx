@@ -170,7 +170,7 @@ const Hero: React.FC = () => {
                 <div className="block lg:hidden mt-6 mb-2">
                   <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-[#212121] tracking-wider">
                     <span className="bg-gradient-to-r from-[#0077B6] to-[#005B8D] bg-clip-text text-transparent">
-                      Hi, I’m Shweta
+                     Shweta Shekhar
                     </span>
                   </h1>
                 </div>
