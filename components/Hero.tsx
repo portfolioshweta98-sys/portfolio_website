@@ -9,17 +9,18 @@ import Image from "next/image";
 
 import profile from "@/public/SHWETA.jpg";
 import { highlights } from "@/data/highlights";
+import { ArrowRightIcon } from "lucide-react";
 
 const Hero: React.FC = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [currentText, setCurrentText] = useState(0);
+  const [currentSection, setCurrentSection] = useState(0);
 
   const animatedTexts = useMemo(
     () => [
-      "AI Intern @GEP",
-      "MSCS @NYU",
-      "Ex–Software Engineer",
-      "Machine Learning & Data Science",
+      "AI Intern @ GEP",
+      "Graduate Course Assistant @ NYU",
+      "MS in Computer Science @ NYU Tandon",
     ],
     []
   );
@@ -36,6 +37,65 @@ const Hero: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [handleTextRotation]);
+
+  const rotatingSections = useMemo(
+    () => [
+      {
+        title: "About Me",
+        paragraphs: [
+          "Hey there! I’m Shweta Shekhar — an engineer by logic, a researcher by curiosity, and a creator by heart.",
+          "Right now, I’m pursuing my Master’s in Computer Science at NYU, maintaining a 4.0 GPA and an ever-growing passion for building AI systems that actually work in the real world.",
+        ],
+      },
+      {
+        title: "What I’m Building",
+        paragraphs: [
+          "By day (and often by night), I’m an AI Intern at GEP Worldwide, working across both Summer and Fall terms.",
+          "I build LangChain-powered LLM pipelines, design telemetry systems that help AI explain its decisions, and create agentic workflows that make enterprise data more transparent and scalable.",
+          "My focus is on making AI not just smart, but trustworthy.",
+        ],
+      },
+      {
+        title: "Before This",
+        paragraphs: [
+          "Before moving to New York, I spent four years at GEP India as a Senior Software Engineer, leading automation, search analytics, and CI/CD initiatives that made enterprise platforms faster, cleaner, and more reliable.",
+          "It’s where I learned that great systems aren’t just coded — they’re crafted.",
+        ],
+      },
+      {
+        title: "What I’m Proud Of",
+        paragraphs: [
+          "Silver Medalist from the University of Mumbai.",
+          "Co-author of an IEEE research paper on Machine Learning–Based Detection of Learning Disabilities, exploring how NLP can make education more inclusive.",
+          "Certified in Deep Learning, Generative AI, and Big Data Systems — because curiosity doesn’t clock out.",
+        ],
+      },
+      {
+        title: "What Drives Me",
+        paragraphs: [
+          "I love solving problems that sit between machine learning and human design — building systems that are auditable, explainable, and scalable.",
+          "If AI is a black box, I’m the kind of person who wants to build the light inside it.",
+        ],
+      },
+      {
+        title: "Beyond the Code",
+        paragraphs: [
+          "When I’m not designing AI workflows or writing telemetry logs, you’ll probably find me dancing, singing, or chasing sunsets across Brooklyn rooftops.",
+          "I believe creativity in rhythm is the same as creativity in logic — both need flow.",
+          "TL;DR — I build AI that earns trust, design systems that scale, and live by one rule — if it’s worth building, make it beautiful.",
+        ],
+      },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    if (!isMounted) return;
+    const sectionInterval = setInterval(() => {
+      setCurrentSection((prev) => (prev + 1) % rotatingSections.length);
+    }, 5000);
+    return () => clearInterval(sectionInterval);
+  }, [isMounted, rotatingSections.length]);
 
   const spotlightElements = useMemo(
     () =>
@@ -110,7 +170,7 @@ const Hero: React.FC = () => {
                 <div className="block lg:hidden mt-6 mb-2">
                   <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-[#212121] tracking-wider">
                     <span className="bg-gradient-to-r from-[#0077B6] to-[#005B8D] bg-clip-text text-transparent">
-                    Hi, I’m Shweta 
+                      Hi, I’m Shweta
                     </span>
                   </h1>
                 </div>
@@ -118,10 +178,30 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex justify-center mb-5">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#212121] leading-tight">
-              {animatedTexts[currentText]}
+          <div className="flex justify-center mb-5 flex-col items-center">
+            <h3 className="mb-5 text-xl sm:text-2xl lg:text-3xl font-bold text-[#212121] leading-tight text-center">
+              Engineer by{" "}
+              <span className="bg-gradient-to-r from-[#0077B6] to-[#005B8D] bg-clip-text text-transparent">
+                logic
+              </span>
+              , researcher by{" "}
+              <span className="bg-gradient-to-r from-[#0077B6] to-[#005B8D] bg-clip-text text-transparent">
+                curiosity
+              </span>
+              , creator at{" "}
+              <span className="bg-gradient-to-r from-[#0077B6] to-[#005B8D] bg-clip-text text-transparent">
+                heart
+              </span>{" "}
+              — shaping dependable AI where rigor meets design and serves
+              people.
             </h3>
+
+            <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#212121] leading-tight text-center">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0077B6]/10 text-[#005B8D]">
+                {animatedTexts[currentText]}
+                <ArrowRightIcon />
+              </span>
+            </p>
           </div>
 
           {/* Middle image */}
@@ -137,26 +217,41 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Animated texts + fusing text */}
+          {/* Rotating bio sections (unstyled like previous) */}
           <div className="mt-6 sm:mt-8 text-center">
-           
-          <p className="mt-3 text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto">
-          I’m Shweta Shekhar, a Graduate Student in Computer Science at New York University (NYU) with a 4.0 GPA, passionate about turning AI ideas into systems that make data useful, trusted, and actionable.
-          </p>
-          <p className="mt-3 text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto">
-  Currently, I’m an AI Intern at GEP Worldwide (New Jersey), where I build LangChain-powered LLM pipelines, automate contract insight retrieval, and design telemetry monitoring systems that enhance performance and reliability. Alongside, I work as a Graduate Assistant at NYU, collaborating with faculty on academic research and mentorship programs.
-    </p>
-    <p className="mt-3 text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto">
-  Before NYU, I spent four years as a <span className="text-[#212121] font-semibold bg-[#0077B6]/10 px-2 py-0.5 rounded-md ml-1 mr-1">Senior Software Engineer </span> at GEP India, leading CI/CD automation, API integrations, and search analytics that improved efficiency and deployment reliability across enterprise platforms.
-  </p>
-  <p className="mt-3 text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto">
-  I’m also a  <span className="text-[#212121] font-semibold bg-[#0077B6]/10 px-2 py-0.5 rounded-md ml-1 mr-1">Silver Medalist </span> from the University of Mumbai and a co-author of an IEEE research paper on Machine Learning–Based Detection of Learning Disabilities, which explored how NLP and AI can make education more inclusive.
-          </p>
-          <p className="mt-3 text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto">
-            Across my projects — from Spark-based research graph analysis to Bayesian modeling for delivery optimization — my goal remains constant: build scalable, human-centered AI that solves real problems with clarity and impact.
-          </p>
+            <div className="mx-auto max-w-3xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#212121] mb-2">
+                {rotatingSections[currentSection].title}
+              </h3>
 
-        </div>
+              <div className="space-y-3">
+                {rotatingSections[currentSection].paragraphs.map(
+                  (para, idx) => (
+                    <p
+                      key={idx}
+                      className="text-base sm:text-lg text-[#212121]/80 leading-relaxed max-w-2xl mx-auto"
+                    >
+                      {para}
+                    </p>
+                  )
+                )}
+              </div>
+              <div className="hidden sm:flex items-center justify-center gap-1 mb-3">
+                {rotatingSections.map((_, i) => (
+                  <span
+                    key={i}
+                    className={cn(
+                      "h-2 w-2 rounded-full",
+                      i === currentSection ? "bg-[#0077B6]" : "bg-[#0077B6]/20"
+                    )}
+                    aria-label={
+                      i === currentSection ? "current section" : "section"
+                    }
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* What I bring to the table */}
           <div className="mt-10 lg:mt-14">
