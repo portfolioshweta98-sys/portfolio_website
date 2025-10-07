@@ -162,7 +162,7 @@ const Navbar: React.FC = () => {
 
               {/* ✅ Resume Button */}
               <motion.a
-                href="Shweta Shekhar Resume Final Version.pdf"
+                href="Shweta Shekhar Resume Final Version_1.pdf"
                 download
                 className="px-4 py-2 text-xs font-medium text-[#F5F5F5] 
              bg-[#0077B6] hover:bg-[#005B8D]
