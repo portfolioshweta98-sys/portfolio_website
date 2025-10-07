@@ -19,8 +19,8 @@ const Hero: React.FC = () => {
   const animatedTexts = useMemo(
     () => [
       "AI Intern @ GEP",
-      "Graduate Course Assistant @ NYU",
-      "MS in Computer Science @ NYU Tandon",
+      "Graduate Course Assistant @ New York University",
+      "MS in Computer Science @ New York University",
     ],
     []
   );
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
       {
         title: "About Me",
         paragraphs: [
-          "Hey there! I’m Shweta Shekhar — an engineer by logic, a researcher by curiosity, and a creator by heart.",
+          "I’m Shweta Shekhar — an engineer with a curious mind and a creative approach to solving real-world problems.",
           "Right now, I’m pursuing my Master’s in Computer Science at NYU, maintaining a 4.0 GPA and an ever-growing passion for building AI systems that actually work in the real world.",
         ],
       },
