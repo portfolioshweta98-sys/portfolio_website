@@ -161,8 +161,8 @@ const Hero: React.FC = () => {
           {/* Top heading */}
           <div className="flex items-center justify-center sm:mb-6 lg:mb-8">
             <TextRevealCard
-              text="Hi, I’m Shweta "
-              revealText="Hi, I’m Shweta "
+              text="Shweta Shekhar"
+              revealText="Shweta Shekhar"
               className="hidden lg:block text-center"
             />
             <div className="text-center">
