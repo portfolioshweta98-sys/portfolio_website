@@ -6,10 +6,13 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "media.licdn.com",
-        pathname: "/dms/image/**", // ✅ only allow LinkedIn dms images
+        pathname: "/**", // Allow all LinkedIn media images
       },
     ],
+    unoptimized: false,
   },
+  // Ensure proper output for Netlify
+  output: "standalone",
 };
 
 module.exports = nextConfig;

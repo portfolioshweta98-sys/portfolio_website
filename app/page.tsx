@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <main className="relative flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
+    <main className="relative flex justify-center items-center flex-col overflow-x-hidden mx-auto sm:px-10 px-5 w-full">
+      <div className="max-w-7xl w-full min-w-0">
         <section id="about">
           <Hero />
         </section>

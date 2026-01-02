@@ -25,6 +25,7 @@ export const Avatar = ({ src, alt }: AvatarProps) => {
         width={48}
         height={48}
         className="rounded-full object-cover bg-gray-700"
+        unoptimized={src?.startsWith("https://media.licdn.com")}
         onError={(e) => {
           const imgElement = e.target as HTMLImageElement;
           imgElement.style.display = "none";

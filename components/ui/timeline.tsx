@@ -54,6 +54,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       width={50}
                       height={50}
                       className="rounded-full object-cover"
+                      unoptimized={item.image?.startsWith("https://")}
                     />
                   ) : item.icon ? (
                     <div className="h-6 w-6 flex items-center justify-center text-[#0077B6]">
