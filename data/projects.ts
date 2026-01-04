@@ -57,6 +57,6 @@ export const projects: Project[] = [
     timeline: "2024",
     tags: ["RoBERTa", "Llama 3.3", "Adversarial AI", "OOD Detection", "Research", "Python", "NLP"],
     url: "https://github.com/shwetashekhar98/hc3-adversarial-analysis",
-    image: "/project-5-hc3.jpg", // HC3 pipeline flowchart - from data ingestion to adversarial evaluation
+    image: "/project-5-hc3.png", // HC3 pipeline flowchart - from data ingestion to adversarial evaluation
   },
 ];
