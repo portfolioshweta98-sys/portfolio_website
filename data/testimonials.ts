@@ -177,4 +177,96 @@ export const testimonials: Testimonial[] = [
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
+    {
+      id: 14,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      title: "Senior Engineering Manager",
+      company: "GEP Worldwide",
+      testimonial:
+        "I had the pleasure of working with Shweta during her tenure as a Software Developer, and I can confidently say she has been an invaluable asset to our team. Shweta possesses strong expertise in full-stack development, with a solid command over .NET Core, API development, Angular, and Azure. She consistently delivered high-quality work on time, demonstrating excellent problem-solving skills and attention to detail. One of her standout qualities is her ability to quickly grasp new concepts and technologies, allowing her to adapt seamlessly to evolving project requirements. Shweta is highly proactive, open to taking on challenging tasks, and approaches each assignment with dedication and a positive mindset. Her collaborative nature, technical proficiency, and commitment to excellence make her a top-tier professional in her field. I wholeheartedly recommend Shweta for any role that requires a skilled, dependable, and adaptable full-stack developer. She will be a great asset to any organization.",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 15,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      title: "Senior to Shweta at GEP Smart Contracts",
+      company: "GEP Worldwide",
+      testimonial:
+        "I had the opportunity to work closely with Shweta Shekhar during our time together on the GEP Smart Contracts team, and I was consistently impressed with her enthusiasm to learn and grow. Though I was in a senior role, I always found our interactions to be more of a mutual exchange of ideas, driven by her curiosity and dedication. She was never afraid to dive into unfamiliar modules or ask insightful questions that reflected a deeper desire to truly understand the product. I remember walking her through various features and technical flows, and she always went beyond surface-level understanding—challenging herself to analyze use cases, consider edge scenarios, and think about how it fits into the broader platform. What stood out to me the most was her mindset. She didn't just look for answers—she wanted to understand why something worked the way it did. Whether we were debugging, ideating, or discussing feature logic, she consistently pushed herself to think in more holistic and scalable ways. Her curiosity, persistence, and technical acumen make her a great teammate and a quick learner. I'm confident she'll bring the same energy and thoughtfulness to every team she joins.",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 16,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      title: "Product Manager | Procurement SaaS",
+      company: "GEP Worldwide",
+      testimonial:
+        "I had the opportunity to work with Shweta on the Contract module at GEP Solutions. She is a dedicated and quick-learning professional, always willing to take initiative and contribute effectively to the team's success. Shweta's easy-going nature allows her to adapt seamlessly to any team environment and collaborate effortlessly with colleagues. Her strong understanding of the Contract module make her a valuable asset in improving and optimizing contracting processes",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 17,
+      companyUrl: "",
+      title: "Assistant Professor",
+      company: "South Indian Education Society Graduate School Of Technology",
+      testimonial:
+        "I know Shweta as my student.She is disciplined,curious and hardworking child.I wish her best future",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 18,
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      title: "Software Engineer",
+      company: "GEP Worldwide",
+      testimonial:
+        "I had the privilege of working with Shweta during my time at GEP in the Contracts team. As my senior, Shweta always stood out for her deep subject knowledge, structured approach to problem-solving, and her ability to simplify even the most complex contract-related challenges. What impressed me the most was her willingness to mentor and guide juniors like me. She was approachable, patient, and always ready to share her expertise, which made learning so much easier and enjoyable. Shweta not only ensured that work was delivered with accuracy and timeliness but also created a collaborative environment where everyone felt valued. Her professionalism, coupled with her supportive nature, makes her an outstanding teammate and leader. I am truly grateful for the learning opportunities I had while working with her and would highly recommend her to any organization looking for a dedicated and inspiring professional.",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 19,
+      companyUrl: "",
+      title: "Founder's Office | Product & Program Manager",
+      company: "Servify",
+      testimonial:
+        "I have known Shweta since our undergraduate days, where we worked together on multiple assignments and projects. She always impressed me with her dedication, structured approach, and ability to contribute fresh ideas that elevated the team's work. Later, at GEP Worldwide, I had the opportunity to see the same qualities in action on client-focused projects. Shweta took ownership of her responsibilities and ensured successful delivery with professionalism and attention to detail. Her combination of teamwork, problem-solving skills, and client orientation makes her a true asset to any organization. I have no doubt that Shweta will continue to excel in her career and add immense value wherever she contributes.",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 20,
+      companyUrl: "",
+      title: "Senior Data Engineer",
+      company: "Fractal",
+      testimonial:
+        "I've had the pleasure of knowing Shweta Shekhar for several years now—first as a friend and batchmate during our 11th and 12th in the PCMB + IT stream, and later as a colleague at GEP. From our school days to the corporate world, her passion for technology and problem-solving has always stood out. Back in college, we collaborated on project competitions where she consistently brought a creative and analytical approach to the table. Her ability to break down problems and think of practical solutions was impressive even then. Our paths crossed again at GEP, where although we worked on different teams, we often discussed solution strategies, technical challenges, and full-stack development ideas. These conversations always left me with fresh perspectives, thanks to her structured thinking and eagerness to explore different possibilities. What sets her apart is her consistency—whether in academics or in the professional space, she puts in the effort to truly understand the problem, question assumptions, and come up with well-thought-out solutions. She's a great team player, always open to discussions and willing to help. I've seen her evolve across stages, and I'm confident she'll continue to do amazing things ahead.",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
+    {
+      id: 21,
+      companyUrl: "",
+      title: "Manager at GEP",
+      company: "GEP Worldwide",
+      testimonial:
+        "I worked with Shweta for 4 years starting August 2020 when she joined as Associate Software Engineer. Me & everyone in the team as well as people from other teams found Shweta to be very hard working & cooperative. She's a quick learner & even assisted many others in her tenure. She's a go to team member for any complex developments. She used to complete the given tasks well within time & with minimal support, even helping out team mates with their tasks whenever required. Shweta puts full efforts into every task & completes it with perfection. Her work was praised by many in the org. With her skills & positive attitude, Shweta will be an asset to any project. I look forward to working with her again in the future & highly recommend for any role.",
+      personAvatar: "",
+      linkedinUrl:
+        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+    },
   ];
