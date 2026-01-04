@@ -66,11 +66,11 @@ const TestimonialCard = ({
           alt={`${testimonial.title}'s avatar`}
           linkedinUrl={testimonial.linkedinUrl}
         />
-        <div>
-          <div className="font-medium text-sm sm:text-base">
+        <div className="flex-1 min-w-0">
+          <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
             {testimonial.title}
           </div>
-          <div className="text-xs sm:text-sm">{testimonial.company}</div>
+          <div className="text-xs sm:text-sm text-gray-400">{testimonial.company}</div>
         </div>
       </div>
 
