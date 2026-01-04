@@ -20,11 +20,15 @@ export const Avatar = ({ src, alt, linkedinUrl }: AvatarProps) => {
       // Try direct URL first, if it fails, use proxy
       setImageSrc(src);
       setUseProxy(false);
+    } else if (!src && linkedinUrl && linkedinUrl.includes("linkedin.com/in/")) {
+      // If no image URL but we have LinkedIn profile URL, try to get image from profile
+      setImageSrc(`/api/image-proxy?profile=${encodeURIComponent(linkedinUrl)}`);
+      setUseProxy(true);
     } else {
       setImageSrc(src);
       setUseProxy(false);
     }
-  }, [src]);
+  }, [src, linkedinUrl]);
 
   const handleError = () => {
     if (src?.startsWith("https://media.licdn.com") && !useProxy) {
@@ -32,6 +36,9 @@ export const Avatar = ({ src, alt, linkedinUrl }: AvatarProps) => {
       setImageSrc(`/api/image-proxy?url=${encodeURIComponent(src)}`);
       setUseProxy(true);
       setImageError(false); // Reset error to try proxy
+    } else if (useProxy) {
+      // Already tried proxy, give up
+      setImageError(true);
     } else {
       setImageError(true);
     }

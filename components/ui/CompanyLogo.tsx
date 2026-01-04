@@ -20,11 +20,17 @@ export const CompanyLogo = ({ src, alt, linkedinUrl }: CompanyLogoProps) => {
       // Try direct URL first, if it fails, use proxy
       setImageSrc(src);
       setUseProxy(false);
+    } else if (!src && linkedinUrl && linkedinUrl.includes("linkedin.com/in/")) {
+      // If no image URL but we have LinkedIn profile URL, try to get company logo from profile
+      // For company logos, we'll need to extract from the profile's company info
+      // For now, just show placeholder
+      setImageSrc(undefined);
+      setUseProxy(false);
     } else {
       setImageSrc(src);
       setUseProxy(false);
     }
-  }, [src]);
+  }, [src, linkedinUrl]);
 
   const handleError = () => {
     if (src?.startsWith("https://media.licdn.com") && !useProxy) {
