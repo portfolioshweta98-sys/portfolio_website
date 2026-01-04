@@ -67,10 +67,18 @@ const TestimonialCard = ({
           linkedinUrl={testimonial.linkedinUrl}
         />
         <div className="flex-1 min-w-0">
-          <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
-            {testimonial.name || testimonial.title}
-          </div>
-          <div className="text-xs sm:text-sm text-gray-400">{testimonial.title} {testimonial.company && `• ${testimonial.company}`}</div>
+          {testimonial.name ? (
+            <>
+              <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
+                {testimonial.name}
+              </div>
+              <div className="text-xs sm:text-sm text-gray-400">{testimonial.title} {testimonial.company && `• ${testimonial.company}`}</div>
+            </>
+          ) : (
+            <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
+              {testimonial.title}
+            </div>
+          )}
         </div>
       </div>
 
@@ -152,13 +160,13 @@ const TestimonialSection = () => {
                 swiper1Ref.current = swiper;
               }}
               className="!overflow-hidden w-full"
-              style={{ width: '100%', isolation: 'isolate' }}
+              style={{ width: '100%', isolation: 'isolate', position: 'relative' }}
             >
               {firstHalf.map((testimonial) => (
                 <SwiperSlide
                   key={testimonial.id}
                   className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px] !flex-shrink-0"
-                  style={{ flexShrink: 0, minWidth: 0 }}
+                  style={{ flexShrink: 0, minWidth: 0, maxWidth: '100%', position: 'relative', isolation: 'isolate' }}
                 >
                   <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>
@@ -200,13 +208,13 @@ const TestimonialSection = () => {
                 swiper2Ref.current = swiper;
               }}
               className="!overflow-hidden w-full"
-              style={{ width: '100%', isolation: 'isolate' }}
+              style={{ width: '100%', isolation: 'isolate', position: 'relative' }}
             >
               {secondHalf.map((testimonial) => (
                 <SwiperSlide
                   key={testimonial.id}
                   className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px] !flex-shrink-0"
-                  style={{ flexShrink: 0, minWidth: 0 }}
+                  style={{ flexShrink: 0, minWidth: 0, maxWidth: '100%', position: 'relative', isolation: 'isolate' }}
                 >
                   <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>

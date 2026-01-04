@@ -39,17 +39,40 @@ body {
 /* Firefox-specific fixes */
 @-moz-document url-prefix() {
   .swiper-slide {
-    min-width: 0;
+    min-width: 0 !important;
     width: auto !important;
+    max-width: 100% !important;
+    flex-shrink: 0 !important;
+    -moz-flex-shrink: 0 !important;
+    position: relative !important;
+    isolation: isolate !important;
   }
   
   .swiper {
     overflow: hidden !important;
+    width: 100% !important;
+    position: relative !important;
   }
   
   .swiper-wrapper {
-    display: -moz-box;
-    display: flex;
+    display: -moz-box !important;
+    display: flex !important;
+    width: auto !important;
+    flex-wrap: nowrap !important;
+    -moz-box-orient: horizontal !important;
+    -moz-box-direction: normal !important;
+  }
+  
+  .swiper-container {
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+  
+  /* Prevent card content from overlapping */
+  .bg-black-200 {
+    position: relative !important;
+    z-index: 1 !important;
+    isolation: isolate !important;
   }
 }
 
