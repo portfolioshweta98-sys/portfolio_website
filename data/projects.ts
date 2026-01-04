@@ -39,4 +39,24 @@ export const projects: Project[] = [
     url: "https://github.com/shwetashekhar98/InfoVizProject",
     image: "/project 3.jpg",
   },
+  {
+    id: 4,
+    title: "EvalME - Answer Sheet Evaluator",
+    description:
+      "A React.js application with Tailwind CSS for evaluating answer sheets by comparing them with model answers. Features include PDF upload functionality, side-by-side preview of answer sheets and model answers in markdown format, and API integration for automated evaluation. Built with modern web technologies for seamless user experience.",
+    timeline: "2024",
+    tags: ["React", "Tailwind CSS", "Vite", "PDF Processing"],
+    url: "https://github.com/shwetashekhar98/EvalME",
+    image: "/project 3.jpg", // Using placeholder - you can add a specific image later
+  },
+  {
+    id: 5,
+    title: "HC3 Adversarial Analysis",
+    description:
+      "Research project focused on adversarial analysis in AI/ML systems. This project involves analyzing adversarial examples, model robustness, and security vulnerabilities in machine learning models. The work contributes to understanding and improving the resilience of AI systems against adversarial attacks.",
+    timeline: "2024",
+    tags: ["Machine Learning", "Adversarial AI", "Research", "Python"],
+    url: "https://github.com/shwetashekhar98/hc3-adversarial-analysis",
+    image: "/project 3.jpg", // Using placeholder - you can add a specific image later
+  },
 ];
