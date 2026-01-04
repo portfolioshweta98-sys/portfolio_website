@@ -41,12 +41,12 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "EvalME - Answer Sheet Evaluator",
+    title: "CheckMe-AI / EvalMate - AI-Powered Answer Paper Evaluator",
     description:
-      "A React.js application with Tailwind CSS for evaluating answer sheets by comparing them with model answers. Features include PDF upload functionality, side-by-side preview of answer sheets and model answers in markdown format, and API integration for automated evaluation. Built with modern web technologies for seamless user experience.",
-    timeline: "2024",
-    tags: ["React", "Tailwind CSS", "Vite", "PDF Processing"],
-    url: "https://github.com/shwetashekhar98/EvalME",
+      "An intelligent automated evaluation system that uses AI to grade student answer papers with complete observability. Leverages OpenAI GPT models and Marker OCR API to extract handwritten text from PDFs, evaluate answers against model answer keys using AI-powered keyword matching, and generate detailed scores, feedback, and matched/missing concepts. Features complete traceability through Galileo tracing, multiple storage options (SQLite, Tigris cloud storage), and RESTful API for easy integration. Built with FastAPI backend and React frontend with Tailwind CSS. Submitted to Daytona HackSprint - NYC, November 2025.",
+    timeline: "Nov 2025",
+    tags: ["FastAPI", "OpenAI GPT", "React", "Tailwind CSS", "OCR", "TypeScript", "Galileo", "Tigris"],
+    url: "https://devpost.com/software/checkme-ai-powered-complete-analysis",
     image: "/project 3.jpg", // Using placeholder - you can add a specific image later
   },
   {
