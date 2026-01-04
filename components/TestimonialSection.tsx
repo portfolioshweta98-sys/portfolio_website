@@ -135,11 +135,23 @@ const TestimonialSection = () => {
               slidesPerView="auto"
               loop={true}
               speed={5000}
+              grabCursor={true}
+              allowTouchMove={true}
+              touchEventsTarget="container"
               autoplay={{
                 delay: 0,
-                disableOnInteraction: true,
-                reverseDirection: false,
+                disableOnInteraction: false,
                 pauseOnMouseEnter: true,
+                reverseDirection: false,
+              }}
+              onTouchStart={() => {
+                swiper1Ref.current?.autoplay.stop();
+              }}
+              onTouchEnd={() => {
+                // Resume autoplay after a delay when user stops interacting
+                setTimeout(() => {
+                  swiper1Ref.current?.autoplay.start();
+                }, 3000);
               }}
               breakpoints={{
                 320: {
@@ -183,11 +195,23 @@ const TestimonialSection = () => {
               slidesPerView="auto"
               loop={true}
               speed={5000}
+              grabCursor={true}
+              allowTouchMove={true}
+              touchEventsTarget="container"
               autoplay={{
                 delay: 0,
-                disableOnInteraction: true,
-                reverseDirection: true,
+                disableOnInteraction: false,
                 pauseOnMouseEnter: true,
+                reverseDirection: true,
+              }}
+              onTouchStart={() => {
+                swiper2Ref.current?.autoplay.stop();
+              }}
+              onTouchEnd={() => {
+                // Resume autoplay after a delay when user stops interacting
+                setTimeout(() => {
+                  swiper2Ref.current?.autoplay.start();
+                }, 3000);
               }}
               breakpoints={{
                 320: {
