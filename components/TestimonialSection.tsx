@@ -30,6 +30,7 @@ const TestimonialCard = ({
         <CompanyLogo
           src={testimonial.companyUrl}
           alt={`${testimonial.company} logo`}
+          linkedinUrl={testimonial.linkedinUrl}
         />
         {testimonial.linkedinUrl && (
           <a
@@ -63,6 +64,7 @@ const TestimonialCard = ({
         <Avatar
           src={testimonial.personAvatar}
           alt={`${testimonial.title}'s avatar`}
+          linkedinUrl={testimonial.linkedinUrl}
         />
         <div>
           <div className="font-medium text-sm sm:text-base">

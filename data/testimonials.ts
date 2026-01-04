@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQHtCA8UC2OWfA/profile-displayphoto-scale_100_100/B4DZjirTCmHsAs-/0/1756149661161?e=1762387200&v=beta&t=qyrWFu8WG18dUfGjqxMNbrW28Trq1uHHZPpvSpWU3IE",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/manish-mishra-243a2220/",
     },
     {
       id: 2,
@@ -30,10 +30,10 @@ export const testimonials: Testimonial[] = [
       title: "Principle Software Engineer",
       company: "GEP Worldwide",
       testimonial:
-        "I had the privilege of working with Shweta Shekhar on the GEP Smart Contracts team, and I can confidently say she was one of the most driven and solution-focused professionals I’ve collaborated with. Over the course of our time together, I witnessed her significant growth in both technical expertise and sense of ownership....",
+        "I had the privilege of working with Shweta Shekhar on the GEP Smart Contracts team, and I can confidently say she was one of the most driven and solution-focused professionals I've collaborated with. Over the course of our time together, I witnessed her significant growth in both technical expertise and sense of ownership....",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/kaleemullah-shaikh-846772109/",
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ export const testimonials: Testimonial[] = [
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQHRlsyB0M2xQw/profile-displayphoto-crop_800_800/B4DZlHOKzCIgAI-/0/1757836522635?e=1761177600&v=beta&t=T8gMa4yJdRJH_3PhDG22jvKTZOzdiWvRP3ysQyKE6Ds",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/sumitraiyer/",
     },
     {
       id: 4,
@@ -72,7 +72,7 @@ export const testimonials: Testimonial[] = [
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQEhQ6jRnv6ixg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1732547313464?e=1762387200&v=beta&t=ccWZEQqMOUpsGBQMVhOcFVfxeKs0Zz_vyaBEYFCXC_4",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/paragwagh/",
     },
     {
       id: 6,
@@ -85,7 +85,7 @@ export const testimonials: Testimonial[] = [
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D5603AQGWQ7qEH8FhYA/profile-displayphoto-shrink_200_200/B56Zb4Rf_WHoAY-/0/1747922063410?e=1759363200&v=beta&t=wdeD9W-YuxRDyKPN0X4pvHtjTNwKNHZMWAMQNWe3RLk",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/rimjhim-sandhir-61377a50/",
     },
     {
       id: 7,
@@ -94,11 +94,11 @@ export const testimonials: Testimonial[] = [
       title: "Graduate Assistant at NYU",
       company: "New York University",
       testimonial:
-        "I had the pleasure of working with Shweta on multiple NYU projects, and I can confidently say she is one of the most dedicated, thoughtful, and innovative teammates I’ve collaborated with....",
+        "I had the pleasure of working with Shweta on multiple NYU projects, and I can confidently say she is one of the most dedicated, thoughtful, and innovative teammates I've collaborated with....",
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D5635AQGYPqE-x8l6Qg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1738359560881?e=1760212800&v=beta&t=u0KsRSeOsow2C3_gItXxUBrFtLWx8MP-Kc4-PQ6q7QM",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/ansh-harjai-7a422b245/",
     },
     {
       id: 8,
@@ -124,7 +124,7 @@ export const testimonials: Testimonial[] = [
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQFe4iBs3HJhDA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1704425676427?e=1762387200&v=beta&t=d4U-9BjF5mE0zoxP0lGmRuViqr1O-UpYBZSE7cZrjIo",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/vrunda-mange/",
     },
     {
       id: 10,
@@ -149,7 +149,7 @@ export const testimonials: Testimonial[] = [
         "I am pleased to recommend shweta who worked under my guidance on a project related to detection of learning disabilities during their final year of the B.E. program.....",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/dr-masooda-modak-264a7695/",
     },
     {
       id: 12,
@@ -158,11 +158,11 @@ export const testimonials: Testimonial[] = [
       title: "Software Engineer",
       company: "GEP Worldwide",
       testimonial:
-        "I've worked alongside Shweta for over 2 years and it’s always been a pleasure. Her technical depth, clear communication, and collaborative approach make her a great teammate. She's someone you can always count on to bring thoughtfulness and precision to any project.",
+        "I've worked alongside Shweta for over 2 years and it's always been a pleasure. Her technical depth, clear communication, and collaborative approach make her a great teammate. She's someone you can always count on to bring thoughtfulness and precision to any project.",
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D5603AQEeNRzO7wam9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720688351966?e=1761177600&v=beta&t=aXGsx_JzvrYYmax-Aa5yvDTIUCAHLb8kZiSUMRxlfNg",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/dilmanpreetsingh/",
     },
     {
       id: 13,
@@ -175,7 +175,7 @@ export const testimonials: Testimonial[] = [
       personAvatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQHB5rncS-AVYA/profile-displayphoto-shrink_400_400/B4DZPsv7GaG0Ag-/0/1734843807093?e=1761177600&v=beta&t=6OC-B2W4OvjR6OYvUQH1HAwUDdID_PIG65aAE6pDFno",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/aravind-acharya-317710129/",
     },
     {
       id: 14,
@@ -187,7 +187,7 @@ export const testimonials: Testimonial[] = [
         "I had the pleasure of working with Shweta during her tenure as a Software Developer, and I can confidently say she has been an invaluable asset to our team. Shweta possesses strong expertise in full-stack development, with a solid command over .NET Core, API development, Angular, and Azure. She consistently delivered high-quality work on time, demonstrating excellent problem-solving skills and attention to detail. One of her standout qualities is her ability to quickly grasp new concepts and technologies, allowing her to adapt seamlessly to evolving project requirements. Shweta is highly proactive, open to taking on challenging tasks, and approaches each assignment with dedication and a positive mindset. Her collaborative nature, technical proficiency, and commitment to excellence make her a top-tier professional in her field. I wholeheartedly recommend Shweta for any role that requires a skilled, dependable, and adaptable full-stack developer. She will be a great asset to any organization.",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/manish-mishra-243a2220/",
     },
     {
       id: 15,
@@ -199,7 +199,7 @@ export const testimonials: Testimonial[] = [
         "I had the opportunity to work closely with Shweta Shekhar during our time together on the GEP Smart Contracts team, and I was consistently impressed with her enthusiasm to learn and grow. Though I was in a senior role, I always found our interactions to be more of a mutual exchange of ideas, driven by her curiosity and dedication. She was never afraid to dive into unfamiliar modules or ask insightful questions that reflected a deeper desire to truly understand the product. I remember walking her through various features and technical flows, and she always went beyond surface-level understanding—challenging herself to analyze use cases, consider edge scenarios, and think about how it fits into the broader platform. What stood out to me the most was her mindset. She didn't just look for answers—she wanted to understand why something worked the way it did. Whether we were debugging, ideating, or discussing feature logic, she consistently pushed herself to think in more holistic and scalable ways. Her curiosity, persistence, and technical acumen make her a great teammate and a quick learner. I'm confident she'll bring the same energy and thoughtfulness to every team she joins.",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/aniket-rahane-a9327516b/",
     },
     {
       id: 16,
@@ -211,7 +211,7 @@ export const testimonials: Testimonial[] = [
         "I had the opportunity to work with Shweta on the Contract module at GEP Solutions. She is a dedicated and quick-learning professional, always willing to take initiative and contribute effectively to the team's success. Shweta's easy-going nature allows her to adapt seamlessly to any team environment and collaborate effortlessly with colleagues. Her strong understanding of the Contract module make her a valuable asset in improving and optimizing contracting processes",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/sayli-karanjkar/",
     },
     {
       id: 17,
@@ -222,7 +222,7 @@ export const testimonials: Testimonial[] = [
         "I know Shweta as my student.She is disciplined,curious and hardworking child.I wish her best future",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/dr-namrata-patel-99bab4126/",
     },
     {
       id: 18,
@@ -234,7 +234,7 @@ export const testimonials: Testimonial[] = [
         "I had the privilege of working with Shweta during my time at GEP in the Contracts team. As my senior, Shweta always stood out for her deep subject knowledge, structured approach to problem-solving, and her ability to simplify even the most complex contract-related challenges. What impressed me the most was her willingness to mentor and guide juniors like me. She was approachable, patient, and always ready to share her expertise, which made learning so much easier and enjoyable. Shweta not only ensured that work was delivered with accuracy and timeliness but also created a collaborative environment where everyone felt valued. Her professionalism, coupled with her supportive nature, makes her an outstanding teammate and leader. I am truly grateful for the learning opportunities I had while working with her and would highly recommend her to any organization looking for a dedicated and inspiring professional.",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/altamashq/",
     },
     {
       id: 19,
@@ -245,7 +245,7 @@ export const testimonials: Testimonial[] = [
         "I have known Shweta since our undergraduate days, where we worked together on multiple assignments and projects. She always impressed me with her dedication, structured approach, and ability to contribute fresh ideas that elevated the team's work. Later, at GEP Worldwide, I had the opportunity to see the same qualities in action on client-focused projects. Shweta took ownership of her responsibilities and ensured successful delivery with professionalism and attention to detail. Her combination of teamwork, problem-solving skills, and client orientation makes her a true asset to any organization. I have no doubt that Shweta will continue to excel in her career and add immense value wherever she contributes.",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/surya-walujkar-002909180/",
     },
     {
       id: 20,
@@ -256,17 +256,18 @@ export const testimonials: Testimonial[] = [
         "I've had the pleasure of knowing Shweta Shekhar for several years now—first as a friend and batchmate during our 11th and 12th in the PCMB + IT stream, and later as a colleague at GEP. From our school days to the corporate world, her passion for technology and problem-solving has always stood out. Back in college, we collaborated on project competitions where she consistently brought a creative and analytical approach to the table. Her ability to break down problems and think of practical solutions was impressive even then. Our paths crossed again at GEP, where although we worked on different teams, we often discussed solution strategies, technical challenges, and full-stack development ideas. These conversations always left me with fresh perspectives, thanks to her structured thinking and eagerness to explore different possibilities. What sets her apart is her consistency—whether in academics or in the professional space, she puts in the effort to truly understand the problem, question assumptions, and come up with well-thought-out solutions. She's a great team player, always open to discussions and willing to help. I've seen her evolve across stages, and I'm confident she'll continue to do amazing things ahead.",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/omkar-patil-5ab62b190/",
     },
     {
       id: 21,
-      companyUrl: "",
+      companyUrl:
+        "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
       title: "Manager at GEP",
       company: "GEP Worldwide",
       testimonial:
         "I worked with Shweta for 4 years starting August 2020 when she joined as Associate Software Engineer. Me & everyone in the team as well as people from other teams found Shweta to be very hard working & cooperative. She's a quick learner & even assisted many others in her tenure. She's a go to team member for any complex developments. She used to complete the given tasks well within time & with minimal support, even helping out team mates with their tasks whenever required. Shweta puts full efforts into every task & completes it with perfection. Her work was praised by many in the org. With her skills & positive attitude, Shweta will be an asset to any project. I look forward to working with her again in the future & highly recommend for any role.",
       personAvatar: "",
       linkedinUrl:
-        "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
+        "https://www.linkedin.com/in/aniket-patil-76a00377/",
     },
   ];

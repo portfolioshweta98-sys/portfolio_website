@@ -7,9 +7,10 @@ import { useState, useEffect } from "react";
 interface CompanyLogoProps {
   src?: string;
   alt: string;
+  linkedinUrl?: string;
 }
 
-export const CompanyLogo = ({ src, alt }: CompanyLogoProps) => {
+export const CompanyLogo = ({ src, alt, linkedinUrl }: CompanyLogoProps) => {
   const [imageError, setImageError] = useState(false);
   const [imageSrc, setImageSrc] = useState<string | undefined>(src);
   const [useProxy, setUseProxy] = useState(false);
@@ -19,11 +20,15 @@ export const CompanyLogo = ({ src, alt }: CompanyLogoProps) => {
       // Try direct URL first, if it fails, use proxy
       setImageSrc(src);
       setUseProxy(false);
+    } else if (!src && linkedinUrl && linkedinUrl.includes("linkedin.com/in/")) {
+      // If no image URL but we have LinkedIn profile URL, try to get company logo from profile
+      setImageSrc(`/api/image-proxy?profile=${encodeURIComponent(linkedinUrl)}`);
+      setUseProxy(true);
     } else {
       setImageSrc(src);
       setUseProxy(false);
     }
-  }, [src]);
+  }, [src, linkedinUrl]);
 
   const handleError = () => {
     if (src?.startsWith("https://media.licdn.com") && !useProxy) {
