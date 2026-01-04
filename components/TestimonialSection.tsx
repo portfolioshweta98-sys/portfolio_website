@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import { LinkedinIcon, ExternalLinkIcon } from "lucide-react";
 import { Avatar } from "./ui/Avatar";
-import { CompanyLogo } from "./ui/CompanyLogo";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -25,14 +24,9 @@ const TestimonialCard = ({
 
   return (
     <div className="bg-black-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] h-full flex flex-col min-h-0 w-full" style={{ minWidth: 0, maxWidth: '100%' }}>
-      {/* Top Row (Company logo + LinkedIn) */}
-      <div className="flex justify-between items-center mb-3 sm:mb-4 flex-shrink-0">
-        <CompanyLogo
-          src={testimonial.companyUrl}
-          alt={`${testimonial.company} logo`}
-          linkedinUrl={testimonial.linkedinUrl}
-        />
-        {testimonial.linkedinUrl && (
+      {/* Top Row (LinkedIn icon) */}
+      {testimonial.linkedinUrl && (
+        <div className="flex justify-end items-center mb-3 sm:mb-4 flex-shrink-0">
           <a
             href={testimonial.linkedinUrl}
             target="_blank"
@@ -40,8 +34,8 @@ const TestimonialCard = ({
           >
             <LinkedinIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 hover:text-blue-300 transition-colors" />
           </a>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Testimonial */}
       <div className="flex-grow min-h-0 mb-3 sm:mb-4">
