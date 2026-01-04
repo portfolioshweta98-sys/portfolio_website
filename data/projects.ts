@@ -43,9 +43,9 @@ export const projects: Project[] = [
     id: 4,
     title: "CheckMe-AI / EvalMate - AI-Powered Answer Paper Evaluator",
     description:
-      "An intelligent automated evaluation system that uses AI to grade student answer papers with complete observability. Leverages OpenAI GPT models and Marker OCR API to extract handwritten text from PDFs, evaluate answers against model answer keys using AI-powered keyword matching, and generate detailed scores, feedback, and matched/missing concepts. Features complete traceability through Galileo tracing, multiple storage options (SQLite, Tigris cloud storage), and RESTful API for easy integration. Built with FastAPI backend and React frontend with Tailwind CSS. Submitted to Daytona HackSprint - NYC, November 2025.",
+      "An intelligent automated evaluation system that uses AI to grade student answer papers with complete observability. Features a split-screen interface with PDF viewer for answer papers and real-time evaluation results. Leverages OpenAI GPT-5.1 models and Marker OCR API to extract handwritten text from PDFs, evaluate answers against model answer keys using AI-powered keyword matching, and generate detailed scores (with percentage breakdowns), feedback, and matched/missing concepts per question. The system provides question-level analysis with matched elements highlighting, processing information tracking, and comprehensive evaluation summaries. Features complete traceability through Galileo tracing, multiple storage options (SQLite, Tigris cloud storage), and RESTful API for easy integration. Built with FastAPI backend and React frontend with Tailwind CSS. Submitted to Daytona HackSprint - NYC, November 2025.",
     timeline: "Nov 2025",
-    tags: ["FastAPI", "OpenAI GPT", "React", "Tailwind CSS", "OCR", "TypeScript", "Galileo", "Tigris"],
+    tags: ["FastAPI", "OpenAI GPT-5.1", "React", "Tailwind CSS", "OCR", "TypeScript", "Galileo", "Tigris", "PDF Processing"],
     url: "https://devpost.com/software/checkme-ai-powered-complete-analysis",
     image: "/project 3.jpg", // Using placeholder - you can add a specific image later
   },
