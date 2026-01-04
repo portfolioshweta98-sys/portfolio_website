@@ -66,10 +66,27 @@ export const Avatar = ({ src, alt, linkedinUrl }: AvatarProps) => {
     }
   };
 
+  // Generate initials from name for fallback
+  const getInitials = (name: string) => {
+    if (!name) return "";
+    const parts = name.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+  };
+
   if (!imageSrc || imageError) {
+    // Show initials instead of generic icon if we have a name
+    const initials = alt && alt !== "avatar" ? getInitials(alt.replace(" avatar", "")) : null;
+    
     return (
       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-secondary rounded-full flex items-center justify-center">
-        <User className="text-white w-6 h-6" />
+        {initials ? (
+          <span className="text-white text-xs sm:text-sm font-semibold">{initials}</span>
+        ) : (
+          <User className="text-white w-6 h-6" />
+        )}
       </div>
     );
   }

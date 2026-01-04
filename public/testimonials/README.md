@@ -1,30 +1,44 @@
 # Testimonial Images
 
-Place testimonial avatar images in this folder.
+**⚠️ IMPORTANT: Privacy & Copyright Notice**
 
-## Naming Convention
+**Do NOT save people's images without explicit permission.**
 
-Use the format: `testimonial-{id}-{name-slug}.jpg` or `.png`
+## Recommended Approach
 
-Examples:
-- `testimonial-1-manish-mishra.jpg`
-- `testimonial-2-kaleemullah-shaikh.jpg`
-- `testimonial-3-sumitra-iyer.jpg`
+**Use LinkedIn URLs directly** (current approach):
+- ✅ Respects privacy and copyright
+- ✅ Images remain on LinkedIn's servers
+- ✅ No legal issues
+- ✅ Always up-to-date if person changes their photo
 
-## How to Update
+The current setup uses LinkedIn URLs which is the ethical and legal approach.
 
-1. Download the person's profile image from LinkedIn
-2. Save it in this folder with the naming convention above
-3. Update `data/testimonials.ts` to use the local path:
-   ```typescript
-   personAvatar: "/testimonials/testimonial-1-manish-mishra.jpg"
-   ```
+## Alternative: Initials-Based Avatars
 
-## Benefits of Local Images
+If images don't load, the component will automatically show:
+- Person's initials (e.g., "MS" for "Manish Mishra")
+- Generic user icon as fallback
 
-- ✅ Always loads reliably
-- ✅ No CORS issues
-- ✅ Faster loading (served from your domain)
-- ✅ Works offline
-- ✅ No dependency on LinkedIn URLs
+This respects privacy while still providing visual identification.
+
+## If You Need Local Images
+
+**Only use local images if:**
+1. ✅ You have **explicit written permission** from the person
+2. ✅ The person has provided the image themselves
+3. ✅ You have proper licensing/rights
+
+**Naming Convention** (if you have permission):
+- `testimonial-{id}-{name-slug}.jpg` or `.png`
+- Example: `testimonial-1-manish-mishra.jpg`
+
+**Update `data/testimonials.ts`:**
+```typescript
+personAvatar: "/testimonials/testimonial-1-manish-mishra.jpg"
+```
+
+## Current Best Practice
+
+**Keep using LinkedIn URLs** - This is the recommended approach that respects privacy and copyright.
 
