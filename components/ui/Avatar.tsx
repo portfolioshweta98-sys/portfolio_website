@@ -74,6 +74,7 @@ export const Avatar = ({ src, alt, linkedinUrl }: AvatarProps) => {
           height={48}
           className="rounded-full object-cover bg-gray-700 w-full h-full"
           onError={handleError}
+          loading="lazy"
         />
       </div>
     );

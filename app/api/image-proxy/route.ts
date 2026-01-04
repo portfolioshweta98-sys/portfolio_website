@@ -8,20 +8,34 @@ export async function GET(request: NextRequest) {
   // Handle LinkedIn profile URL to extract profile image
   if (profileUrl && profileUrl.includes("linkedin.com/in/")) {
     try {
-      // Use allorigins.win to bypass CORS and fetch LinkedIn profile page
-      const proxyApiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(profileUrl)}`;
-      
-      const response = await fetch(proxyApiUrl, {
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        },
-      });
+      // Try multiple proxy services to fetch LinkedIn profile page
+      const proxies = [
+        `https://api.allorigins.win/get?url=${encodeURIComponent(profileUrl)}`,
+        `https://corsproxy.io/?${encodeURIComponent(profileUrl)}`,
+      ];
 
-      if (response.ok) {
-        const data = await response.json();
-        const html = data.contents;
-        
+      let html = null;
+      for (const proxyApiUrl of proxies) {
+        try {
+          const response = await fetch(proxyApiUrl, {
+            headers: {
+              "User-Agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            },
+            next: { revalidate: 3600 },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            html = data.contents || data;
+            if (html) break;
+          }
+        } catch (e) {
+          continue;
+        }
+      }
+
+      if (html) {
         // Try to extract profile image from meta tags
         const metaImageMatch = html.match(
           /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
@@ -29,14 +43,17 @@ export async function GET(request: NextRequest) {
         
         if (metaImageMatch && metaImageMatch[1]) {
           const extractedImageUrl = metaImageMatch[1];
-          // Now proxy the extracted image
-          return fetch(extractedImageUrl, {
-            headers: {
-              "User-Agent":
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-              Referer: "https://www.linkedin.com/",
-            },
-          }).then(async (imgResponse) => {
+          
+          // Try to fetch the extracted image directly first
+          try {
+            const imgResponse = await fetch(extractedImageUrl, {
+              headers: {
+                "User-Agent":
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                Referer: "https://www.linkedin.com/",
+              },
+            });
+
             if (imgResponse.ok) {
               const imageBuffer = await imgResponse.arrayBuffer();
               const contentType = imgResponse.headers.get("content-type") || "image/jpeg";
@@ -48,9 +65,20 @@ export async function GET(request: NextRequest) {
                 },
               });
             }
-            // If direct fetch fails, try weserv.nl proxy
-            const proxyUrl = `https://images.weserv.nl/?url=${encodeURIComponent(extractedImageUrl)}&output=webp`;
-            const proxyResponse = await fetch(proxyUrl);
+          } catch (e) {
+            // Continue to proxy method
+          }
+
+          // If direct fetch fails, try weserv.nl proxy
+          try {
+            const proxyUrl = `https://images.weserv.nl/?url=${encodeURIComponent(extractedImageUrl)}&output=webp&q=80`;
+            const proxyResponse = await fetch(proxyUrl, {
+              headers: {
+                "User-Agent":
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+              },
+            });
+            
             if (proxyResponse.ok) {
               const imageBuffer = await proxyResponse.arrayBuffer();
               const contentType = proxyResponse.headers.get("content-type") || "image/jpeg";
@@ -62,7 +90,9 @@ export async function GET(request: NextRequest) {
                 },
               });
             }
-          });
+          } catch (e) {
+            // Continue
+          }
         }
       }
     } catch (error) {
