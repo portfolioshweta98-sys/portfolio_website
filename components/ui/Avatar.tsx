@@ -39,18 +39,24 @@ export const Avatar = ({ src, alt, linkedinUrl }: AvatarProps) => {
     }
   }, [src, linkedinUrl]);
 
-  const handleError = () => {
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    console.log("Image error:", target.src, "useProxy:", useProxy, "src:", src);
+    
     if (src?.startsWith("https://media.licdn.com") && !useProxy) {
       // Try proxy on error
+      console.log("Trying proxy for:", src);
       setImageSrc(`/api/image-proxy?url=${encodeURIComponent(src)}`);
       setUseProxy(true);
       setImageError(false); // Reset error to try proxy
-    } else if (imageSrc?.startsWith("/api/image-proxy") && !imageError) {
-      // Profile extraction failed, show placeholder
+    } else if (imageSrc?.startsWith("/api/image-proxy")) {
+      // Profile extraction or proxy failed, show placeholder
+      console.log("Proxy failed, showing placeholder");
       setImageError(true);
       setImageSrc(undefined);
     } else {
       // All attempts failed, show placeholder
+      console.log("All attempts failed, showing placeholder");
       setImageError(true);
     }
   };

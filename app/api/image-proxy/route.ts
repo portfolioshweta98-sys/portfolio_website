@@ -97,8 +97,21 @@ export async function GET(request: NextRequest) {
       }
     } catch (error) {
       console.error("Error fetching profile image:", error);
+      return new NextResponse(
+        JSON.stringify({ error: "Could not fetch profile image", details: error instanceof Error ? error.message : String(error) }),
+        { 
+          status: 404,
+          headers: { "Content-Type": "application/json" }
+        }
+      );
     }
-    return new NextResponse("Could not fetch profile image", { status: 404 });
+    return new NextResponse(
+      JSON.stringify({ error: "Could not extract image from LinkedIn profile - profile may require authentication" }),
+      { 
+        status: 404,
+        headers: { "Content-Type": "application/json" }
+      }
+    );
   }
 
   if (!imageUrl) {
