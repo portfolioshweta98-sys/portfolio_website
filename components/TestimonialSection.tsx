@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { LinkedinIcon, ExternalLinkIcon } from "lucide-react";
 import { Avatar } from "./ui/Avatar";
 import { CompanyLogo } from "./ui/CompanyLogo";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
 import { testimonials } from "../data/testimonials";
@@ -93,6 +94,8 @@ const TestimonialCard = ({
 const TestimonialSection = () => {
   const firstHalf = testimonials.slice(0, Math.ceil(testimonials.length / 2));
   const secondHalf = testimonials.slice(Math.ceil(testimonials.length / 2));
+  const swiper1Ref = useRef<SwiperType | null>(null);
+  const swiper2Ref = useRef<SwiperType | null>(null);
 
   return (
     <section className="bg-black-100 py-12 px-4 sm:px-6 overflow-hidden">
@@ -114,52 +117,68 @@ const TestimonialSection = () => {
         {/* Infinite Scroll Testimonials */}
         <div className="space-y-8">
           {/* First row - moving left */}
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView="auto"
-            loop={true}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: true,
-              reverseDirection: false,
-            }}
-            className="!overflow-visible"
+          <div
+            onMouseEnter={() => swiper1Ref.current?.autoplay.stop()}
+            onMouseLeave={() => swiper1Ref.current?.autoplay.start()}
           >
-            {firstHalf.map((testimonial) => (
-              <SwiperSlide
-                key={testimonial.id}
-                className="!w-[300px] sm:!w-[350px] lg:!w-[400px]"
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={24}
+              slidesPerView="auto"
+              loop={true}
+              speed={5000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: true,
+                reverseDirection: false,
+              }}
+              onSwiper={(swiper) => {
+                swiper1Ref.current = swiper;
+              }}
+              className="!overflow-visible"
+            >
+              {firstHalf.map((testimonial) => (
+                <SwiperSlide
+                  key={testimonial.id}
+                  className="!w-[300px] sm:!w-[350px] lg:!w-[400px]"
+                >
+                  <TestimonialCard testimonial={testimonial} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
           {/* Second row - moving right */}
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView="auto"
-            loop={true}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: true,
-              reverseDirection: true,
-            }}
-            className="!overflow-visible"
+          <div
+            onMouseEnter={() => swiper2Ref.current?.autoplay.stop()}
+            onMouseLeave={() => swiper2Ref.current?.autoplay.start()}
           >
-            {secondHalf.map((testimonial) => (
-              <SwiperSlide
-                key={testimonial.id}
-                className="!w-[300px] sm:!w-[350px] lg:!w-[400px]"
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={24}
+              slidesPerView="auto"
+              loop={true}
+              speed={5000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: true,
+                reverseDirection: true,
+              }}
+              onSwiper={(swiper) => {
+                swiper2Ref.current = swiper;
+              }}
+              className="!overflow-visible"
+            >
+              {secondHalf.map((testimonial) => (
+                <SwiperSlide
+                  key={testimonial.id}
+                  className="!w-[300px] sm:!w-[350px] lg:!w-[400px]"
+                >
+                  <TestimonialCard testimonial={testimonial} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </section>
