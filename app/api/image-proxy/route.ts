@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
       const proxies = [
         `https://api.allorigins.win/get?url=${encodeURIComponent(profileUrl)}`,
         `https://corsproxy.io/?${encodeURIComponent(profileUrl)}`,
+        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(profileUrl)}`,
       ];
 
       let html = null;
@@ -36,13 +37,38 @@ export async function GET(request: NextRequest) {
       }
 
       if (html) {
-        // Try to extract profile image from meta tags
+        let extractedImageUrl = null;
+        
+        // Method 1: Try to extract profile image from meta tags
         const metaImageMatch = html.match(
           /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i
         );
         
         if (metaImageMatch && metaImageMatch[1]) {
-          const extractedImageUrl = metaImageMatch[1];
+          extractedImageUrl = metaImageMatch[1];
+        }
+        
+        // Method 2: Try LinkedIn profile image pattern
+        if (!extractedImageUrl) {
+          const linkedinImageMatch = html.match(
+            /https:\/\/media\.licdn\.com\/dms\/image\/[^"'\s]+profile-displayphoto[^"'\s]+/i
+          );
+          if (linkedinImageMatch && linkedinImageMatch[0]) {
+            extractedImageUrl = linkedinImageMatch[0];
+          }
+        }
+        
+        // Method 3: Try any LinkedIn media image
+        if (!extractedImageUrl) {
+          const mediaImageMatch = html.match(
+            /https:\/\/media\.licdn\.com\/dms\/image\/[^"'\s]+/i
+          );
+          if (mediaImageMatch && mediaImageMatch[0]) {
+            extractedImageUrl = mediaImageMatch[0];
+          }
+        }
+        
+        if (extractedImageUrl) {
           
           // Try to fetch the extracted image directly first
           try {
