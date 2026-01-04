@@ -1,6 +1,7 @@
 interface Testimonial {
   id: number;
   companyUrl: string; // can be an image URL or fallback text
+  name: string; // person's name
   title: string;
   company: string;
   testimonial: string;
@@ -14,6 +15,7 @@ export const testimonials: Testimonial[] = [
       id: 1,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Manish Mishra",
       title: "Senior Engineering Manager",
       company: "GEP Worldwide",
       testimonial:
@@ -27,6 +29,7 @@ export const testimonials: Testimonial[] = [
       id: 2,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Kaleemullah Shaikh",
       title: "Principle Software Engineer",
       company: "GEP Worldwide",
       testimonial:
@@ -39,6 +42,7 @@ export const testimonials: Testimonial[] = [
       id: 3,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQHeJ-2mFiqcmQ/company-logo_200_200/company-logo_200_200/0/1732599862731?e=1759363200&v=beta&t=8rnfNvoNhUx10bZnN2ExDi0SW5F5W2ZztYhkpaSDU3g",
+      name: "Sumitra Iyer",
       title: "Associate Director of Academics",
       company: "upGrad",
       testimonial:
@@ -52,6 +56,7 @@ export const testimonials: Testimonial[] = [
       id: 4,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C4E0BAQFKa_ObftR_8w/company-logo_200_200/company-logo_200_200/0/1634555714140/nielsen_logo?e=1759363200&v=beta&t=03uvwtvAlErQCHcYWPW-_8G6_lsAIMms08vruAPhtX0",
+      name: "Omkar Patil",
       title: "Software Engineer at Nielsen",
       company: "Nielsen",
       testimonial:
@@ -65,6 +70,7 @@ export const testimonials: Testimonial[] = [
       id: 5,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Parag Wagh",
       title: "Senior Business Analyst at GEP Worldwide",
       company: "GEP Worldwide",
       testimonial:
@@ -78,6 +84,7 @@ export const testimonials: Testimonial[] = [
       id: 6,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Rimjhim Sandhir",
       title: "Sr.Consultant-Digital Transformation",
       company: "GEP Worldwide",
       testimonial:
@@ -91,6 +98,7 @@ export const testimonials: Testimonial[] = [
       id: 7,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C4D0BAQF6TmzLkch0dQ/company-logo_200_200/company-logo_200_200/0/1630556159190/new_york_university_logo?e=1759363200&v=beta&t=5uuiWDerbMeHX9YJ5-HCwify4N_FXah5tpmhEhGMEv0",
+      name: "Ansh Harjai",
       title: "Graduate Assistant at NYU",
       company: "New York University",
       testimonial:
@@ -104,6 +112,7 @@ export const testimonials: Testimonial[] = [
       id: 8,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C4D0BAQGKc55wKjYy2A/company-logo_200_200/company-logo_200_200/0/1660715835929/sbi_life_insurance_co__ltd__logo?e=1759363200&v=beta&t=US_dGJaTbIlfBc_znwl-nUJs4wa6zGgFKaO-GOOv1PA",
+      name: "Omkar Warade",
       title: "RPA Developer with Automation Anywhere",
       company: "SBI Life Insurance Co. Ltd.",
       testimonial:
@@ -117,6 +126,7 @@ export const testimonials: Testimonial[] = [
       id: 9,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C560BAQFyJGIrZBoY0g/company-logo_200_200/company-logo_200_200/0/1630611526356/punchcut_logo?e=1759363200&v=beta&t=fosUcE2vdc_bWxY2LSbsE5vh0wDM2ESRpuqkA49FZ9s",
+      name: "Vrunda Mange",
       title: "Interaction Designer @Punchcut",
       company: "Punchcut",
       testimonial:
@@ -130,6 +140,7 @@ export const testimonials: Testimonial[] = [
       id: 10,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEgtOEcxlXMog/company-logo_200_200/B4DZfqEQWkHAAQ-/0/1751978673981/accenture_logo?e=1759363200&v=beta&t=HWcOmfyJi6ul3p7saiO6BhC7eDIV3EDR2Bhoa9u5Q9I",
+      name: "Saiprasad Ganesan",
       title: "Data Scientist specializing in AI-ML using Python",
       company: "Accenture",
       testimonial:
@@ -143,6 +154,7 @@ export const testimonials: Testimonial[] = [
       id: 11,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/C511BAQEgJywU_jIMUQ/company-background_10000/company-background_10000/0/1584233244179/nmims_mpstme_alumni_association_cover?e=1758801600&v=beta&t=232wvzHJbIRPquslo_tstcoQeuRq5peZBV3QcIyBGV0",
+      name: "Dr. Masooda Modak",
       title: "Assistant Professor at MPSTME-NMIMS",
       company: "MPSTME-NMIMS",
       testimonial:
@@ -155,6 +167,7 @@ export const testimonials: Testimonial[] = [
       id: 12,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Dilmanpreet Singh",
       title: "Software Engineer",
       company: "GEP Worldwide",
       testimonial:
@@ -168,6 +181,7 @@ export const testimonials: Testimonial[] = [
       id: 13,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQGsGR9p4ikS5w/company-logo_200_200/company-logo_200_200/0/1708946550425/tata_consultancy_services_logo?e=1761177600&v=beta&t=2yqQrYEIwQXu7wfX5Z_D8J9CE212dqtNcwj0Kywr1Qc",
+      name: "Aravind Acharya",
       title: "Lead Full Stack Developer",
       company: "Tata Consultancy Services",
       testimonial:
@@ -181,6 +195,7 @@ export const testimonials: Testimonial[] = [
       id: 14,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Manish Mishra",
       title: "Senior Engineering Manager",
       company: "GEP Worldwide",
       testimonial:
@@ -193,6 +208,7 @@ export const testimonials: Testimonial[] = [
       id: 15,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Aniket Rahane",
       title: "Senior to Shweta at GEP Smart Contracts",
       company: "GEP Worldwide",
       testimonial:
@@ -205,6 +221,7 @@ export const testimonials: Testimonial[] = [
       id: 16,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Sayli Karanjkar",
       title: "Product Manager | Procurement SaaS",
       company: "GEP Worldwide",
       testimonial:
@@ -216,6 +233,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 17,
       companyUrl: "",
+      name: "Dr. Namrata Patel",
       title: "Assistant Professor",
       company: "South Indian Education Society Graduate School Of Technology",
       testimonial:
@@ -228,6 +246,7 @@ export const testimonials: Testimonial[] = [
       id: 18,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Altamash Qureshi",
       title: "Software Engineer",
       company: "GEP Worldwide",
       testimonial:
@@ -239,6 +258,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 19,
       companyUrl: "",
+      name: "Surya Walujkar",
       title: "Founder's Office | Product & Program Manager",
       company: "Servify",
       testimonial:
@@ -250,6 +270,7 @@ export const testimonials: Testimonial[] = [
     {
       id: 20,
       companyUrl: "",
+      name: "Omkar Patil",
       title: "Senior Data Engineer",
       company: "Fractal",
       testimonial:
@@ -262,6 +283,7 @@ export const testimonials: Testimonial[] = [
       id: 21,
       companyUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A",
+      name: "Aniket Patil",
       title: "Manager at GEP",
       company: "GEP Worldwide",
       testimonial:

@@ -63,14 +63,14 @@ const TestimonialCard = ({
       <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4 flex-shrink-0">
         <Avatar
           src={testimonial.personAvatar}
-          alt={`${testimonial.title}'s avatar`}
+          alt={`${testimonial.name || testimonial.title}'s avatar`}
           linkedinUrl={testimonial.linkedinUrl}
         />
         <div className="flex-1 min-w-0">
           <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
-            {testimonial.title}
+            {testimonial.name || testimonial.title}
           </div>
-          <div className="text-xs sm:text-sm text-gray-400">{testimonial.company}</div>
+          <div className="text-xs sm:text-sm text-gray-400">{testimonial.title} {testimonial.company && `• ${testimonial.company}`}</div>
         </div>
       </div>
 
