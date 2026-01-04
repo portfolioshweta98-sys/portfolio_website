@@ -53,9 +53,9 @@ export const projects: Project[] = [
     id: 5,
     title: "HC3 Adversarial Analysis",
     description:
-      "Research project focused on adversarial analysis in AI/ML systems. This project involves analyzing adversarial examples, model robustness, and security vulnerabilities in machine learning models. The work contributes to understanding and improving the resilience of AI systems against adversarial attacks.",
+      "Research project focused on adversarial analysis and robustness evaluation of AI classifiers. The pipeline processes the HC3 dataset through data splitting (train/validation/test), fine-tunes RoBERTa-based classifiers on training and validation splits, and generates out-of-distribution (OOD) adversarial responses using Llama 3.3 70B Instruct model with both regular and human-style prompts. The fine-tuned RoBERTa classifiers are then evaluated against original HC3 test data and adversarial/OOD responses to assess model robustness and identify vulnerabilities. The comprehensive evaluation framework provides insights into classifier performance under adversarial conditions and contributes to understanding model resilience against distribution shifts.",
     timeline: "2024",
-    tags: ["Machine Learning", "Adversarial AI", "Research", "Python"],
+    tags: ["RoBERTa", "Llama 3.3", "Adversarial AI", "OOD Detection", "Research", "Python", "NLP"],
     url: "https://github.com/shwetashekhar98/hc3-adversarial-analysis",
     image: "/project 3.jpg", // Using placeholder - you can add a specific image later
   },
