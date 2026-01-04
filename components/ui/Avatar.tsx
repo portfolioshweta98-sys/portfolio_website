@@ -17,12 +17,17 @@ export const Avatar = ({ src, alt, linkedinUrl }: AvatarProps) => {
 
   useEffect(() => {
     if (src && src.trim() !== "") {
-      // We have an image URL
-      if (src.startsWith("https://media.licdn.com")) {
-        // Try direct URL first, if it fails, use proxy
+      // Check if it's a local image (starts with /)
+      if (src.startsWith("/")) {
+        // Local image from public folder
+        setImageSrc(src);
+        setUseProxy(false);
+      } else if (src.startsWith("https://media.licdn.com")) {
+        // LinkedIn image URL - try direct first, fallback to proxy
         setImageSrc(src);
         setUseProxy(false);
       } else {
+        // Other external URL
         setImageSrc(src);
         setUseProxy(false);
       }
