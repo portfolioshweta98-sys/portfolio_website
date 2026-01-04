@@ -1,0 +1,34 @@
+[
+  {
+    "id": 11,
+    "title": "Software Engineer",
+    "company": "GEP Worldwide",
+    "linkedinUrl": "https://www.linkedin.com/in/dilmanpreetsingh/",
+    "personAvatar": "",
+    "companyUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A"
+  },
+  {
+    "id": 15,
+    "title": "Product Manager | Procurement SaaS",
+    "company": "GEP Worldwide",
+    "linkedinUrl": "https://www.linkedin.com/in/sayli-karanjkar/",
+    "personAvatar": "",
+    "companyUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A"
+  },
+  {
+    "id": 17,
+    "title": "Software Engineer",
+    "company": "GEP Worldwide",
+    "linkedinUrl": "https://www.linkedin.com/in/altamashq/",
+    "personAvatar": "",
+    "companyUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEYVD5i8grh2g/company-logo_200_200/B4DZfGRTzuGsAI-/0/1751378116345/gep_worldwide_logo?e=1761177600&v=beta&t=OxNFnoDbGj6nggT1Wtqs8xe0oPhp6To8lmZwH2Gsl0A"
+  },
+  {
+    "id": 19,
+    "title": "Senior Data Engineer",
+    "company": "Fractal",
+    "linkedinUrl": "https://www.linkedin.com/in/omkar-patil-5ab62b190/",
+    "personAvatar": "",
+    "companyUrl": ""
+  }
+]
