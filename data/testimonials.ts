@@ -213,7 +213,7 @@ export const testimonials: Testimonial[] = [
       company: "GEP Worldwide",
       testimonial:
         "I had the opportunity to work closely with Shweta Shekhar during our time together on the GEP Smart Contracts team, and I was consistently impressed with her enthusiasm to learn and grow. Though I was in a senior role, I always found our interactions to be more of a mutual exchange of ideas, driven by her curiosity and dedication. She was never afraid to dive into unfamiliar modules or ask insightful questions that reflected a deeper desire to truly understand the product. I remember walking her through various features and technical flows, and she always went beyond surface-level understanding—challenging herself to analyze use cases, consider edge scenarios, and think about how it fits into the broader platform. What stood out to me the most was her mindset. She didn't just look for answers—she wanted to understand why something worked the way it did. Whether we were debugging, ideating, or discussing feature logic, she consistently pushed herself to think in more holistic and scalable ways. Her curiosity, persistence, and technical acumen make her a great teammate and a quick learner. I'm confident she'll bring the same energy and thoughtfulness to every team she joins.",
-      personAvatar: "",
+      personAvatar: "https://media.licdn.com/dms/image/v2/D4E03AQGRxZPj2qy7jg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1687753019980?e=1769040000&v=beta&t=3NbJ6BkRKaQZV_JOzWaBrRaJghieXBvH-a9j8dPx_wM",
       linkedinUrl:
         "https://www.linkedin.com/in/aniket-rahane-a9327516b/",
     },
