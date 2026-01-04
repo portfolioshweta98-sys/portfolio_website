@@ -47,7 +47,7 @@ export const projects: Project[] = [
     timeline: "Nov 2025",
     tags: ["FastAPI", "OpenAI GPT-5.1", "React", "Tailwind CSS", "OCR", "TypeScript", "Galileo", "Tigris", "PDF Processing"],
     url: "https://devpost.com/software/checkme-ai-powered-complete-analysis",
-    image: "/project 3.jpg", // TODO: Add CheckMe-AI/EvalMate screenshot as project-4-evalmate.jpg
+    image: "/project-4-evalmate.jpg", // CheckMe-AI/EvalMate screenshot - split-screen interface
   },
   {
     id: 5,
@@ -57,6 +57,6 @@ export const projects: Project[] = [
     timeline: "2024",
     tags: ["RoBERTa", "Llama 3.3", "Adversarial AI", "OOD Detection", "Research", "Python", "NLP"],
     url: "https://github.com/shwetashekhar98/hc3-adversarial-analysis",
-    image: "/research.png", // Using research.png temporarily - add project-5-hc3.jpg for flowchart
+    image: "/project-5-hc3.jpg", // HC3 pipeline flowchart - from data ingestion to adversarial evaluation
   },
 ];
