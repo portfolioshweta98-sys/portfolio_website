@@ -1,0 +1,14 @@
+===========================================
+ADD YOUR PROJECT IMAGES HERE
+===========================================
+
+Please add these 2 image files to this folder (public/):
+
+1. project-4-evalmate.jpg
+   - The CheckMe-AI/EvalMate screenshot (split-screen interface)
+
+2. project-5-hc3.jpg  
+   - The HC3 Adversarial Analysis flowchart (pipeline diagram)
+
+Once you add the images, delete this file.
+The code is already configured to use these image names!

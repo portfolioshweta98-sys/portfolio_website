@@ -1,0 +1,36 @@
+===========================================
+HOW TO ADD YOUR PROJECT IMAGES
+===========================================
+
+STEP 1: Save the CheckMe-AI/EvalMate Screenshot
+------------------------------------------------
+1. Right-click on the CheckMe-AI screenshot you showed me
+   (the one with split-screen: PDF viewer on left, evaluation results on right)
+2. Select "Save image as..." or "Download image"
+3. Save it with this EXACT name: project-4-evalmate.jpg
+4. Place it in: portfolio_website/public/project-4-evalmate.jpg
+
+STEP 2: Save the HC3 Adversarial Analysis Flowchart
+-----------------------------------------------------
+1. Right-click on the HC3 flowchart you showed me
+   (the pipeline diagram showing HC3 Dataset → Data Splitting → RoBERTa → Llama → Evaluation)
+2. Select "Save image as..." or "Download image"
+3. Save it with this EXACT name: project-5-hc3.jpg
+4. Place it in: portfolio_website/public/project-5-hc3.jpg
+
+STEP 3: Verify Files Exist
+---------------------------
+After saving, run this command to verify:
+  ls -la public/project-4-evalmate.jpg public/project-5-hc3.jpg
+
+STEP 4: Let Me Know
+-------------------
+Once the images are saved, tell me and I'll update the code to use them!
+
+Current temporary images:
+- CheckMe-AI: /project 2.jpg (wrong - showing food delivery project)
+- HC3: /research.png (wrong - showing certificate)
+
+After you add images, I'll change to:
+- CheckMe-AI: /project-4-evalmate.jpg
+- HC3: /project-5-hc3.jpg
