@@ -132,7 +132,7 @@ export const testimonials: Testimonial[] = [
       testimonial:
         "Shweta is exceptionally dedicated to her work. Her developer expertise is extensive, and she has excellent problem-solving abilities....",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/D4D03AQFe4iBs3HJhDA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1704425676427?e=1762387200&v=beta&t=d4U-9BjF5mE0zoxP0lGmRuViqr1O-UpYBZSE7cZrjIo",
+        "https://media.licdn.com/dms/image/v2/D5635AQG-5RjBeJ3gMg/profile-framedphoto-shrink_400_400/B56Zt3y6eUJoAc-/0/1767241394416?e=1768150800&v=beta&t=GGblzCha4MeH7YWdsaMji4DPKN3YNhTRM6w6uc_nYCY",
       linkedinUrl:
         "https://www.linkedin.com/in/vrunda-mange/",
     },
@@ -146,7 +146,7 @@ export const testimonials: Testimonial[] = [
       testimonial:
         "I had the privilege of studying Computer Engineering with Shweta, and throughout those four years, they consistently stood out as one of the most reliable and sharp-minded individuals in our batch. Shweta brought a strong technical foundation, a problem-solving mindset, and a calm, team-first attitude whenever we collaborated on projects. We took part in multiple project competitions and hackathons ( got 2nd Prize) throughout Engineering. Her inputs in all phases of projects were equally crucial whether it was ideation, solution approach, development etc. Shweta excelled in Academia as well and always helped others by explaining academic concepts or topics. Her excellent communication skills were definitely an enabler in this regard. Academics and Projects aside, she was always willing to support others, share knowledge, and raise the overall level of any team or group she was part of....",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/C5603AQEGkVPhTdzI7A/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1595769353200?e=1762387200&v=beta&t=WR3wvXa4KS9rNEfQFVQ5aKbLL41R92e7KFi2fsCzSYk",
+        "https://media.licdn.com/dms/image/v2/C5603AQEGkVPhTdzI7A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1595769353200?e=1769040000&v=beta&t=JepCM7gWPWdBSOfQZTO-Gt8Bkk-obW2LRxC_HGAcyfE",
       linkedinUrl:
         "https://www.linkedin.com/in/shwetashekhar98/details/recommendations/",
     },
@@ -173,7 +173,7 @@ export const testimonials: Testimonial[] = [
       testimonial:
         "I've worked alongside Shweta for over 2 years and it's always been a pleasure. Her technical depth, clear communication, and collaborative approach make her a great teammate. She's someone you can always count on to bring thoughtfulness and precision to any project.",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/D5603AQEeNRzO7wam9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720688351966?e=1761177600&v=beta&t=aXGsx_JzvrYYmax-Aa5yvDTIUCAHLb8kZiSUMRxlfNg",
+        "https://media.licdn.com/dms/image/v2/D5603AQHnxPEuqfBgGw/profile-displayphoto-scale_400_400/B56ZncNnNhG0Ag-/0/1760336182678?e=1769040000&v=beta&t=QyHc5MPVQLW1BLEG-3RyxhNbzLtZk-tvJVEBJXksDGE",
       linkedinUrl:
         "https://www.linkedin.com/in/dilmanpreetsingh/",
     },
@@ -187,7 +187,7 @@ export const testimonials: Testimonial[] = [
       testimonial:
         "Shweta is a great peer to work with as she is very dedicated and meticulous about assigned tasks.She also possesses great technical and analytical skills.",
       personAvatar:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHB5rncS-AVYA/profile-displayphoto-shrink_400_400/B4DZPsv7GaG0Ag-/0/1734843807093?e=1761177600&v=beta&t=6OC-B2W4OvjR6OYvUQH1HAwUDdID_PIG65aAE6pDFno",
+        "https://media.licdn.com/dms/image/v2/D4D03AQHB5rncS-AVYA/profile-displayphoto-shrink_400_400/B4DZPsv7GaG0Ag-/0/1734843807093?e=1769040000&v=beta&t=QR5ekuZ9_825SbzMQB1NDWI67D3SR2MOzjJdrs75h90",
       linkedinUrl:
         "https://www.linkedin.com/in/aravind-acharya-317710129/",
     },
@@ -288,7 +288,7 @@ export const testimonials: Testimonial[] = [
       company: "GEP Worldwide",
       testimonial:
         "I worked with Shweta for 4 years starting August 2020 when she joined as Associate Software Engineer. Me & everyone in the team as well as people from other teams found Shweta to be very hard working & cooperative. She's a quick learner & even assisted many others in her tenure. She's a go to team member for any complex developments. She used to complete the given tasks well within time & with minimal support, even helping out team mates with their tasks whenever required. Shweta puts full efforts into every task & completes it with perfection. Her work was praised by many in the org. With her skills & positive attitude, Shweta will be an asset to any project. I look forward to working with her again in the future & highly recommend for any role.",
-      personAvatar: "",
+      personAvatar: "https://media.licdn.com/dms/image/v2/D4D03AQH1-jjfXQGeyg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712947359604?e=1769040000&v=beta&t=c5wvLSZjZIvknJYTQALghI1BUDmmyXiYjZQ1K2Xa-sE",
       linkedinUrl:
         "https://www.linkedin.com/in/aniket-patil-76a00377/",
     },
