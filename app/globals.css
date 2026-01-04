@@ -21,6 +21,17 @@ body {
   position: relative;
 }
 
+/* Prevent overlapping in Swiper slides */
+.swiper-slide {
+  height: auto !important;
+  box-sizing: border-box;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
 /* --- Font Variables --- */
 :root {
   --font-montserrat: var(--font-montserrat);

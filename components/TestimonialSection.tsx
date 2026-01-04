@@ -24,9 +24,9 @@ const TestimonialCard = ({
     : words.slice(0, 30).join(" ");
 
   return (
-    <div className="bg-black-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] h-full flex flex-col">
+    <div className="bg-black-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] h-full flex flex-col min-h-0">
       {/* Top Row (Company logo + LinkedIn) */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-3 sm:mb-4 flex-shrink-0">
         <CompanyLogo
           src={testimonial.companyUrl}
           alt={`${testimonial.company} logo`}
@@ -44,15 +44,15 @@ const TestimonialCard = ({
       </div>
 
       {/* Testimonial */}
-      <div>
-        <p className="leading-relaxed text-sm sm:text-base mb-2">
+      <div className="flex-grow min-h-0 mb-3 sm:mb-4">
+        <p className="leading-relaxed text-sm sm:text-base mb-2 break-words">
           &quot;{displayedContent}
           {!isExpanded && shouldShowReadMore ? "..." : ""}&quot;
         </p>
         {shouldShowReadMore && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-primary font-bold underline hover:text-secondary text-sm transition-colors mb-3"
+            className="text-primary font-bold underline hover:text-secondary text-xs sm:text-sm transition-colors mb-2"
           >
             {isExpanded ? "Read Less" : "Read More"}
           </button>
@@ -60,7 +60,7 @@ const TestimonialCard = ({
       </div>
 
       {/* Person Info */}
-      <div className="flex items-center space-x-3 mb-4">
+      <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4 flex-shrink-0">
         <Avatar
           src={testimonial.personAvatar}
           alt={`${testimonial.title}'s avatar`}
@@ -75,7 +75,7 @@ const TestimonialCard = ({
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-700 my-3"></div>
+      <div className="border-t border-gray-700 my-2 sm:my-3 flex-shrink-0"></div>
 
       {/* Bottom Link */}
       {testimonial.linkedinUrl && (
@@ -83,10 +83,10 @@ const TestimonialCard = ({
           href={testimonial.linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-2 text-xs sm:text-sm hover:text-secondary transition-colors"
+          className="flex items-center space-x-2 text-xs sm:text-sm hover:text-secondary transition-colors flex-shrink-0"
         >
-          <span>Click to view on LinkedIn</span>
-          <ExternalLinkIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+          <span className="truncate">Click to view on LinkedIn</span>
+          <ExternalLinkIcon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
         </a>
       )}
     </div>
@@ -117,11 +117,12 @@ const TestimonialSection = () => {
         </div>
 
         {/* Infinite Scroll Testimonials */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8 overflow-hidden">
           {/* First row - moving left */}
           <div
             onMouseEnter={() => swiper1Ref.current?.autoplay.stop()}
             onMouseLeave={() => swiper1Ref.current?.autoplay.start()}
+            className="overflow-hidden"
           >
             <Swiper
               modules={[Autoplay]}
@@ -149,7 +150,7 @@ const TestimonialSection = () => {
               onSwiper={(swiper) => {
                 swiper1Ref.current = swiper;
               }}
-              className="!overflow-visible"
+              className="!overflow-hidden"
             >
               {firstHalf.map((testimonial) => (
                 <SwiperSlide
@@ -166,6 +167,7 @@ const TestimonialSection = () => {
           <div
             onMouseEnter={() => swiper2Ref.current?.autoplay.stop()}
             onMouseLeave={() => swiper2Ref.current?.autoplay.start()}
+            className="overflow-hidden"
           >
             <Swiper
               modules={[Autoplay]}
@@ -193,7 +195,7 @@ const TestimonialSection = () => {
               onSwiper={(swiper) => {
                 swiper2Ref.current = swiper;
               }}
-              className="!overflow-visible"
+              className="!overflow-hidden"
             >
               {secondHalf.map((testimonial) => (
                 <SwiperSlide
