@@ -67,26 +67,14 @@ const TestimonialCard = ({
           linkedinUrl={testimonial.linkedinUrl}
         />
         <div className="flex-1 min-w-0">
-          {testimonial.name && testimonial.name.trim() !== "" ? (
-            <>
-              <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
-                {testimonial.name}
-              </div>
-              <div className="text-xs sm:text-sm text-gray-400">
-                {testimonial.title}
-                {testimonial.company && ` • ${testimonial.company}`}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
-                {testimonial.title}
-              </div>
-              {testimonial.company && (
-                <div className="text-xs sm:text-sm text-gray-400">{testimonial.company}</div>
-              )}
-            </>
-          )}
+          <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
+            {testimonial.name || testimonial.title}
+          </div>
+          <div className="text-xs sm:text-sm text-gray-400">
+            {testimonial.name ? testimonial.title : ""}
+            {testimonial.name && testimonial.company && " • "}
+            {testimonial.company || ""}
+          </div>
         </div>
       </div>
 
