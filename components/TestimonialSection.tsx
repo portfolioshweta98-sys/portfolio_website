@@ -24,7 +24,7 @@ const TestimonialCard = ({
     : words.slice(0, 30).join(" ");
 
   return (
-    <div className="bg-black-200 rounded-2xl p-5 sm:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+    <div className="bg-black-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] h-full flex flex-col">
       {/* Top Row (Company logo + LinkedIn) */}
       <div className="flex justify-between items-center mb-4">
         <CompanyLogo
@@ -100,17 +100,17 @@ const TestimonialSection = () => {
   const swiper2Ref = useRef<SwiperType | null>(null);
 
   return (
-    <section className="bg-black-100 py-12 px-4 sm:px-6 overflow-hidden">
+    <section className="bg-black-100 py-8 sm:py-12 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           {/* Title */}
           <div className="text-center">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 relative">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 relative">
               LinkedIn Recommendations
             </h2>
           </div>
-          <p className="text-primary text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-primary text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Stories and perspectives from people who&apos;ve journeyed with me
             professionally and academically
           </p>
@@ -125,7 +125,7 @@ const TestimonialSection = () => {
           >
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={24}
+              spaceBetween={16}
               slidesPerView="auto"
               loop={true}
               speed={5000}
@@ -133,6 +133,18 @@ const TestimonialSection = () => {
                 delay: 0,
                 disableOnInteraction: true,
                 reverseDirection: false,
+                pauseOnMouseEnter: true,
+              }}
+              breakpoints={{
+                320: {
+                  spaceBetween: 16,
+                },
+                640: {
+                  spaceBetween: 20,
+                },
+                768: {
+                  spaceBetween: 24,
+                },
               }}
               onSwiper={(swiper) => {
                 swiper1Ref.current = swiper;
@@ -142,7 +154,7 @@ const TestimonialSection = () => {
               {firstHalf.map((testimonial) => (
                 <SwiperSlide
                   key={testimonial.id}
-                  className="!w-[300px] sm:!w-[350px] lg:!w-[400px]"
+                  className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px]"
                 >
                   <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>
@@ -157,7 +169,7 @@ const TestimonialSection = () => {
           >
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={24}
+              spaceBetween={16}
               slidesPerView="auto"
               loop={true}
               speed={5000}
@@ -165,6 +177,18 @@ const TestimonialSection = () => {
                 delay: 0,
                 disableOnInteraction: true,
                 reverseDirection: true,
+                pauseOnMouseEnter: true,
+              }}
+              breakpoints={{
+                320: {
+                  spaceBetween: 16,
+                },
+                640: {
+                  spaceBetween: 20,
+                },
+                768: {
+                  spaceBetween: 24,
+                },
               }}
               onSwiper={(swiper) => {
                 swiper2Ref.current = swiper;
@@ -174,7 +198,7 @@ const TestimonialSection = () => {
               {secondHalf.map((testimonial) => (
                 <SwiperSlide
                   key={testimonial.id}
-                  className="!w-[300px] sm:!w-[350px] lg:!w-[400px]"
+                  className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px]"
                 >
                   <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>

@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/SHWETA.jpeg",
   },
+  other: {
+    "cache-control": "no-cache, no-store, must-revalidate",
+    pragma: "no-cache",
+    expires: "0",
+  },
 };
 
 export const viewport = {
