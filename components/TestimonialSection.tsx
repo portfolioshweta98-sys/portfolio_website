@@ -24,7 +24,7 @@ const TestimonialCard = ({
     : words.slice(0, 30).join(" ");
 
   return (
-    <div className="bg-black-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] h-full flex flex-col min-h-0">
+    <div className="bg-black-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] h-full flex flex-col min-h-0 w-full" style={{ minWidth: 0, maxWidth: '100%' }}>
       {/* Top Row (Company logo + LinkedIn) */}
       <div className="flex justify-between items-center mb-3 sm:mb-4 flex-shrink-0">
         <CompanyLogo
@@ -100,8 +100,8 @@ const TestimonialSection = () => {
   const swiper2Ref = useRef<SwiperType | null>(null);
 
   return (
-    <section className="bg-black-100 py-8 sm:py-12 px-4 sm:px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-black-100 py-8 sm:py-12 px-4 sm:px-6 overflow-hidden w-full">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10">
           {/* Title */}
@@ -117,12 +117,13 @@ const TestimonialSection = () => {
         </div>
 
         {/* Infinite Scroll Testimonials */}
-        <div className="space-y-6 sm:space-y-8 overflow-hidden">
+        <div className="space-y-6 sm:space-y-8 overflow-hidden w-full">
           {/* First row - moving left */}
           <div
             onMouseEnter={() => swiper1Ref.current?.autoplay.stop()}
             onMouseLeave={() => swiper1Ref.current?.autoplay.start()}
-            className="overflow-hidden"
+            className="overflow-hidden w-full"
+            style={{ isolation: 'isolate' }}
           >
             <Swiper
               modules={[Autoplay]}
@@ -150,12 +151,14 @@ const TestimonialSection = () => {
               onSwiper={(swiper) => {
                 swiper1Ref.current = swiper;
               }}
-              className="!overflow-hidden"
+              className="!overflow-hidden w-full"
+              style={{ width: '100%', isolation: 'isolate' }}
             >
               {firstHalf.map((testimonial) => (
                 <SwiperSlide
                   key={testimonial.id}
-                  className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px]"
+                  className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px] !flex-shrink-0"
+                  style={{ flexShrink: 0, minWidth: 0 }}
                 >
                   <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>
@@ -167,7 +170,8 @@ const TestimonialSection = () => {
           <div
             onMouseEnter={() => swiper2Ref.current?.autoplay.stop()}
             onMouseLeave={() => swiper2Ref.current?.autoplay.start()}
-            className="overflow-hidden"
+            className="overflow-hidden w-full"
+            style={{ isolation: 'isolate' }}
           >
             <Swiper
               modules={[Autoplay]}
@@ -195,12 +199,14 @@ const TestimonialSection = () => {
               onSwiper={(swiper) => {
                 swiper2Ref.current = swiper;
               }}
-              className="!overflow-hidden"
+              className="!overflow-hidden w-full"
+              style={{ width: '100%', isolation: 'isolate' }}
             >
               {secondHalf.map((testimonial) => (
                 <SwiperSlide
                   key={testimonial.id}
-                  className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px]"
+                  className="!w-[280px] sm:!w-[320px] md:!w-[350px] lg:!w-[400px] !flex-shrink-0"
+                  style={{ flexShrink: 0, minWidth: 0 }}
                 >
                   <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>

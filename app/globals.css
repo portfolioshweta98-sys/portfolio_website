@@ -25,11 +25,32 @@ body {
 .swiper-slide {
   height: auto !important;
   box-sizing: border-box;
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
 }
 
 .swiper-wrapper {
   display: flex;
   align-items: stretch;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+}
+
+/* Firefox-specific fixes */
+@-moz-document url-prefix() {
+  .swiper-slide {
+    min-width: 0;
+    width: auto !important;
+  }
+  
+  .swiper {
+    overflow: hidden !important;
+  }
+  
+  .swiper-wrapper {
+    display: -moz-box;
+    display: flex;
+  }
 }
 
 /* --- Font Variables --- */
