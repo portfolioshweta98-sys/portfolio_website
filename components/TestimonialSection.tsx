@@ -67,7 +67,7 @@ const TestimonialCard = ({
           linkedinUrl={testimonial.linkedinUrl}
         />
         <div className="flex-1 min-w-0">
-          <div className="font-semibold text-sm sm:text-base text-white mb-0.5">
+          <div className="font-semibold text-sm sm:text-base text-black mb-0.5">
             {testimonial.name || testimonial.title}
           </div>
           <div className="text-xs sm:text-sm text-gray-400">
