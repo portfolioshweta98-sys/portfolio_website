@@ -11,8 +11,6 @@ const nextConfig: NextConfig = {
     ],
     unoptimized: false,
   },
-  // Ensure proper output for Netlify
-  output: "standalone",
 };
 
 module.exports = nextConfig;
